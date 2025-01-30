@@ -5,9 +5,9 @@ console.log("test");
 // locate you.
 let map;
 
-window.initMap = async function () {
-  const {AdvancedMarkerElement} = await google.maps.importLibrary("marker")
-  const {Map} = await google.maps.importLibrary("maps");
+function initMap() {
+  const {AdvancedMarkerElement} = google.maps.importLibrary("marker")
+  const {Map} = google.maps.importLibrary("maps");
   map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 44.56495296308599, lng: -123.27630649064899},
     zoom: 15,
@@ -68,3 +68,6 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.open(map);
 }
 
+document.createEventListener("DOMContentLoaded", () => {
+  initMap();
+});
