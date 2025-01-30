@@ -52,22 +52,24 @@ Hopefully with the new designated time it will elimate tardiness and allow for m
 ### Calvin Chen
 
 #### 2.1 Exact Copy of the Third Section from Last Week
-N/A for this week.
-
-#### 2.2 Progress and Issues
-
-**What we've finished:**  Our team dispersed out roles for every memeber, finished our presentation slides, updated our living document and github repository. We were also able
-to allocate some time to act out our presentation in the library.
-
-**What we learned:**  We learned many github commands along with a more clear image on how our final product will look like. Not only that, we discovered that every member is
-available to work on the project on Mondays at 2pm.
-
-**Where we had trouble/stuck:**  We had trouble committing to our scheduled meetups on the weekends as everyone was busy, which delayed our progress.
-
-#### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
 - Meet with our TA on Thursday at 2pm to get approval and feedback for the start of our project (1 week)
 - Map out how the reward system will work for players (2 weeks)
 - Brainstorm with team members to come up with how big of an advantage should monetization have on the game (2 weeks)
+
+#### 2.2 Progress and Issues
+
+**What we've finished:**  Our team was able to import Google's Geolocation API and have it run locally. We also hardcoded the coordinates of Corvallis's location of 44, -123,
+so that we can have a general map to work on in the future.
+
+**What we learned:**  We learned to import Google's Geolocation API and have it run locally. We also learned many commands of Node.js and found out that an extension called
+live share in VScode helped accelerate our progress as we were all able to edit multiple files in real-time.
+
+**Where we had trouble/stuck:**  We had trouble coordinating meetup times besides Monday (due to everyone's busy schedule and have other class meetups), which delayed our progress.
+
+#### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
+- Split up parts of code for everyone to work on and commit changes to github when done (30 min)
+- Implement a pin-point location on the map to represent where the player is (1 hr)
+- Freely control the players movement on the map (3 hrs)
 
 ### Brian Munger
 
