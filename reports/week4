@@ -72,23 +72,27 @@ available to work on the project on Mondays at 2pm.
 ### Brian Munger
 
 #### 2.1 Exact Copy of the Third Section from Last Week
-N/A for this week.
-
-#### 2.2 Progress and Issues
-
-**What we've finished:** My team and I edited the living document to include all the required information regarding our game concept. 
-We also finished and practiced our presentation, which we will present in class tomorrow. 
-
-**What we learned:**  We learned that Mondays and Tuesdays work great for all of us to meet, work together, and discuss ideas. I learned
-about how to Git commands when working with a remote repository. This will be useful when working on our app together. 
-
-**Where we had trouble/stuck:** We had trouble on Monday finding a time that worked for all of us to meet, delaying our progress.
-
-#### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
 - Meet Wednesday at 3 pm before class to practice presentation one more time (~1hr).
 - Present our application in class (5 mins).
 - Meet with our TA on Thursday (15 mins).
 - Start development of the app on Thursday if possible (2 hours). 
+
+#### 2.2 Progress and Issues
+
+**What we've finished:** This week, we met on Monday to start the development of our app. We are implementing it to work on any browser, most likely on mobile devices. We implemented the Google 
+Geolocation API, and was able to run it on localhost with it opening up to Corvallis, OR. We experimented with this API and discussed the different functionalities we may want to use.
+
+**What we learned:** We learned how to implement the Google Geolocation API. This includes setting the right permissions, having it load correctly, and displaying the webpage via Node.JS.
+
+**Where we had trouble/stuck:** Delegating the work is a little hard right now since we are so early in development. We worked together to figure out the Google API, and will likely split
+roles and responsibilities at the end of the week.
+
+#### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
+- Add marker to Google Maps (30 mins)
+- Add navigational capabilities to application (2 hours)
+- Delegate work (begin frontend, backend, etc) (10 mins)
+- Begin individual tasks (2 hours)
+- Meet to discuss progress later in the week (30 mins)
 
 ### Shi-Ru Huang
 
