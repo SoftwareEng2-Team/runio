@@ -154,24 +154,28 @@ One of the main things we are going to have trouble with is creating the mobile 
 ### Connor Sun
 
 #### 2.1 Exact Copy of the Third Section from Last Week 
-N/A
-
-#### 2.2 Progress and Issues
-
-Finished our initial setup for the living document, Github organization, role assignments, presentation, and I finished my Figma design for the mobile view.
-
-We learned how to manage version control as a group/organization and how to work as a cohesive team. Further solidified the shared mental image of what our final product should look like.
-
-We had trouble coordinating meeting times and delegating roles to each member. The project idea is still in its fledgling stages and needs a proper development roadmap. Another issue is that none of us have mobile development experience (even just mobile view I think) so that will need to be decided on by the related members. 
-
-#### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
 
 - Figure out how to reward players for exploring new areas (1 Week)
 - Figure out how to retain players who have lost their lives (3 Weeks)
 - Decide how players will 'spawn' with territory (1 Week)
 	- Is territory even needed? (<1 Week)
 
+#### 2.2 Progress and Issues
 
+We have figured out the basics of using Google Maps API and have rendered the map onto a webpage. However, our progress is significantly hampered by the fact that we can no longer use Live Share on VSCode. Working on code is much less efficient now that we all can't participate in the learning process for things like API usage, website design, game programming, etc. This will be an ongoing issue that we just have to figure out. 
 
+Figured out the basics of having players explore new areas. We should move from a mi^2 scoring system to a general point system. We can algorithmically designate lower popularity areas (that are still suitable for running) to naturally give more points. This means that some players will have to run in areas that they generally don't run in. This has some security concerns and lots of bugfixing, so this will have to be implemented much later on unless we can find a better solution that doesn't come with the risks.
 
+Spawning proves to be a much more difficult task without a functioning game prototpye. However, an initial amount of territory is good as we may have bugs without it (easier to get rid of edge cases) and it will center a player and not allow them to freely run around the map and spawn in areas frustrating to other players. Defender's priority takes precedent, so we should reduce the times that higher ranking players get 'sniped' by people respawning
 
+#### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
+
+- Finalize the point system (1-2 weeks)
+    - Decide the criteria for weighing an area more heavily for points (1 week)
+- Research viability of desired monitezation systems (1-2 weeks)
+    - Business collaboration viability (1 week)
+    - Microtransaction viability (1 week)
+    - Privacy-compliant data selling
+
+- Figure out how to retain players who have lost their lives (3 weeks+)
+- Decide where spawning would cause the least amount of frustration for all parties (? weeks)
