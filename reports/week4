@@ -102,24 +102,24 @@ roles and responsibilities at the end of the week.
 ### Shi-Ru Huang
 
 #### 2.1 Exact Copy of the Third Section from Last Week
-N/A for this week.
-
-#### 2.2 Progress and Issues
-
-**What we've finished:** We finished the updated version of living document, make up the presentation slide, making sure what our individual 
-role in the project, we also set up enviorment for our future project.
-
-**What we learned:** We learned that it will be more efficent and smooth when it a in-person group meeting instead of meeting online. And good 
-conmunication really establish well fundenmental for not just our team but for keeping the entire project open mind and on track.
-
-**Where we had trouble/stuck:**  So, since 1/20 is a holiday, not everyone is on campus, it at that time we found out working online might be 
-sligthy difficult than we thought.
-
-#### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
 - Meet Wednesday at 3 pm before class to practice presentation one more time (1hr).
 - Present our slides during class (5 mins).
 - Meet with our TA on Thursday (15 mins).
 - Start doing individual part of the project after we meet on Thursday(3 days).
+
+#### 2.2 Progress and Issues
+
+**What we've finished:** Our team meet on monday at library to start working on the location tracking by using google map. We first implement it on localhost, try to work and be able to open it locally.
+
+**What we learned:** We learned that using google map API will be efficent for us to implement. And understand how it function correctly by using it, since none of us done this before this class.
+
+**Where we had trouble/stuck:**  What I enconter in is that since I never done the location traking before, I got to spend more time on how it implemented, do more research on how will it work to be able 
+to using it on either locally or remotely(means it a real-time update). 		
+
+#### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
+- Meet Thursday after TA group meeting to dicuss for the next step (2 hr).
+- Distribute part for each member (1 hr).
+- Meet with our TA on Thursday (15 mins).
 
 ### Evan Albert
 
