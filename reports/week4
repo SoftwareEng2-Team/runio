@@ -4,28 +4,28 @@
 
 ### 1.1 Exact Copy of the Third Section from Last Week
 
-
-### 1.2 Progress and Issues
-
-**What we've finished:**  
-- Revised the living document  
-- Set up the four-page slides for presentation  
-- Set up GitHub repository  
-- Set up Trello  
-
-**What we learned:**  
-
-**Where we had trouble/stuck:**  
-
-
-### 1.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
-
 **Main goal:**  
 - Begin a heavier technical approach to our app. Figure out exactly what front-end and back-end services we will be using, making sure they fit our project idea.  
 - Communicate with the team to figure out member qualities and comfort levels.  
 - Allocate members that can work on front-end and back-end frameworks.  
 
----
+### 1.2 Progress and Issues
+
+**What we've finished:** 
+Initial geolocation testing is looking promising. Presentation did well and we have taken the sparse advice to improve our specifications. Github repository has been cleaned up and Trello has working objectives.
+
+**What we learned:**  
+We learned that using VSCode Live Share is harmful to the grading practice. We have also learned how to interact with some of the Google Maps API endpoints and will move on to implementing more features that are the backbone of our game's implementation. 
+
+**Where we had trouble/stuck:**  
+Right now Brian has all of our commits because we worked on his computer collaboratively. This will be changed in the future. Coding efficiently will also be hard because the repository-to-local cycle slows down production.
+
+### 1.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
+
+- Allocate tasks and side-tasks (ongoing weekly, so 1 week every week)
+- Implement basic Google Maps navigation (1 week)
+- Solidify design of gameplay loop (2 weeks)
+- Build good organizational management techniques and learn from previous complications (1 week)
 
 ## 2. Contributions of Individual Team Members
 
