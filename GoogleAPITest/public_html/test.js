@@ -42,13 +42,13 @@ async function initMap() {
   });
 
   // Add an info window to display the marker's position
-  const infoWindow = new google.maps.InfoWindow();
+  const marker_location_window = new google.maps.InfoWindow();
   draggableMarker.addListener("click", () => {
-      infoWindow.setContent(`Marker at: ${draggableMarker.getPosition().lat()}, ${draggableMarker.getPosition().lng()}`);
-      infoWindow.open(map, draggableMarker);
+      marker_location_window.setContent(`Marker at: ${draggableMarker.getPosition().lat()}, ${draggableMarker.getPosition().lng()}`);
+      marker_location_window.open(map, draggableMarker);
   });
   
-  infoWindow = new google.maps.InfoWindow();
+  const current_location_window = new google.maps.InfoWindow();
 
   const locationButton = document.createElement("button");
   console.log("button");
@@ -75,30 +75,30 @@ async function initMap() {
             return;
           }
 
-          infoWindow.setPosition(pos);
-          infoWindow.setContent("Location found.");
-          infoWindow.open(map);
+          current_location_window.setPosition(pos);
+          current_location_window.setContent("Location found.");
+          current_location_window.open(map);
           map.setCenter(pos);
         },
         () => {
-          handleLocationError(true, infoWindow, map.getCenter());
+          handleLocationError(true, current_location_window, map.getCenter());
         },
       );
     } else {
       // Browser doesn't support Geolocation
-      handleLocationError(false, infoWindow, map.getCenter());
+      handleLocationError(false, current_location_window, map.getCenter());
     }
   });
 }
 
-function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-  infoWindow.setPosition(pos);
-  infoWindow.setContent(
+function handleLocationError(browserHasGeolocation, current_location_window, pos) {
+  current_location_window.setPosition(pos);
+  current_location_window.setContent(
     browserHasGeolocation
       ? "Error: The Geolocation service failed."
       : "Error: Your browser doesn't support geolocation.",
   );
-  infoWindow.open(map);
+  current_location_window.open(map);
 }
 
 document.createEventListener("DOMContentLoaded", () => {
