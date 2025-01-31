@@ -6,9 +6,6 @@ console.log("test");
 let map;
 
 function initMap() {
-  const {AdvancedMarkerElement} = google.maps.importLibrary("marker")
-  const {Map} = google.maps.importLibrary("maps");
-
   // Bounding Box for the OSU Campus
   const osuBounds = {
     north: 44.56788,
