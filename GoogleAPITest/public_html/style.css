@@ -1,6 +1,7 @@
 #map {
     height: 80%;
     width: 100%;
+    background-color: transparent;
   }
   html, body {
     height: 100%;

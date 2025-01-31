@@ -3,31 +3,18 @@ console.log("test");
 // prompted by your browser. If you see the error "The Geolocation service
 // failed.", it means you probably did not give permission for the browser to
 // locate you.
-let map;
-
-function initMap() {
-  const {AdvancedMarkerElement} = google.maps.importLibrary("marker")
-  const {Map} = google.maps.importLibrary("maps");
-  map = new google.maps.Map(document.getElementById("map"), {
+async function initMap() {
+  const {Map} = await google.maps.importLibrary("maps");
+  const {AdvancedMarkerElement} = await google.maps.importLibrary("marker");
+  map = new Map(document.getElementById("map"), {
     center: { lat: 44.56495296308599, lng: -123.27630649064899},
     zoom: 15,
   });
-
-  // Static Marker on Corvallis
-  const corvallisMarker = new google.maps.AdvancedMarkerElement({
+  marker = new AdvancedMarkerElement({
     map: map,
-    position: {lat: 44, lng: -123},
-    title: "Corvallis, Oregon",
-    mapId: "d3a934f281f5593e",
-    gmpDraggable: true,
-    gmpClickable: true
+    position: { lat: 44.5649, lng: -123.2789},
   });
-  corvallisMarker.addEventListenter("gmp-click", () => {
-    console.log("Marker clicked");
-  });
-  
   infoWindow = new google.maps.InfoWindow();
-
   const locationButton = document.createElement("button");
   locationButton.textContent = "Pan to Current Location";
   locationButton.classList.add("custom-map-control-button");
@@ -58,6 +45,7 @@ function initMap() {
   });
 }
 
+
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.setPosition(pos);
   infoWindow.setContent(
@@ -67,7 +55,3 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   );
   infoWindow.open(map);
 }
-
-document.createEventListener("DOMContentLoaded", () => {
-  initMap();
-});
