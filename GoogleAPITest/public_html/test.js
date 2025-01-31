@@ -4,6 +4,7 @@ console.log("test");
 // failed.", it means you probably did not give permission for the browser to
 // locate you.
 let map;
+let draggableMarker; // The player's draggable marker
 
 function initMap() {
   // Bounding Box for the OSU Campus
@@ -26,16 +27,32 @@ function initMap() {
   });
 
   // Static Marker on Corvallis
-  const corvallisMarker = new google.maps.AdvancedMarkerElement({
+  draggableMarker = new google.maps.Marker({
+    position: { lat: 44.56495296308599, lng: -123.27630649064899 },
     map: map,
+<<<<<<< HEAD
     position: {lat: 44, lng: -123},
     title: "Corvallis, Oregon",
     gmpDraggable: true,
     gmpClickable: true
+=======
+    title: "Move me!",
+    draggable: true, // Enable dragging
+    animation: google.maps.Animation.DROP, // Drop effect when added
+>>>>>>> 17c0b6f9fc1e4d3158dbe34c71d0ff8f95b71b4c
   });
-  
-  corvallisMarker.addEventListenter("gmp-click", () => {
-    console.log("Marker clicked");
+
+  // Add an event listener to log position when marker is moved
+  draggableMarker.addListener("dragend", () => {
+      const newPosition = draggableMarker.getPosition();
+      console.log(`Marker moved to: ${newPosition.lat()}, ${newPosition.lng()}`);
+  });
+
+  // Add an info window to display the marker's position
+  const infoWindow = new google.maps.InfoWindow();
+  draggableMarker.addListener("click", () => {
+      infoWindow.setContent(`Marker at: ${draggableMarker.getPosition().lat()}, ${draggableMarker.getPosition().lng()}`);
+      infoWindow.open(map, draggableMarker);
   });
   
   infoWindow = new google.maps.InfoWindow();
