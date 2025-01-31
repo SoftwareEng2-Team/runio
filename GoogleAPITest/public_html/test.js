@@ -30,16 +30,17 @@ function initMap() {
   draggableMarker = new google.maps.Marker({
     position: { lat: 44.56495296308599, lng: -123.27630649064899 },
     map: map,
-<<<<<<< HEAD
     position: {lat: 44, lng: -123},
     title: "Corvallis, Oregon",
     gmpDraggable: true,
     gmpClickable: true
-=======
+  });
+  
+  corvallisMarker.addEventListenter("gmp-click", () => {
+    console.log("Marker clicked");
     title: "Move me!",
     draggable: true, // Enable dragging
     animation: google.maps.Animation.DROP, // Drop effect when added
->>>>>>> 17c0b6f9fc1e4d3158dbe34c71d0ff8f95b71b4c
   });
 
   // Add an event listener to log position when marker is moved
