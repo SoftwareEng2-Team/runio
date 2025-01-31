@@ -8,9 +8,23 @@ let map;
 function initMap() {
   const {AdvancedMarkerElement} = google.maps.importLibrary("marker")
   const {Map} = google.maps.importLibrary("maps");
+
+  // Bounding Box for the OSU Campus
+  const osuBounds = {
+    north: 44.56788,
+    south: 44.55726,
+    east: -123.27163,
+    west: -123.28965
+  };
+
+  // This will initilize with the boundary
   map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: 44.56495296308599, lng: -123.27630649064899},
-    zoom: 15,
+    center: { lat: 44.5646, lng: -123.2620 },
+    zoom: 16,
+    restriction: {
+      latLngBounds: osuBounds,
+      strictBounds: true,
+    },
   });
 
   // Static Marker on Corvallis
@@ -32,6 +46,7 @@ function initMap() {
   locationButton.textContent = "Pan to Current Location";
   locationButton.classList.add("custom-map-control-button");
   map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
+
   locationButton.addEventListener("click", () => {
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
@@ -42,6 +57,16 @@ function initMap() {
             lng: position.coords.longitude,
           };
 
+          if(
+            pos.lat < osuBounds.south ||
+            pos.lat > osuBounds.north ||
+            pos.lng < osuBounds.west ||
+            pos.lng > osuBounds.east
+          ){
+            console.log("Location is outside OSU campus. Stay within the boundary.");
+            return;
+          }
+          
           infoWindow.setPosition(pos);
           infoWindow.setContent("Location found.");
           infoWindow.open(map);
