@@ -36,6 +36,7 @@ function initMap() {
     gmpDraggable: true,
     gmpClickable: true
   });
+  
   corvallisMarker.addEventListenter("gmp-click", () => {
     console.log("Marker clicked");
   });
@@ -66,7 +67,7 @@ function initMap() {
             console.log("Location is outside OSU campus. Stay within the boundary.");
             return;
           }
-          
+
           infoWindow.setPosition(pos);
           infoWindow.setContent("Location found.");
           infoWindow.open(map);
