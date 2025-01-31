@@ -18,6 +18,7 @@ function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 44.5646, lng: -123.2620 },
     zoom: 16,
+    mapId: "d3a934f281f5593e",
     restriction: {
       latLngBounds: osuBounds,
       strictBounds: true,
@@ -29,7 +30,6 @@ function initMap() {
     map: map,
     position: {lat: 44, lng: -123},
     title: "Corvallis, Oregon",
-    mapId: "d3a934f281f5593e",
     gmpDraggable: true,
     gmpClickable: true
   });
