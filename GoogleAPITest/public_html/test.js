@@ -6,6 +6,7 @@ console.log("test");
 // locate you.
 let map;
 let draggableMarker; // The player's draggable marker
+let openlocationwindow = null; // Info window for current location
 
 async function initMap() {
   // Bounding Box for the OSU Campus
@@ -35,6 +36,12 @@ async function initMap() {
     animation: google.maps.Animation.DROP, // Drop effect when added
   });
 
+  draggableMarker.addListener("dragstart", () => {
+    if(openlocationwindow){
+      openlocationwindow.close()
+    }
+      console.log("Marker is being dragged");
+  });
   // Add an event listener to log position when marker is moved
   draggableMarker.addListener("dragend", () => {
       const newPosition = draggableMarker.getPosition();
@@ -44,8 +51,12 @@ async function initMap() {
   // Add an info window to display the marker's position
   const marker_location_window = new google.maps.InfoWindow();
   draggableMarker.addListener("click", () => {
-      marker_location_window.setContent(`Marker at: ${draggableMarker.getPosition().lat()}, ${draggableMarker.getPosition().lng()}`);
-      marker_location_window.open(map, draggableMarker);
+    if(openlocationwindow){
+      openlocationwindow.close()
+    }
+    marker_location_window.setContent(`Marker at: ${draggableMarker.getPosition().lat()}, ${draggableMarker.getPosition().lng()}`);
+    marker_location_window.open(map, draggableMarker);
+    openlocationwindow = marker_location_window;
   });
   
   const current_location_window = new google.maps.InfoWindow();
@@ -56,6 +67,9 @@ async function initMap() {
   locationButton.classList.add("custom-map-control-button");
   map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
   locationButton.addEventListener("click", () => {
+    if(openlocationwindow){
+      openlocationwindow.close()
+    }
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -78,6 +92,7 @@ async function initMap() {
           current_location_window.setPosition(pos);
           current_location_window.setContent("Location found.");
           current_location_window.open(map);
+          openlocationwindow = current_location_window;
           map.setCenter(pos);
         },
         () => {
@@ -100,7 +115,3 @@ function handleLocationError(browserHasGeolocation, current_location_window, pos
   );
   current_location_window.open(map);
 }
-
-document.createEventListener("DOMContentLoaded", () => {
-  initMap();
-});
