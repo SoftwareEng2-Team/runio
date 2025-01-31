@@ -1,3 +1,4 @@
+
 console.log("test");
 // Note: This example requires that you consent to location sharing when
 // prompted by your browser. If you see the error "The Geolocation service
@@ -19,7 +20,6 @@ function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 44.5646, lng: -123.2620 },
     zoom: 16,
-    mapId: "d3a934f281f5593e",
     restriction: {
       latLngBounds: osuBounds,
       strictBounds: true,
@@ -30,14 +30,6 @@ function initMap() {
   draggableMarker = new google.maps.Marker({
     position: { lat: 44.56495296308599, lng: -123.27630649064899 },
     map: map,
-    position: {lat: 44, lng: -123},
-    title: "Corvallis, Oregon",
-    gmpDraggable: true,
-    gmpClickable: true
-  });
-  
-  corvallisMarker.addEventListenter("gmp-click", () => {
-    console.log("Marker clicked");
     title: "Move me!",
     draggable: true, // Enable dragging
     animation: google.maps.Animation.DROP, // Drop effect when added
