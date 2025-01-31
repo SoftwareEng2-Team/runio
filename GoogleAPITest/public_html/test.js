@@ -7,7 +7,7 @@ console.log("test");
 let map;
 let draggableMarker; // The player's draggable marker
 
-function initMap() {
+async function initMap() {
   // Bounding Box for the OSU Campus
   const osuBounds = {
     north: 44.56788,
