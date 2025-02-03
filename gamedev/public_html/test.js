@@ -1,16 +1,14 @@
-
-console.log("test");
-// Note: This example requires that you consent to location sharing when
-// prompted by your browser. If you see the error "The Geolocation service
-// failed.", it means you probably did not give permission for the browser to
-// locate you.
+// Map variable
 let map;
-let draggableMarker; // The player's draggable marker
-let openlocationwindow = null; // Info window for current location
+// The player's draggable marker
+let draggableMarker; 
+// Info window for current location
+let openlocationwindow = null; 
 
 async function initMap() {
   // Bounding Box for the OSU Campus
   const osuBounds = {
+    // Coordinates for the map boundary
     north: 44.56788,
     south: 44.55726,
     east: -123.27163,
@@ -32,17 +30,21 @@ async function initMap() {
     position: { lat: 44.56495296308599, lng: -123.27630649064899 },
     map: map,
     title: "Move me!",
-    draggable: true, // Enable dragging
-    animation: google.maps.Animation.DROP, // Drop effect when added
+    // Enable dragging
+    draggable: true, 
+    // Drop effect when added
+    animation: google.maps.Animation.DROP, 
   });
 
+  // Event listener for when the marker is dragged
   draggableMarker.addListener("dragstart", () => {
     if(openlocationwindow){
       openlocationwindow.close()
     }
       console.log("Marker is being dragged");
   });
-  // Add an event listener to log position when marker is moved
+  
+  // Event listener to log position when marker is moved
   draggableMarker.addListener("dragend", () => {
       const newPosition = draggableMarker.getPosition();
       console.log(`Marker moved to: ${newPosition.lat()}, ${newPosition.lng()}`);
@@ -70,7 +72,7 @@ async function initMap() {
     if(openlocationwindow){
       openlocationwindow.close()
     }
-    // Try HTML5 geolocation.
+    // HTML5 geolocation.
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
@@ -106,6 +108,7 @@ async function initMap() {
   });
 }
 
+// Error handling for geolocation
 function handleLocationError(browserHasGeolocation, current_location_window, pos) {
   current_location_window.setPosition(pos);
   current_location_window.setContent(
