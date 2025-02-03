@@ -1,0 +1,165 @@
+# Weekly Status Report -- 20250129
+
+## 1. Team Report
+
+### 1.1 Exact Copy of the Third Section from Last Week
+
+- Allocate tasks and side-tasks (ongoing weekly, so 1 week every week)
+- Implement basic Google Maps navigation (1 week)
+- Solidify design of gameplay loop (2 weeks)
+- Build good organizational management techniques and learn from previous complications (1 week)
+
+### 1.2 Progress and Issues
+
+**What we've finished:** 
+Webapp navigation between leaderboard, map, and profile has been implemented. We have successfully used Google's Geolocation API to find the position of our players and can display that and their coordinates on the map. The InfoWindow object now also closes automatically upon a user's action for QoL and the map will continue to be improved. 
+
+**What we learned:**  
+We learned how to manage several objects from the Google Maps API and how to combine them to create a detailed game interface. Furthermore, we now understand how to use Google's Geolocation API to find a player's position and can extend that to figure out how to implement live tracking features. 
+
+**Where we had trouble/stuck:**  
+We attempted to use the AdvancedMarker library from Google because we were informed the Marker library is deprecated. However, the AdvancedMarker would not render on our map while the Marker library would. This caused us to waste many hours of work through bug-chasing.
+
+### 1.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
+
+- Allocate tasks and side-tasks (ongoing weekly, so 1 week every week)
+- Solidify design of gameplay loop (1 weeks)
+- Build leaderboard frontend and architect it to be able to integrate a database (2 week)
+- Update living document to meet the expectations of the Project Architecture and Design specifications (<1 week)
+- Implement Run For Your Life (RFYL) on the school servers so we can test it on a non-localhost server (? weeks)
+- Ask TA if using a database is the correct way to go about implementing our leaderboard (1 week)
+    - Research alternatives to the suggested solution (1 week)
+    - Act on the information (2 weeks)
+
+## 2. Contributions of Individual Team Members
+
+### James Nichols
+
+#### 2.1 Exact Copy of the Third Section from Last Week
+
+
+#### 2.2 Progress and Issues
+
+**What we've finished:** 
+
+**What we learned:**  
+
+**Where we had trouble/stuck:**  
+
+#### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
+
+- Improve understanding of the Google API (1 week)
+- Begin planning the development and planning out progess milestones (1 weeks)
+- Begin developing a basic location tracking software to begin optimizing and testing (2 weeks)
+
+
+### Calvin Chen
+
+#### 2.1 Exact Copy of the Third Section from Last Week
+
+#### 2.2 Progress and Issues
+
+**What we've finished:**  
+
+**What we learned:**  
+
+**Where we had trouble/stuck:**  
+
+#### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
+
+- Split up parts of code for everyone to work on and commit changes to github when done (30 min)
+- Implement a pin-point location on the map to represent where the player is (1 hr)
+- Freely control the players movement on the map (3 hrs)
+
+### Brian Munger
+
+#### 2.1 Exact Copy of the Third Section from Last Week
+
+#### 2.2 Progress and Issues
+
+**What we've finished:**
+
+**What we learned:**
+
+**Where we had trouble/stuck:**
+
+#### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
+- Add marker to Google Maps (30 mins)
+- Add navigational capabilities to application (2 hours)
+- Delegate work (begin frontend, backend, etc) (10 mins)
+- Begin individual tasks (2 hours)
+- Meet to discuss progress later in the week (30 mins)
+
+### Shi-Ru Huang
+
+#### 2.1 Exact Copy of the Third Section from Last Week
+
+#### 2.2 Progress and Issues
+
+**What we've finished:** 
+
+**What we learned:** 
+
+**Where we had trouble/stuck:**  
+
+#### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
+
+- Meet Thursday after TA group meeting to dicuss for the next step (2 hr).
+- Distribute part for each member (1 hr).
+- Meet with our TA on Thursday (15 mins).
+
+### Evan Albert
+
+#### 2.1 Exact Copy of the Third Section from Last Week
+
+#### 2.2 Progress and Issues
+
+**What we've finished:** 
+
+**What we learned:**  
+
+**Where we had trouble/stuck:**
+
+#### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
+
+### Keona Abad
+
+#### 2.1 Exact Copy of the Third Section from Last Week
+
+#### 2.2 Progress and Issues
+
+**What we've finished:** 
+
+**What we learned:**  
+
+**Where we had trouble/stuck:**
+
+#### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
+
+- Finalize how we will keep track of the point system (3 hours)
+- Meet with the team on Wednesday and Thursday (1 hour)
+- Finalize a draft of the backend (2-3 hours)
+
+### Connor Sun
+
+#### 2.1 Exact Copy of the Third Section from Last Week 
+
+#### 2.2 Progress and Issues
+
+**What we've finished:** 
+
+**What we learned:**  
+
+**Where we had trouble/stuck:**
+
+#### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
+
+- Finalize the point system (1-2 weeks)
+    - Decide the criteria for weighing an area more heavily for points (1 week)
+- Research viability of desired monitezation systems (1-2 weeks)
+    - Business collaboration viability (1 week)
+    - Microtransaction viability (1 week)
+    - Privacy-compliant data selling
+
+- Figure out how to retain players who have lost their lives (3 weeks+)
+- Decide where spawning would cause the least amount of frustration for all parties (? weeks)
