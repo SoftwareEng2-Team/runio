@@ -130,7 +130,7 @@ Con: Might have restrictions that we have yet to realize.
 
 Alternative: We can look into other server hosting options such as Render.com and AWS EC2.
 
-Backend: If allowed it will run on school's public server. If applicable we will use MongoDB to store data for our game. We will use Node.js (real-time sync) to retrieve player data. Alternatively, we will use PHP (over-time sync).
+Backend: If allowed it will run on school's public server. If applicable we will use MongoDB to store data for our game. We will use Node.js (real-time sync) to retrieve player data.
 
 Pros: Real-time updates and can use microservices.
 
