@@ -120,7 +120,7 @@ Repository: https://github.com/SoftwareEng2-Team/runio
 Trello:
 https://trello.com/b/OsvSTA7E/pt1-run-for-your-life
 
-Major Software Components:
+1. Software architecture:
 
 Frontend: Using the school's public_html we will build the frontend using HTML, CSS and Javascript.
 
