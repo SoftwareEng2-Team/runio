@@ -4,7 +4,7 @@ About Our Game: Run For Your Life is a competitive running game that simulates t
 
 Format Of The Repo: 
 
-/gamedev - contains the current progress of our game, being hosted on a localhost\n
+/gamedev - contains the current progress of our game, being hosted on a localhost
 /reports - contains our weekly reports, including both group and individual responses
 /living-doc-versions - an archive that contains previous versions of our living document 
 
