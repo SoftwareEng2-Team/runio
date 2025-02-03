@@ -102,7 +102,7 @@ Week 9: Implement the last features as necessary. Finalize and test the game, an
 
 Week 10: Prepare the final presentation demonstrating the work we completed with the app. 
 
-Coding guideline
+Coding guideline: 
 
 With our project, we are implementing our design to be accessible through a webpage. This way, it can be utilized on any device without installation. Additionally, all of the group members have experience with website development, making it a smart choice. We are using HTML to structure our web pages, CSS to style them, and JavaScript to handle the functionality of our project.
 
