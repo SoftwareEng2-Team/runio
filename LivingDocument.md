@@ -51,6 +51,48 @@ Planning to use JavaScript/HTML for the app layout and general display features.
 Risks: 
 Location tracking since none of us have experience with that. But we might solve it by using JavaScript. Mobile development is a concern because we collectively have little to no experience in its development.
 
+Risk assessment:
+
+  GPS location tracking:
+    Likelihood: Low
+    Impact: High
+    Evidence: Base on our team members previous experience no one has done the location tracking, so it might be a challege for us, since if it not working then basically the whole                   game will be crash down. Also, we have to think about the GPS signal issues, permission restrictions.
+    Steps to reduce risk: We are using the Google Geolocation API, it combine GPS, Wifi, cell tower data and IP address to increse the accuracy of tracking, also redue the location                               tracking issuea. The geolocation help us to improve the issue of accuracy, real-time speed, and reliability.
+    Detecting the problem: We're going to test by taking our device and move around on the OSU campus once we finished implement it, to check if the location tracking is accurate and                              function without lacking it. Also player have to allow the permission for tracking on thier own device.
+    Mitigation plan: If the Geolocation API failed, then we will recheck all the implemetation we done on the location tracking. I don't think we are going to re-implement a new                             location tracking since Geolocation API is one of the most accurate and easy to implement.
+
+  Speed limit for players to prevent cheating:
+    Likelihood: High
+    Impact: Medium
+    Evidence: 
+    Steps to reduce risk:
+    Detecting the problem:
+    Mitigation plan:
+
+  real-time multiplayer interaction:
+    Likelihood: Medium
+    Impact: High
+    Evidence:
+    Steps to reduce risk:
+    Detecting the problem:
+    Mitigation plan:
+
+  Database performance:
+    Likelihood: Medium
+    Impact: High
+    Evidence:
+    Steps to reduce risk:
+    Detecting the problem:
+    Mitigation plan:
+
+  Sever performance:
+    Likelihood: Medium
+    Impact: High
+    Evidence:
+    Steps to reduce risk:
+    Detecting the problem:
+    Mitigation plan:
+
 Team members and roles/responsibilities:
 James Nichols - Project Manager  
 Brian Munger - Implement User Interface; Assist In Back End 
