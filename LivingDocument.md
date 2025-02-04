@@ -135,6 +135,48 @@ The role of a tester is to ensure the quality, reliability, and functionality of
 Evan Albert, Quality Assurance:
 Being the quality assurance means that I have the responsibility to ensure that the app development is on track and meets the desired outcomes throughout production. I will ensure that any bugs or possible structure flaws are identified early on and addressed accordingly.
 
+Test Plans and Bugs:
+We plan to test the key features, including geolocation tracking, server responsiveness, and the accuracy of claimed territory, along with the number of points the users get.
+
+Geolocation tracking;
+Unit testing: Each function will be tested as development goes on. The test will include different features such as how accurate the location tracking API is, also how the marker appears on the map. By testing each function in isolation we can tell quickly what the problem may be and make corrections or workarounds.
+
+System testing: Test how the location tracking connects between the point calculation functions and the mapping API. By comparing the results that the system gives to the expected results we can determine if everything is working smoothly. 
+
+Usability testing: Since our product is a game that many will use usability testing will be the most important. Since the geolocation is not able to be interacted with by the user it shouldn't be a major concern. However, since our product involves location tracking we will have to have users test to see if they can use our app to track people. 
+
+Example test suites: 
+1) Enter random locations to see if the location marker properly tracks them.
+2) Enter random location sizes to see if the points are accurately returned and calculated.
+3) Have random friends or people run our website to determine if the user can understand the layout and whether they can use the app to track other users' data.
+
+
+
+Server Responsiveness;
+Unit testing: Each function will be tested as development goes on. The test will include different features such as how the server runs depending on the amount of users currently on, also how user quickly the site can update itself to display new data. Testing each feature in isolation allows for obvious bugs to be found in corrected. 
+
+System testing: Test how the server handles taking in data from multiple sources, such as the location tracking and the user database. Since the app will be running 24 hours a day, the server will need to be able to handle all the features and accurately update the information provided by the users.
+
+Usability testing: Since our product is a game that many will use usability testing will be the most important. The server will need to be able to respond to users at a near-instant rate. The server will also need to be tested with different amounts of players online. Since the responsiveness will most likely change depending on the amount of users.
+
+Example test suites: 
+1) Have only one or two users on the server and test responsiveness.
+2) Have many users on the server, most likely from class, and determine if the server can handle that or if it will need to implement multiple servers.
+3) Have users enter the server on different levels of connection and test responsiveness; mobile data, Wi-Fi, and low mobile data (1-2 bars). 
+
+
+
+Territory Claimed and Points Scored;
+Unit testing: Each function will be tested as development goes on. The test will include different features such as how accurate the location tracking API is with creating territories, and that the points are accurately calculated based on territory. By testing each feature in isolation it will reveal if we need to change weights for points or alter how territories are created.
+
+System testing: Test how the location tracking connects between the point calculation functions and the mapping API. By comparing the results that the system gives to the expected results we can determine if everything is working smoothly. 
+
+Usability testing: Since our product is a game that many will use usability testing will be the most important. The most significant feature to be tested will be how the territories are displayed. These will be a key feature for the users to determine how other users are doing and what their territory looks like. Another major feature that will need a lot of testing and adjusting is the points calculations. Since some areas will be more difficult to claim the points for it will need to be adjusted to reflect that. 
+
+Example test suites: 
+1) Create random territories and ensure the points properly reflect the size.
+2) Enter random weights for different map areas and make sure they are properly reflected in the point calculations.
+3) Have multiple users at once claim territory to make sure the functions can handle multiple inputs at once.
 
 Timeline with milestones:
 Week 3: Develop a living document and present our app idea. 
