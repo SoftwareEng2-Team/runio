@@ -74,21 +74,33 @@ We attempted to use the AdvancedMarker library from Google because we were infor
 ### Brian Munger
 
 #### 2.1 Exact Copy of the Third Section from Last Week
-
-#### 2.2 Progress and Issues
-
-**What we've finished:**
-
-**What we learned:**
-
-**Where we had trouble/stuck:**
-
-#### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
 - Add marker to Google Maps (30 mins)
-- Add navigational capabilities to application (2 hours)
+- Add navigational capabilities to the application (2 hours)
 - Delegate work (begin frontend, backend, etc) (10 mins)
 - Begin individual tasks (2 hours)
 - Meet to discuss progress later in the week (30 mins)
+
+#### 2.2 Progress and Issues
+
+**What we've finished:** 
+- We have set up the basic outline for our application
+- We have successfully implemented the Google Geolocation API into our program
+- We have allowed the program to find where the user is
+- The user can now put a pin on the map
+- We structured the GitHub and Trello board to be more complete
+
+**What we learned:**
+- We learned that it is hard to delegate work in the beginning stages of a project like this
+- The Google Geolocation API has a lot of features for us to utilize and implement
+
+**Where we had trouble/stuck:**
+- At times, the Google Geolocation API is hard to understand
+
+#### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
+- Implement leaderboard (~3 hours)
+- Run web application on the OSU public.html server (~1 hour)
+- Start creating the profile section (~2 hours)
+- Work on presentation (~2 hours)
 
 ### Shi-Ru Huang
 
