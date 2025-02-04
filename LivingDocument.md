@@ -259,7 +259,7 @@ Google GeoLocation API to communicate current locations.
 
 Software Design: 
 Front-End
-- UI Package: The map view displays the map and user movement. The leaderboard renders the current leaderboard.
+- UI Package: The map view displays the map and user movement. The leaderboard view renders the current leaderboard. The profile view displays user-specific metrics and information.
 - Networking package: Manages REST API requests and handles fetching user locations and game data.
 - Game Logic package: Handles displaying claimed land and processes user GPS movement.
 
