@@ -63,35 +63,35 @@ Risk assessment:
 
   Speed limit for players to prevent cheating:
     Likelihood: High
-    Impact: Medium
-    Evidence: 
-    Steps to reduce risk:
-    Detecting the problem:
-    Mitigation plan:
+    Impact: High
+    Evidence: Not just our games faced this kind of issue, there are games that plyers using VPN, other GPS app to control the speed.
+    Steps to reduce risk: Implement a speed limit function that detect once the plyer's speed exceed over fast-walk speed limit, or dected user jumop for one location to other location.
+    Detecting the problem: Do some automatic checks that ascertain the speed of movement against set physical benchmarks. 
+    Mitigation plan: Modify and improve the logic of speed detection according to the behavioral patterns observed from the player.
 
   real-time multiplayer interaction:
     Likelihood: Medium
     Impact: High
-    Evidence:
-    Steps to reduce risk:
-    Detecting the problem:
-    Mitigation plan:
+    Evidence: The mutiplayer synchronization issue happens a lot in different real-time games nowadays, something like lacking, desynchronization, it can cause a major problem to how                 the player's in game sensetivity.
+    Steps to reduce risk: It can be solve by implementing server-side conflict or interact solution by dealing with cliaming route or territory.
+    Detecting the problem: Keep track on two players claim the same route at the same time, see if the sever-side deal with the problem.
+    Mitigation plan: The server-side should be able to detect which user comes first, and able to handle it without occuring any error.
 
   Database performance:
     Likelihood: Medium
     Impact: High
-    Evidence:
-    Steps to reduce risk:
-    Detecting the problem:
-    Mitigation plan:
+    Evidence: Since this is a game need player login, and allow recording player's data, it is important to have a worth reliable database to store all player's information and game                  record.
+    Steps to reduce risk: It can be solve by using MongoDB, it can fast reads/writes, flexible schema, and automatic indexing improves MongoDB performance. This allows for rapid                                  updates to the leaderboard and easy claiming of routes. MongoDB also ensures smooth real time gameplay through its caching and scalability features.
+    Detecting the problem: It can be detect by implement function such as, monitoring, logging, and query optimization.
+    Mitigation plan: If the database is not working or crashed, the having a replica as a backup will be a best option to support.
 
   Sever performance:
     Likelihood: Medium
     Impact: High
-    Evidence:
-    Steps to reduce risk:
-    Detecting the problem:
-    Mitigation plan:
+    Evidence: When a small amout of user becomes to a huge scale of user the server might crash due to not able handle multiple player logi at the same time.
+    Steps to reduce risk: We are usig oregon state university's engineering server as our sever, which can be seure, be able to handle multiple user cenario.
+    Detecting the problem: it would be great to monitor OSU server resource usage.
+    Mitigation plan: If the server crash down then the best way is to contact OSU IT support.
 
 Team members and roles/responsibilities:
 James Nichols - Project Manager  
