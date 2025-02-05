@@ -123,16 +123,29 @@ We attempted to use the AdvancedMarker library from Google because we were infor
 ### Evan Albert
 
 #### 2.1 Exact Copy of the Third Section from Last Week
+- Add marker to Google Maps (30 mins)
+- Add navigational capabilities to the application (2 hours)
+- Delegate work (begin frontend, backend, etc) (10 mins)
+- Begin individual tasks (2 hours)
+- Meet to discuss progress later in the week (30 mins)
 
 #### 2.2 Progress and Issues
 
 **What we've finished:** 
+- Implementing a barrier around the map
+- Implementing a marker onto the map which we will use as a player
+- Most of the completion on the API implementation
 
 **What we learned:**  
+We learned about Google's API location tracking and how we can implement it into our game.
 
 **Where we had trouble/stuck:**
+We had trouble figuring out if it was possible to implement our game on the schools public_html network.
 
 #### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
+- Meet Thursday after TA group meeting to dicuss for the next step (2 hr).
+- Distribute part for each member (1 hr).
+- Meet with our TA on Thursday (15 mins).
 
 ### Keona Abad
 
