@@ -137,20 +137,34 @@ We attempted to use the AdvancedMarker library from Google because we were infor
 ### Keona Abad
 
 #### 2.1 Exact Copy of the Third Section from Last Week
+- Finalize the point system (1-2 weeks)
+    - Decide the criteria for weighing an area more heavily for points (1 week)
+- Research viability of desired monitezation systems (1-2 weeks)
+    - Business collaboration viability (1 week)
+    - Microtransaction viability (1 week)
+    - Privacy-compliant data selling
+- Figure out how to retain players who have lost their lives (3 weeks+)
+- Decide where spawning would cause the least amount of frustration for all parties (? weeks)
 
 #### 2.2 Progress and Issues
 
 **What we've finished:** 
+- Implementing a barrier around the map
+- Implementing a marker onto the map which we will use as a player
+- Most of the completion on the API implementation
 
 **What we learned:**  
+We learned how to manage a large API system and how to gather pre-existing code from external sources that can really help us in our development stage. We also learned how to properly navigate through our local host.
 
 **Where we had trouble/stuck:**
+I would not say we are completely having trouble with anything at the moment, but right now we are trying to figure out how we are going to host this on a public server
 
 #### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
 
-- Finalize how we will keep track of the point system (3 hours)
+- Create a UX design for the marker (player 2 hours at most)
 - Meet with the team on Wednesday and Thursday (1 hour)
-- Finalize a draft of the backend (2-3 hours)
+- We should get exact coordinates for the border of Oregon State University to have precise on our map (30 mins)
+- Still decide where spawning would cause the least amount of frustration for all parties (? weeks)
 
 ### Connor Sun
 
