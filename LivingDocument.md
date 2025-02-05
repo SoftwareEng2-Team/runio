@@ -138,6 +138,9 @@ Being the quality assurance means that I have the responsibility to ensure that 
 Test Plans and Bugs:
 We plan to test the key features, including geolocation tracking, server responsiveness, and the accuracy of claimed territory, along with the number of points the users get.
 
+Documentation Plan:
+The README file will contain and overview, installation steps, and usage instructions. A USER_GUIDE.md file will provide gameplay instructions and key features. For developers, inline documentation and an API.md file will outline endpoints. A TESTING.md file will document our test plans, and a CHANGELOG.md will track updates. By the end of our development, if need be we will add some more documents such as a CONTRIBUTING.md file for coding standards and Git workflow we used. Our goal is to make clear documents for not just users, but developers, and administrators as well. 
+
 Geolocation tracking;
 Unit testing: Each function will be tested as development goes on. The test will include different features such as how accurate the location tracking API is, also how the marker appears on the map. By testing each function in isolation we can tell quickly what the problem may be and make corrections or workarounds.
 
