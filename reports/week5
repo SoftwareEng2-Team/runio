@@ -124,19 +124,26 @@ We attempted to use the AdvancedMarker library from Google because we were infor
 ### Shi-Ru Huang
 
 #### 2.1 Exact Copy of the Third Section from Last Week
+- Meet Thursday after TA group meeting to dicuss for the next step (2 hr).
+- Distribute part for each member (1 hr).
+- Meet with our TA on Thursday (15 mins).
 
 #### 2.2 Progress and Issues
 
 **What we've finished:** 
+- Implementing the Geolocation API successfully
+- Implementing the boundaries for our map
+- We add up more details and information on the Trello board in order to keep progress going
 
 **What we learned:** 
+- We've learned how to implemting the Geolocation API, how to pin on the ap as a user, what we gooing to user for database and server.
 
-**Where we had trouble/stuck:**  
+**Where we had trouble/stuck:**
+- Mostly for me about where the trouble stuck is that it hard to split the jobs evenly and catch up others progress at the begining stage.
 
 #### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
-
 - Meet Thursday after TA group meeting to dicuss for the next step (2 hr).
-- Distribute part for each member (1 hr).
+- Finished implementing one of the part of this project, which we will talk about what exactly when we meet on Thursday (12 hr).
 - Meet with our TA on Thursday (15 mins).
 
 ### Evan Albert
