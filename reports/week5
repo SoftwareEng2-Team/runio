@@ -36,21 +36,31 @@ We attempted to use the AdvancedMarker library from Google because we were infor
 ### James Nichols
 
 #### 2.1 Exact Copy of the Third Section from Last Week
-
+- Improve understanding of the Google API (1 week)
+- Begin planning the development and planning out progess milestones (1 weeks)
+- Begin developing a basic location tracking software to begin optimizing and testing (2 weeks)
 
 #### 2.2 Progress and Issues
 
 **What we've finished:** 
+- Worked on user display and what the game will look like to the users
+- Worked on creating a clear development plan and began planning test methods for out game.
+- Worked on allowing the program to properly track and display where a user is.
 
 **What we learned:**  
+- The google API has a lot of feature that will be helpful for this project.
+- The backend will need stress testing to determine how many players could use it at once.
 
-**Where we had trouble/stuck:**  
+**Where we had trouble/stuck:** 
+- I had a issue with the area that I'm living out which resulted in me having to head home for the week which made me unable to work at the same level as my teammates this week.
+
 
 #### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
+- Return to Corvallis to be abel to work with my group in-person again.
+- Work on creating a backend that will hold user profile information.
+- Begin creating test plans and bug testing to ensure no problems make it far into development.
 
-- Improve understanding of the Google API (1 week)
-- Begin planning the development and planning out progess milestones (1 weeks)
-- Begin developing a basic location tracking software to begin optimizing and testing (2 weeks)
+
 
 
 ### Calvin Chen
