@@ -211,53 +211,53 @@ Example test suites:
 
 Timeline with milestones:
 Week 3: Project Planning.
-Finalize project idea and scope, and present our project to the class.
-Develop the living document.
-Establish a GitHub repository and Trello board for task tracking.
-Assign initial roles and responsibilities.
-Begin researching Google Maps API and real-time updates.
+- Finalize project idea and scope, and present our project to the class.
+- Develop the living document.
+- Establish a GitHub repository and Trello board for task tracking.
+- Assign initial roles and responsibilities.
+- Begin researching Google Maps API and real-time updates.
 
 Week 4: Technical planning and initial back-end setup.
-Figure out exactly what front-end and back-end services we will be using (like HTML and JavaScript), making sure they fit our project idea. 
-Communicate with the team to figure out member qualities and comfort levels. Allocate members that can work on front-end and back-end frameworks.
-Assign tasks depending on team member’s roles on the Trello board. Meet to ensure development can begin as soon as possible and all members understand their tasks.
+- Figure out exactly what front-end and back-end services we will be using (like HTML and JavaScript), making sure they fit our project idea. 
+- Communicate with the team to figure out member qualities and comfort levels. Allocate members that can work on front-end and back-end frameworks.
+- Assign tasks depending on team member’s roles on the Trello board. Meet to ensure development can begin as soon as possible and all members understand their tasks.
               	
 Week 5: Start development of the app. 
-Start implementing the user interface for the different web pages of our application. Start with designing the main page and footer for all pages. 
-Ensure Google Geolocation API works for our needs.
-Research database options and create a schema for what our database will look like.
-Prep for the mid-term presentation, create a presentation that includes what we have accomplished so far, and what will accomplish in the future. 
+- Start implementing the user interface for the different web pages of our application. Start with designing the main page and footer for all pages. 
+- Ensure Google Geolocation API works for our needs.
+- Research database options and create a schema for what our database will look like.
+- Prep for the mid-term presentation, create a presentation that includes what we have accomplished so far, and what will accomplish in the future. 
 
 Week 6: Mid-term presentation. Share what we have so far, see results, and address any concerns.
-Continue working towards implementing the user interface. Focus on the leaderboard and profile pages (user authentication) this week.
-Choose a database service and start integrating it into our application. It will need to store player credentials, as well as their location data to show other users. 
-Figure out how to host our application on the Oregon State public.html server. 
+- Continue working towards implementing the user interface. Focus on the leaderboard and profile pages (user authentication) this week.
+- Choose a database service and start integrating it into our application. It will need to store player credentials, as well as their location data to show other users. 
+- Figure out how to host our application on the Oregon State public.html server. 
 
 Week 7: Full game logic and user interface navigation.
-Work to finish implementing the core features of our game. 
-Implement route validation (ensure closed loop formations before territory claim).
-Implement cheating detection (speed validation and GPS consistency).
-Optimize real-time synchronization for multiple players through our sql database.
-Begin testing with multiple simulated players.
-Create a general user interface, allowing them to easily navigate through the game. 
+- Work to finish implementing the core features of our game. 
+- Implement route validation (ensure closed loop formations before territory claim).
+- Implement cheating detection (speed validation and GPS consistency).
+- Optimize real-time synchronization for multiple players through our sql database.
+- Begin testing with multiple simulated players.
+- Create a general user interface, allowing them to easily navigate through the game. 
 
 Week 8: UI refinement and mobile optimization.
-Improve UI/UX for the game map, leaderboard and profile.
-Optimize mobile responsiveness (scaling maps for different screen sizes).
-Test GPS accuracy under different conditions (Wi-Fi, cellular, bad reception areas).
-Run beta testing with multiple team members to collect UI/UX feedback.
+- Improve UI/UX for the game map, leaderboard and profile.
+- Optimize mobile responsiveness (scaling maps for different screen sizes).
+- Test GPS accuracy under different conditions (Wi-Fi, cellular, bad reception areas).
+- Run beta testing with multiple team members to collect UI/UX feedback.
 
 Week 9: Final feature testing and stress testing.
-Finalize and conduct playtesting to ensure features/game logic works to our expectations.
-Conduct stress testing with multiple simulated users (ensure real-time performance scales).
-Debug and finalize cut-off and land takeover mechanics.
-Identify edge cases for cheating prevention and refine algorithms.
-Implement final security measures (preventing unauthorized API access, improving database indexing).
+- Finalize and conduct playtesting to ensure features/game logic works to our expectations.
+- Conduct stress testing with multiple simulated users (ensure real-time performance scales).
+- Debug and finalize cut-off and land takeover mechanics.
+- Identify edge cases for cheating prevention and refine algorithms.
+- Implement final security measures (preventing unauthorized API access, improving database indexing).
 
 Week 10: Final testing and project presentation.
-Prepare final project report and documentation (README, API docs, and contribution guide).
-Record gameplay demonstration video.
-Conduct final presentation rehearsals.
+- Prepare final project report and documentation (README, API docs, and contribution guide).
+- Record gameplay demonstration video.
+- Conduct final presentation rehearsals.
 
 Coding guideline: 
 
