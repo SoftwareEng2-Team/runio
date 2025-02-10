@@ -1,0 +1,7 @@
+Command to source the querey
+\i 'C:/Users/Keona/Desktop/software-eng-2/run-for-your-life/database/query.sql'
+
+
+Switch to database
+\c run_for_your_life
+
