@@ -12,7 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const card = document.createElement("div");
         card.classList.add("card");
         card.innerHTML = `
-            <h2>${player.name}</h2>
+            <div></div>
+            <p>${player.name}<p>
             <p>Score: ${player.score}</p>
         `;
         leaderboardContainer.appendChild(card);
