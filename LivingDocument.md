@@ -283,82 +283,85 @@ Finally, for JavsScript, we will declare variables that have meaningful names th
 For all languages, using caution to periodically enter a new line if the current line gets too long will increase readability. Using 'camel case' for naming variables will keep the code consistent and easy to read.
 
 Software Architecture
-Major Software Components and Their Functionality
-Frontend
-The front end will be developed using HTML, CSS, and JavaScript and hosted on the school's public_html directory.
-It will be responsible for rendering the user interface, handling user interactions, and sending/receiving data from the backend.
-Backend
-The backend will be implemented using Node.js, running on the school's public server (if allowed).
-It will handle game logic, player authentication, and interactions with the database.
-The backend will also serve API endpoints for data retrieval and updates.
-Database
-The system will use MySQL (Relational Database) for storing player data, including game statistics and leaderboard rankings.
-The database will follow a structured relational schema with foreign key relationships.
-Communication Between Frontend and Backend
-The primary method of communication will be HTTP requests (REST API) for data retrieval and updates.
-WebSockets may be used as an alternative for real-time updates, depending on feasibility and server constraints.
-Interfaces Between Components
-Frontend to Backend
-The front end will communicate with the backend using RESTful API requests (HTTP GET/POST/PUT/DELETE).
-If WebSockets are implemented, the front end will establish a persistent connection for real-time updates.
-Backend to Database
-The backend will interact with the MySQL database using SQL queries or an ORM like Sequelize.
-Queries will utilize joins and indexes for optimized performance.
-Third-Party API Integration
-The Google GeoLocation API will be used to retrieve and process location-based data.
-Data Storage and Organization
+Major Software Components and Their Functionality:
+1. Frontend
+    - The front end will be developed using HTML, CSS, and JavaScript and hosted on the school's public_html directory.
+    - It will be responsible for rendering the user interface, handling user interactions, and sending/receiving data from the backend.
+2. Backend
+    - The backend will be implemented using Node.js, running on the school's public server (if allowed).
+    - It will handle game logic, player authentication, and interactions with the database.
+    - The backend will also serve API endpoints for data retrieval and updates.
+3. Database
+    - The system will use MySQL (Relational Database) for storing player data, including game statistics and leaderboard rankings.
+    - The database will follow a structured relational schema with foreign key relationships.
+4. Communication Between Frontend and Backend
+    - The primary method of communication will be HTTP requests (REST API) for data retrieval and updates.
+    - WebSockets may be used as an alternative for real-time updates, depending on feasibility and server constraints.
+
+Interfaces Between Components:
+1. Frontend to Backend
+  - The front end will communicate with the backend using RESTful API requests (HTTP GET/POST/PUT/DELETE).
+    - If WebSockets are implemented, the front end will establish a persistent connection for real-time updates.
+2. Backend to Database
+    - The backend will interact with the MySQL database using SQL queries or an ORM like Sequelize.
+    - Queries will utilize joins and indexes for optimized performance.
+3. Third-Party API Integration
+    - The Google GeoLocation API will be used to retrieve and process location-based data.
+
+Data Storage and Organization:
 MySQL Schema (Relational Database)
 Main Entities:
-Users Table
-user_id: Primary key (serial)
-username: Unique username
-email: User email
-total_distance: Total distance covered by the user
-weekly_flair: Boolean indicating special achievements
-Runs Table
-run_id: Primary key (serial)
-user_id: Foreign key linking to Users
-start_time: Timestamp marking the start of a run
-end_time: Timestamp marking the end of a run
-distance: Total distance covered in the run
-route_coords: JSON or TEXT field storing route coordinates
-Territories Table
-territory_id: Primary key (serial)
-user_id: Foreign key linking to Users
-run_id: Foreign key linking to Runs
-polygon_coords: JSON or TEXT field representing the claimed area
-claimed_at: Timestamp of territory acquisition
-Leaderboards Table
-leaderboard_id: Primary key (serial)
-user_id: Foreign key linking to Users
-week_start: Start date of leaderboard cycle
-total_distance: Distance recorded for the leaderboard
-Assumptions Underpinning the Architecture
-The school's public server allows running Node.js and MySQL.
-HTTP requests will be sufficient for most operations, but WebSockets may be needed for real-time features.
-If real-time performance is required, the system can switch to WebSockets for efficiency.
-Alternative Architectural Decisions
+- Users Table
+    - user_id: Primary key (serial)
+    - username: Unique username
+    - email: User email
+    - total_distance: Total distance covered by the user
+    - weekly_flair: Boolean indicating special achievements
+- Runs Table
+    - run_id: Primary key (serial)
+    - user_id: Foreign key linking to Users
+    - start_time: Timestamp marking the start of a run
+    - end_time: Timestamp marking the end of a run
+    - distance: Total distance covered in the run
+    - route_coords: JSON or TEXT field storing route coordinates
+- Territories Table
+    - territory_id: Primary key (serial)
+    - user_id: Foreign key linking to Users
+    - run_id: Foreign key linking to Runs
+    - polygon_coords: JSON or TEXT field representing the claimed area
+    - claimed_at: Timestamp of territory acquisition
+- Leaderboards Table
+    - leaderboard_id: Primary key (serial)
+    - user_id: Foreign key linking to Users
+    - week_start: Start date of leaderboard cycle
+    - total_distance: Distance recorded for the leaderboard
+- Assumptions Underpinning the Architecture
+    - The school's public server allows running Node.js and MySQL.
+    - HTTP requests will be sufficient for most operations, but WebSockets may be needed for real-time features.
+    - If real-time performance is required, the system can switch to WebSockets for efficiency.
+
+Alternative Architectural Decisions:
 Frontend Hosting
-Chosen Approach: Host the front end on the school's public_html server.
-Pros: Free hosting, easy access, and no extra infrastructure needed.
-Cons: Potential restrictions on what can be deployed.
-Alternative: Use a third-party hosting service like Render.com or AWS EC2.
-Pros: More flexibility and fewer restrictions.
-Cons: May introduce additional costs and configuration overhead.
+- Chosen Approach: Host the front end on the school's public_html server.
+    - Pros: Free hosting, easy access, and no extra infrastructure needed.
+    - Cons: Potential restrictions on what can be deployed.
+- Alternative: Use a third-party hosting service like Render.com or AWS EC2.
+    - Pros: More flexibility and fewer restrictions.
+    - Cons: May introduce additional costs and configuration overhead.
 Backend Technology
-Chosen Approach: Use Node.js with MySQL for structured data storage.
-Pros: Supports real-time interactions, efficient with relational data.
-Cons: Requires structured queries and schema migrations.
-Alternative: Use PHP with MySQL for backend services.
-Pros: More widely supported on school servers, good for fetching data.
-Cons: Not ideal for real-time features, slower when handling large-scale data.
+- Chosen Approach: Use Node.js with MySQL for structured data storage.
+    - Pros: Supports real-time interactions, efficient with relational data.
+    - Cons: Requires structured queries and schema migrations.
+- Alternative: Use PHP with MySQL for backend services.
+    - Pros: More widely supported on school servers, good for fetching data.
+    - Cons: Not ideal for real-time features, slower when handling large-scale data.
 Data Communication
-Chosen Approach: Use REST API with HTTP requests for most interactions.
-Pros: Simple, well-supported, and familiar to the team.
-Cons: Slower than WebSockets for real-time updates.
-Alternative: Use WebSockets for real-time data transmission.
-Pros: Faster and more efficient for continuous data updates.
-Cons: More complex to implement, and may not be supported on the school's server.
+- Chosen Approach: Use REST API with HTTP requests for most interactions.
+    - Pros: Simple, well-supported, and familiar to the team.
+    - Cons: Slower than WebSockets for real-time updates.
+- Alternative: Use WebSockets for real-time data transmission.
+    - Pros: Faster and more efficient for continuous data updates.
+    - Cons: More complex to implement, and may not be supported on the school's server.
 
 Software Design: 
 Front-End
