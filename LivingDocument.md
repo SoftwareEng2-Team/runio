@@ -1,4 +1,4 @@
-*Run For Your Life!*
+Run For Your Life!
 James Nichols, Brian Munger, Keona Abad, Shi-Ru Huang, Connor Sun, Calvin Chen, Evan Albert
 
 Abstract: 
@@ -14,9 +14,36 @@ Novelty:
 We will use JavaScript to code the program with a location-tracking API. This allows the service to receive live updates and allows other users to compete for land. While other apps offer interactive maps that users can interact with, our game will enable people to compete over the land of the map in a territory-claiming style similar to paper.io.
 
 Effects: 
-New and improved “.io game” genre for runners but with required real-time physical activities such as routes to run to claim plots of land. It will create friendly competition for local runners to compete with each other regarding speed and distance.
+New and improved “.io game” genre for runners but with required real-time physical activities such as routes to run to claim plots of land. It will create friendly competition for local runners to compete with each other in terms of speed and distance.
 
 Use Cases: 
+New players open the app and are shown a login page. The player will need to create a username and password to link to an account. If the player enters a username that isn’t already in use the player will be able to login to that account and begin playing the game. The new player will be able to compete with current players. The new player will not be able to play the game until they have successfully made an account.
+
+Returning players open the app and are shown a login page. The player will need to login to their account using their username and password. If the player enters an incorrect username that player will be prompted to try again. Once the player gets their username and password correct. The player will be able to play the game and continue with the score that they left off. If the player can not remember their login information they’ll have to create a new account and start over.
+
+The top player of the week opens the app. The top player will have to log in using their username and password to access their account. Once logged in they will be able to go to the leader board and see their total score for the week at the top. They will see their name now has a fire effect around it to signify that they’re the top player. The player score will be reset at the end of the week each Sunday.
+
+The player outside the given area (Oregon State University Corvallis Campus) tries to log in. The player will be required on the login page to show their location. Once the location is shared the site will check if the area their in is inside the bounds. If the player is outside the given bounds then the user will be unable to access their account and prompted to only login while on campus.  
+
+Old player lost their login information and are unable to access their account. When a player visits the site they will be required to enter their username and password if they already have an account. If the account is unable to be accessed by the player then the player will have to make a new account with a new username and password. The old player will lose the current territory and points that they own but they will be able to access their old account as soon as they remember their login information.
+
+The player decides to stop playing our game. When a player decides to stop playing the game all they have to do is click the logout button on their screen or close the site page. Doing either option will stop the location tracking and end any paths that they are making. If the user wishes to join again later then they just need to login to the game again and their location will be tracked again. 
+
+If a player has an unstable connection. When a player is playing our game they must be connected to the site at all times so that their location can be properly displayed. If a player disconnects from the game server they will be kicked out and will need to login again to continue playing. Any paths that they were currently working on will be removed, but their score will be saved.
+
+
+Returning players open the app and are shown a login page. The player will need to login to their account using their username and password. If the player enters an incorrect username that player will be prompted to try again. Once the player gets their username and password correct. The player will be able to play the game and continue with the score that they left off. If the player can not remember their login information they’ll have to create a new account and start over.
+
+The top player of the week opens the app. The top player will have to log in using their username and password to access their account. Once logged in they will be able to go to the leader board and see their total score for the week at the top. They will see their name now has a fire effect around it to signify that they’re the top player. The player score will be reset at the end of the week each Sunday.
+
+The player outside the given area (Oregon State University Corvallis Campus) tries to login. The player will be required on the login page to show their location. Once the location is shared the site will check if the area their in is inside the bounds. If the player is outside the given bounds then the user will be unable to access their account and prompted to only login while on campus.  
+
+Old player lost their login information and are unable to access their account. When a player visits the site they will be required to enter their username and password if they already have an account. If the account is unable to be accessed by the player then the player will have to make a new account with a new username and password. The old player will lose the current territory and points that they own but they will be able to access their old account as soon as they remember their login information.
+
+The player decides to stop playing our game. When a player decides to stop playing the game all they have to do is click the logout button on their screen or close the site page. Doing either option will stop the location tracking and end any paths that they are making. If the user wishes to join again later then they just need to login to the game again and their location will be tracked again. 
+
+
+
 Location tracking that maps the path the user runs. 
 Involve friendly competition by allowing users to go against other users, fighting to claim the most amount of land. 
 Allow users to ‘cut off’ each other, and eliminate one of their lives. A user can cut off another user’s path by running through their path and completing a route before that user. 
@@ -48,59 +75,76 @@ Communicating with our team, we will address strengths and weaknesses in ourselv
 Technical approach: 
 Planning to use JavaScript/HTML for the app layout and general display features. Plan to use Python for location grabbing and more technical back-end features. May experiment with Flutter to aid in the development process. 
 
-Risk assessment:
+Risks: 
+GPS location tracking:
+Likelihood: Low; Impact: High
+Evidence: Based on our team members' previous experience no one has done the location tracking, so it might be a challenge for us since if it not working then basically the whole game will crash down. Also, we have to think about the GPS signal issues, and permission restrictions. 
+Steps to reduce risk: We are using the Google Geolocation API, which combines GPS, Wifi, cell tower data, and IP address to increase the accuracy of tracking, and also reduce the location tracking issue. The geolocation helps us to improve the issue of accuracy, real-time speed, and reliability. 
+Detecting the problem: We're going to test by taking our device and moving it around on the OSU campus once we finish implementing it, to check if the location tracking is accurate and functions without lacking it. Also player have to allow permission for tracking on their device. 
+Mitigation plan: If the Geolocation API fails, then we will recheck all the implementations we have done on the location tracking. I don't think we are going to re-implement a new location tracking since Geolocation API is one of the most accurate and easy to implement.
 
-GPS location tracking: Likelihood: Low Impact: High Evidence: Base on our team members previous experience no one has done the location tracking, so it might be a challege for us, since if it not working then basically the whole game will be crash down. Also, we have to think about the GPS signal issues, permission restrictions. Steps to reduce risk: We are using the Google Geolocation API, it combine GPS, Wifi, cell tower data and IP address to increse the accuracy of tracking, also redue the location tracking issuea. The geolocation help us to improve the issue of accuracy, real-time speed, and reliability. Detecting the problem: We're going to test by taking our device and move around on the OSU campus once we finished implement it, to check if the location tracking is accurate and function without lacking it. Also player have to allow the permission for tracking on thier own device. Mitigation plan: If the Geolocation API failed, then we will recheck all the implemetation we done on the location tracking. I don't think we are going to re-implement a new location tracking since Geolocation API is one of the most accurate and easy to implement.
+The speed limit for players to prevent cheating: 
+Likelihood: High; Impact: High 
+Evidence: Not only do our games face this kind of issue, but there are games that players use VPN, and other GPS apps to control the speed. 
+Steps to reduce risk: Implement a speed limit function that detects once the plyer's speed exceeds the fast-walk speed limit, or detects user jump from one location to another location. 
+Detecting the problem: Do some automatic checks that ascertain the speed of movement against set physical benchmarks. 
+Mitigation plan: Modify and improve the logic of speed detection according to the behavioral patterns observed by the player.
 
-Speed limit for players to prevent cheating: Likelihood: High Impact: High Evidence: Not just our games faced this kind of issue, there are games that plyers using VPN, other GPS app to control the speed. Steps to reduce risk: Implement a speed limit function that detect once the plyer's speed exceed over fast-walk speed limit, or dected user jumop for one location to other location. Detecting the problem: Do some automatic checks that ascertain the speed of movement against set physical benchmarks. Mitigation plan: Modify and improve the logic of speed detection according to the behavioral patterns observed from the player.
+Real-time multiplayer interaction: 
+Likelihood: Medium; Impact: High 
+Evidence: The multiplayer synchronization issue happens a lot in different real-time games nowadays, something like lacking, desynchronization, can cause a major problem with how the player's in-game sensitivity. 
+Steps to reduce risk: It can be solved by implementing server-side conflict or interactive solutions by dealing with claiming routes or territory. 
+Detecting the problem: Keep track of two players who claim the same route at the same time, and see if the server-side deals with the problem. 
+Mitigation plan: The server side should be able to detect which user comes first, and be able to handle it without occuring any error.
 
-real-time multiplayer interaction: Likelihood: Medium Impact: High Evidence: The mutiplayer synchronization issue happens a lot in different real-time games nowadays, something like lacking, desynchronization, it can cause a major problem to how the player's in game sensetivity. Steps to reduce risk: It can be solve by implementing server-side conflict or interact solution by dealing with cliaming route or territory. Detecting the problem: Keep track on two players claim the same route at the same time, see if the sever-side deal with the problem. Mitigation plan: The server-side should be able to detect which user comes first, and able to handle it without occuring any error.
+Database performance: 
+Likelihood: Medium Impact: High Evidence: 
+Since this is a game that needs player login and allows recording player's data, it is important to have a reliable database to store all player's information and game record.
+Steps to reduce risk: It can be solved by using MongoDB, it can fast reads/writes, flexible schema, and automatic indexing to improve MongoDB performance. This allows for rapid updates to the leaderboard and easy claiming of routes. MongoDB also ensures smooth real-time gameplay through its caching and scalability features. 
+Detecting the problem: It can be detected by implementing functions such as monitoring, logging, and query optimization. 
+Mitigation plan: If the database is not working or crashes, having a replica as a backup will be the best option to support it.
 
-Database performance: Likelihood: Medium Impact: High Evidence: Since this is a game need player login, and allow recording player's data, it is important to have a worth reliable database to store all player's information and game record. Steps to reduce risk: It can be solve by using MongoDB, it can fast reads/writes, flexible schema, and automatic indexing improves MongoDB performance. This allows for rapid updates to the leaderboard and easy claiming of routes. MongoDB also ensures smooth real time gameplay through its caching and scalability features. Detecting the problem: It can be detect by implement function such as, monitoring, logging, and query optimization. Mitigation plan: If the database is not working or crashed, the having a replica as a backup will be a best option to support.
+Server performance: 
+Likelihood: Medium; Impact: High 
+Evidence: When a small amount of users becomes a huge scale of users the server might crash due to not being able to handle multiple player logos at the same time. 
+Steps to reduce risk: We are using Oregon State University's engineering server as our server, which can be securand e, be able to handle multiple user scenarios. 
+Detecting the problem: it would be great to monitor OSU server resource usage. 
+Mitigation plan: If the server crashes down then the best way is to contact OSU IT support.
 
-Sever performance: Likelihood: Medium Impact: High Evidence: When a small amout of user becomes to a huge scale of user the server might crash due to not able handle multiple player logi at the same time. Steps to reduce risk: We are usig oregon state university's engineering server as our sever, which can be seure, be able to handle multiple user cenario. Detecting the problem: it would be great to monitor OSU server resource usage. Mitigation plan: If the server crash down then the best way is to contact OSU IT support.
+GPS location tracking:
+Likelihood: Low; Impact: High
+Evidence: Based on our team members' previous experience no one has done the location tracking, so it might be a challenge for us, since if it does not work then basically the whole game will crash down. Also, we have to think about the GPS signal issues, and permission restrictions.
+Steps to reduce risk: We are using the Google Geolocation API, which combines GPS, Wifi, cell tower data, and IP address to increase the accuracy of tracking, and also reduce the location tracking issue. The geolocation helps us to improve the issue of accuracy, real-time speed, and reliability.
+Detecting the problem: We're going to test by taking our device and moving it around on the OSU campus once we finish implementing it, to check if the location tracking is accurate and functions without lacking it. Also, players have to allow permission for tracking on their devices.
+Mitigation plan: If the Geolocation API fails, then we will recheck all the implementations we did on the location tracking. I don't think we are going to re-implement a new location tracking since Geolocation API is one of the most accurate and easy to implement.
 
-Risk assessment:
+The speed limit for players to prevent cheating:
+Likelihood: High; Impact: High
+Evidence: Not just our games face this kind of issue, some games use VPN, and other GPS apps to control the speed.
+Steps to reduce risk: Implement a speed limit function that detects once the plyer's speed exceeds the fast-walk speed limit or the program detects a jump from one location to another location.
+Detecting the problem: Do some automatic checks that ascertain the speed of movement against set physical benchmarks. 
+Mitigation plan: Modify and improve the logic of speed detection according to the behavioral patterns observed by the player.
 
-  GPS location tracking:
-    Likelihood: Low
-    Impact: High
-    Evidence: Base on our team members previous experience no one has done the location tracking, so it might be a challege for us, since if it not working then basically the whole                   game will be crash down. Also, we have to think about the GPS signal issues, permission restrictions.
-    Steps to reduce risk: We are using the Google Geolocation API, it combine GPS, Wifi, cell tower data and IP address to increse the accuracy of tracking, also redue the location                               tracking issuea. The geolocation help us to improve the issue of accuracy, real-time speed, and reliability.
-    Detecting the problem: We're going to test by taking our device and move around on the OSU campus once we finished implement it, to check if the location tracking is accurate and                              function without lacking it. Also player have to allow the permission for tracking on thier own device.
-    Mitigation plan: If the Geolocation API failed, then we will recheck all the implemetation we done on the location tracking. I don't think we are going to re-implement a new                             location tracking since Geolocation API is one of the most accurate and easy to implement.
+  Real-time multiplayer interaction:
+Likelihood: Medium; Impact: High
+Evidence: The multiplayer synchronization issue happens a lot in different real-time games nowadays, something like lacking, desynchronization, can cause a major problem with how the player's in-game sensitivity.
+Steps to reduce risk: It can be solved by implementing server-side conflict or interactive solutions by dealing with claiming routes or territory.
+Detecting the problem: Keep track of two players who claim the same route at the same time, and see if the server-side deals with the problem.
+Mitigation plan: The server-side should be able to detect which user comes first, and be able to handle it without encountering any error.
 
-  Speed limit for players to prevent cheating:
-    Likelihood: High
-    Impact: High
-    Evidence: Not just our games faced this kind of issue, there are games that plyers using VPN, other GPS app to control the speed.
-    Steps to reduce risk: Implement a speed limit function that detect once the plyer's speed exceed over fast-walk speed limit, or dected user jumop for one location to other location.
-    Detecting the problem: Do some automatic checks that ascertain the speed of movement against set physical benchmarks. 
-    Mitigation plan: Modify and improve the logic of speed detection according to the behavioral patterns observed from the player.
+Database performance:
+Likelihood: Medium; Impact: High
+Evidence: Since this is a game thneedseed player login, and allows recording players' data, it is important to have a reliable database to store all players' information and game records.
+Steps to reduce risk: It can be solved by using MongoDB, it can fast reads/writes, flexible schema, and automatic indexing to improve MongoDB performance. This allows for rapid updates to the leaderboard and easy claiming of routes. MongoDB also ensures smooth real-time gameplay through its caching and scalability features.
+Detecting the problem: It can be detected by implementing functions such as monitoring, logging, and query optimization.
+Mitigation plan: If the database is not working or crashes, having a replica as a backup will be the best option.
 
-  real-time multiplayer interaction:
-    Likelihood: Medium
-    Impact: High
-    Evidence: The mutiplayer synchronization issue happens a lot in different real-time games nowadays, something like lacking, desynchronization, it can cause a major problem to how                 the player's in game sensetivity.
-    Steps to reduce risk: It can be solve by implementing server-side conflict or interact solution by dealing with cliaming route or territory.
-    Detecting the problem: Keep track on two players claim the same route at the same time, see if the sever-side deal with the problem.
-    Mitigation plan: The server-side should be able to detect which user comes first, and able to handle it without occuring any error.
-
-  Database performance:
-    Likelihood: Medium
-    Impact: High
-    Evidence: Since this is a game need player login, and allow recording player's data, it is important to have a worth reliable database to store all player's information and game                  record.
-    Steps to reduce risk: It can be solve by using MongoDB, it can fast reads/writes, flexible schema, and automatic indexing improves MongoDB performance. This allows for rapid                                  updates to the leaderboard and easy claiming of routes. MongoDB also ensures smooth real time gameplay through its caching and scalability features.
-    Detecting the problem: It can be detect by implement function such as, monitoring, logging, and query optimization.
-    Mitigation plan: If the database is not working or crashed, the having a replica as a backup will be a best option to support.
-
-  Sever performance:
-    Likelihood: Medium
-    Impact: High
-    Evidence: When a small amout of user becomes to a huge scale of user the server might crash due to not able handle multiple player logi at the same time.
-    Steps to reduce risk: We are usig oregon state university's engineering server as our sever, which can be seure, be able to handle multiple user cenario.
-    Detecting the problem: it would be great to monitor OSU server resource usage.
-    Mitigation plan: If the server crash down then the best way is to contact OSU IT support.
+Server performance:
+Likelihood: Medium; Impact: High
+Evidence: When a small amount of users becomes a huge scale of users the server might crash due to not being able to handle multiple player logos at the same time.
+Steps to reduce risk: We are using Oregon State University's engineering server as our server, which can be secure, and be able to handle multiple user scenarios.
+Detecting the problem: it would be great to monitor OSU server resource usage.
+Mitigation plan: If the server crashes down then the best way is to contact OSU IT support.
 
 Team members and roles/responsibilities:
 James Nichols - Project Manager  
@@ -115,7 +159,7 @@ Team process:
 We will be using Visual Studio code for the main part of our programming as all of our team members have experience using it in past projects. We have yet to discover other possible alternatives and ways we want to implement API location gathering.
 
 James Nichols, Project Manager: 
-As the project manager my main job will be ensuring that the team stays on track of deadlines and members know what their tasks are. Since each member has so much going on it’ll be important for me to be on top of things and able to divide up work so member feels too overwhelmed. I was assigned this role by the staff (professor) but I believe I will be able to excel at this role and help guide our team to a successful project.
+As the project manager my main job will be ensuring that the team stays on track of deadlines and members know their tasks. Since each member has so much going on it’ll be important for me to be on top of things and able to divide up work so member feels too overwhelmed. I was assigned this role by the staff (professor) but I believe I will be able to excel at this role and help guide our team to a successful project.
 
 Brian Munger, Implement User Interface:
 Per my role of implementing the user interface for our game, it is my job to design an interface where the user can effectively navigate the app, see their progress, and perform other necessary actions. In doing this, I will communicate closely with Connor to bring his design to life. I intend to use Flutter to implement the user interface for our game. 
@@ -135,8 +179,12 @@ The role of a tester is to ensure the quality, reliability, and functionality of
 Evan Albert, Quality Assurance:
 Being the quality assurance means that I have the responsibility to ensure that the app development is on track and meets the desired outcomes throughout production. I will ensure that any bugs or possible structure flaws are identified early on and addressed accordingly.
 
+
 Test Plans and Bugs:
 We plan to test the key features, including geolocation tracking, server responsiveness, and the accuracy of claimed territory, along with the number of points the users get.
+
+Documentation Plan:
+The README file will contain an overview, installation steps, and usage instructions. A USER_GUIDE.md file will provide gameplay instructions and key features. For developers, inline documentation and an API.md file will outline endpoints. A TESTING.md file will document our test plans, and a CHANGELOG.md will track updates. By the end of our development, if need be we will add some more documents such as a CONTRIBUTING.md file for coding standards and the Git workflow we used. Our goal is to make clear documents for not just users, but developers, and administrators as well. 
 
 Geolocation tracking;
 Unit testing: Each function will be tested as development goes on. The test will include different features such as how accurate the location tracking API is, also how the marker appears on the map. By testing each function in isolation we can tell quickly what the problem may be and make corrections or workarounds.
@@ -150,8 +198,6 @@ Example test suites:
 2) Enter random location sizes to see if the points are accurately returned and calculated.
 3) Have random friends or people run our website to determine if the user can understand the layout and whether they can use the app to track other users' data.
 
-
-
 Server Responsiveness;
 Unit testing: Each function will be tested as development goes on. The test will include different features such as how the server runs depending on the amount of users currently on, also how user quickly the site can update itself to display new data. Testing each feature in isolation allows for obvious bugs to be found in corrected. 
 
@@ -163,8 +209,6 @@ Example test suites:
 1) Have only one or two users on the server and test responsiveness.
 2) Have many users on the server, most likely from class, and determine if the server can handle that or if it will need to implement multiple servers.
 3) Have users enter the server on different levels of connection and test responsiveness; mobile data, Wi-Fi, and low mobile data (1-2 bars). 
-
-
 
 Territory Claimed and Points Scored;
 Unit testing: Each function will be tested as development goes on. The test will include different features such as how accurate the location tracking API is with creating territories, and that the points are accurately calculated based on territory. By testing each feature in isolation it will reveal if we need to change weights for points or alter how territories are created.
@@ -179,83 +223,145 @@ Example test suites:
 3) Have multiple users at once claim territory to make sure the functions can handle multiple inputs at once.
 
 Timeline with milestones:
-Week 3: Develop a living document and present our app idea. 
+Week 3: Project Planning.
+- Finalize project idea and scope, and present our project to the class.
+- Develop the living document.
+- Establish a GitHub repository and Trello board for task tracking.
+- Assign initial roles and responsibilities.
+- Begin researching Google Maps API and real-time updates.
 
-Week 4: Begin a heavier technical approach to our app. Figure out exactly what front-end and back-end services we will be using, making sure they fit our project idea. Communicate with the team to figure out member qualities and comfort levels. Allocate members that can work on front-end and back-end frameworks.              	
-
-Week 5: Start development of the app. Attempt to create a User interface that communicates with the backend. Focus on completing the main functions of the application: user location tracking and leaderboard score tracking.
+Week 4: Technical planning and initial back-end setup.
+- Figure out exactly what front-end and back-end services we will be using (like HTML and JavaScript), making sure they fit our project idea. 
+- Communicate with the team to figure out member qualities and comfort levels. Allocate members that can work on front-end and back-end frameworks.
+- Assign tasks depending on team member’s roles on the Trello board. Meet to ensure development can begin as soon as possible and all members understand their tasks.
+              	
+Week 5: Start development of the app. 
+- Start implementing the user interface for the different web pages of our application. Start with designing the main page and footer for all pages. 
+- Ensure Google Geolocation API works for our needs.
+- Research database options and create a schema for what our database will look like.
+- Prep for the mid-term presentation, create a presentation that includes what we have accomplished so far, and what will accomplish in the future. 
 
 Week 6: Mid-term presentation. Share what we have so far, see results, and address any concerns.
+- Continue working towards implementing the user interface. Focus on the leaderboard and profile pages (user authentication) this week.
+- Choose a database service and start integrating it into our application. It will need to store player credentials, as well as their location data to show other users. 
+- Figure out how to host our application on the Oregon State public.html server. 
 
-Week 7: Continue developing the app, focusing on making sure the main functions are implemented.
+Week 7: Full game logic and user interface navigation.
+- Work to finish implementing the core features of our game. 
+- Implement route validation (ensure closed loop formations before territory claim).
+- Implement cheating detection (speed validation and GPS consistency).
+- Optimize real-time synchronization for multiple players through our sql database.
+- Begin testing with multiple simulated players.
+- Create a general user interface, allowing them to easily navigate through the game. 
 
-Week 8: Develop user interface and work on polishing up designs. Work on completing/implementing mobile functions. 
+Week 8: UI refinement and mobile optimization.
+- Improve UI/UX for the game map, leaderboard and profile.
+- Optimize mobile responsiveness (scaling maps for different screen sizes).
+- Test GPS accuracy under different conditions (Wi-Fi, cellular, bad reception areas).
+- Run beta testing with multiple team members to collect UI/UX feedback.
 
-Week 9: Implement the last features as necessary. Finalize and test the game, and ensure it works to our expectations. 
+Week 9: Final feature testing and stress testing.
+- Finalize and conduct playtesting to ensure features/game logic works to our expectations.
+- Conduct stress testing with multiple simulated users (ensure real-time performance scales).
+- Debug and finalize cut-off and land takeover mechanics.
+- Identify edge cases for cheating prevention and refine algorithms.
+- Implement final security measures (preventing unauthorized API access, improving database indexing).
 
-Week 10: Prepare the final presentation demonstrating the work we completed with the app. 
+Week 10: Final testing and project presentation.
+- Prepare final project report and documentation (README, API docs, and contribution guide).
+- Record gameplay demonstration video.
+- Conduct final presentation rehearsals.
 
 Coding guideline: 
 
 With our project, we are implementing our design to be accessible through a webpage. This way, it can be utilized on any device without installation. Additionally, all of the group members have experience with website development, making it a smart choice. We are using HTML to structure our web pages, CSS to style them, and JavaScript to handle the functionality of our project.
 
-For HTML, we will always declare the document type at the beginning (for example, ). We will use lowercase element names, as this is the industry standard, and we will open and close all elements on different lines.
+For HTML, we will always declare the document type at the beginning (for example, <!DOCTYPE html>). We will use lowercase element names, as this is the industry standard, and we will open and close all elements on different lines.
 For CSS, we will find a style for the webpage that we all agree upon. If someone disagrees with a stylistic choice, we will find an alternative that we can agree on. Comments should be used in CSS documents to show what different style blocks affect.
 Finally, for JavsScript, we will declare variables that have meaningful names that give us insight into what they store. Comments will be used to explain what different code blocks do, making it easy for other group members to understand. Spacing around operators and general indentation of code will be implemented to increase readability.
+
 For all languages, using caution to periodically enter a new line if the current line gets too long will increase readability. Using 'camel case' for naming variables will keep the code consistent and easy to read.
 
+Software Architecture
+Major Software Components and Their Functionality:
+1. Frontend
+    - The front end will be developed using HTML, CSS, and JavaScript and hosted on the school's public_html directory.
+    - It will be responsible for rendering the user interface, handling user interactions, and sending/receiving data from the backend.
+2. Backend
+    - The backend will be implemented using Node.js, running on the school's public server (if allowed).
+    - It will handle game logic, player authentication, and interactions with the database.
+    - The backend will also serve API endpoints for data retrieval and updates.
+3. Database
+    - The system will use MySQL (Relational Database) for storing player data, including game statistics and leaderboard rankings.
+    - The database will follow a structured relational schema with foreign key relationships.
+4. Communication Between Frontend and Backend
+    - The primary method of communication will be HTTP requests (REST API) for data retrieval and updates.
+    - WebSockets may be used as an alternative for real-time updates, depending on feasibility and server constraints.
 
-Git Repo Link: 
-Organization: https://github.com/SoftwareEng2-Team 
-Repository: https://github.com/SoftwareEng2-Team/runio 
+Interfaces Between Components:
+1. Frontend to Backend
+  - The front end will communicate with the backend using RESTful API requests (HTTP GET/POST/PUT/DELETE).
+    - If WebSockets are implemented, the front end will establish a persistent connection for real-time updates.
+2. Backend to Database
+    - The backend will interact with the MySQL database using SQL queries or an ORM like Sequelize.
+    - Queries will utilize joins and indexes for optimized performance.
+3. Third-Party API Integration
+    - The Google GeoLocation API will be used to retrieve and process location-based data.
 
+Data Storage and Organization:
+MySQL Schema (Relational Database)
+Main Entities:
+- Users Table
+    - user_id: Primary key (serial)
+    - username: Unique username
+    - email: User email
+    - total_distance: Total distance covered by the user
+    - weekly_flair: Boolean indicating special achievements
+- Runs Table
+    - run_id: Primary key (serial)
+    - user_id: Foreign key linking to Users
+    - start_time: Timestamp marking the start of a run
+    - end_time: Timestamp marking the end of a run
+    - distance: Total distance covered in the run
+    - route_coords: JSON or TEXT field storing route coordinates
+- Territories Table
+    - territory_id: Primary key (serial)
+    - user_id: Foreign key linking to Users
+    - run_id: Foreign key linking to Runs
+    - polygon_coords: JSON or TEXT field representing the claimed area
+    - claimed_at: Timestamp of territory acquisition
+- Leaderboards Table
+    - leaderboard_id: Primary key (serial)
+    - user_id: Foreign key linking to Users
+    - week_start: Start date of leaderboard cycle
+    - total_distance: Distance recorded for the leaderboard
+- Assumptions Underpinning the Architecture
+    - The school's public server allows running Node.js and MySQL.
+    - HTTP requests will be sufficient for most operations, but WebSockets may be needed for real-time features.
+    - If real-time performance is required, the system can switch to WebSockets for efficiency.
 
-Trello:
-https://trello.com/b/OsvSTA7E/pt1-run-for-your-life
-
-1. Software architecture:
-
-Frontend: Using the school's public_html we will build the frontend using HTML, CSS and Javascript.
-
-Pros: Offer us a free hosting server to use to allow communication between clients.
-
-Con: Might have restrictions that we have yet to realize.
-
-Alternative: We can look into other server hosting options such as Render.com and AWS EC2.
-
-Backend: If allowed it will run on school's public server. If applicable we will use MongoDB to store data for our game. We will use Node.js (real-time sync) to retrieve player data.
-
-Pros: Real-time updates and can use microservices.
-
-Cons: Could have possible database limitations.
-
-Alternatively: We will use PHP (over-time sync) to retrieve data.
-
-Pros: Wide Compatibility. Simple to Use. Good and fetching data. Has good performance as it can run server-sided.
-
-Cons: Not ideal for real-time data use. When dealing with large data can have performance issues.
-
-Communicating between frontend and backend we could use: HTTP requests (Rest API) for over-time updates.
-
-Pros: We are more familiar with HTTP requests. Simple as it uses standard HTTP methods. Works with JavaScript.
-
-Cons: Slower than WebSockets for real-time.
-
-Alternatively: We can use WebSockets for real-time updates.
-
-Pros: Offers real-time communication that is faster than HTTP requests. Efficient with bandwidth usage. Reduces server load with fewer requests.
-
-Cons: More complex compared to HTTP requests. Not always supported and could run into complications when attempting to use it with a server.
-
-Extra:
-
-MongoDB Schema (NoSQL): Main Entities:
-
-Player statistics: Score. Level. Distance.
-
-Leaderboard.
-
-Google GeoLocation API to communicate current locations.
+Alternative Architectural Decisions:
+Frontend Hosting
+- Chosen Approach: Host the front end on the school's public_html server.
+    - Pros: Free hosting, easy access, and no extra infrastructure needed.
+    - Cons: Potential restrictions on what can be deployed.
+- Alternative: Use a third-party hosting service like Render.com or AWS EC2.
+    - Pros: More flexibility and fewer restrictions.
+    - Cons: May introduce additional costs and configuration overhead.
+Backend Technology
+- Chosen Approach: Use Node.js with MySQL for structured data storage.
+    - Pros: Supports real-time interactions, efficient with relational data.
+    - Cons: Requires structured queries and schema migrations.
+- Alternative: Use PHP with MySQL for backend services.
+    - Pros: More widely supported on school servers, good for fetching data.
+    - Cons: Not ideal for real-time features, slower when handling large-scale data.
+Data Communication
+- Chosen Approach: Use REST API with HTTP requests for most interactions.
+    - Pros: Simple, well-supported, and familiar to the team.
+    - Cons: Slower than WebSockets for real-time updates.
+- Alternative: Use WebSockets for real-time data transmission.
+    - Pros: Faster and more efficient for continuous data updates.
+    - Cons: More complex to implement, and may not be supported on the school's server.
 
 Software Design: 
 Front-End
@@ -264,17 +370,27 @@ Front-End
 - Game Logic package: Handles displaying claimed land and processes user GPS movement.
 
 Back-End
-- API Handlers: Manages core game logic such as update position and claim territory.
+- API Handlers: Manages core game logic such as updating position and claim territory.
 - Game Logic: Computes areas enclosed by a completed run and checks if a user's route overlaps another's.
 - Database Handlers: Handles user data and stores running route data.
 
 Database
 - The backbone for storing and managing game data.
-- The schema includes key tables such as users, which stoes gameplay statistics, routes, which logs completed running circuts with timestamps and GPS coordinates, and territories, which tracks claimed land areas for each user.
+- The schema includes key tables such as users, which store gameplay statistics, routes, which logs completed running circuits with timestamps and GPS coordinates, and territories, which track claimed land areas for each user.
+
+
 
 Location Tracking API
 - Uses Google Maps API to fetch and process real-time location data.
 - Ensures routes are valid before allowing a claim.
+
+Git Repo Link: 
+Organization: https://github.com/SoftwareEng2-Team 
+Repository: https://github.com/SoftwareEng2-Team/runio 
+
+
+Trello:
+https://trello.com/b/OsvSTA7E/pt1-run-for-your-life
 
 
 Communication tools and rules:
@@ -286,4 +402,3 @@ GitHub: Sync as often as possible to keep work up to date; contribute to weekly 
 API key: AIzaSyBYPZyFFX2wm_TAr1haKfFJGMlDbHkF8TQ
 
 Figma link: https://www.figma.com/design/SG1ROIIvWYSpmKm1g8WVZm/Untitled?node-id=0-1&t=ExN0nOSrw4YITC6Y-1
-
