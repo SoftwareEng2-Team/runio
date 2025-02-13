@@ -104,26 +104,37 @@ _ As the project takes more shape there will be more things for each member to w
 ### Brian Munger
 
 #### 2.1 Exact Copy of the Third Section from Last Week
-
-#### 2.2 Progress and Issues
-
-**What we've finished:** 
-
-**What we learned:**
-
-**Where we had trouble/stuck:**
-- At times, the Google Geolocation API is hard to understand
-
-#### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
 - Implement leaderboard (~3 hours)
 - Run web application on the OSU public.html server (~1 hour)
 - Start creating the profile section (~2 hours)
 - Work on presentation (~2 hours)
 
+#### 2.2 Progress and Issues
+
+**What we've finished:** 
+- Finished and presented our presentation
+- Implemented the website on the public.html server
+- Designed the leaderboard and profile sections
+- Got the database to work
+
+**What we learned:**
+- We will need more time than needed to find out how the database works
+- Learned we don't need to use Node.JS if using public.html
+
+**Where we had trouble/stuck:**
+- Finding what database to use
+- Agreeing on the presentation/what slides to include
+- Finding how to incorporate a database in the code
+
+#### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
+- Implement database in code
+- Have the website display the leaderboard, sign-in, and profile pages correctly
+- Have the code correctly read/write from database
+
 ### Shi-Ru Huang
 
 #### 2.1 Exact Copy of the Third Section from Last Week
-- Meet Thursday after TA group meeting to dicuss for the next step (2 hr).
+- Meet Thursday after TA group meeting to discuss for the next step (2 hr).
 - Finished implementing one of the part of this project, which we will talk about what exactly when we meet on Thursday (12 hr).
 - Meet with our TA on Thursday (15 mins).
 
