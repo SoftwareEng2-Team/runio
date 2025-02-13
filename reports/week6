@@ -45,29 +45,31 @@ However, through discussing as a group and asking questions in class we were abl
 ### James Nichols
 
 #### 2.1 Exact Copy of the Third Section from Last Week
-- Improve understanding of the Google API (1 week)
-- Begin planning the development and planning out progess milestones (1 weeks)
-- Begin developing a basic location tracking software to begin optimizing and testing (2 weeks)
+- Return to Corvallis to be abel to work with my group in-person again.
+- Work on creating a backend that will hold user profile information.
+- Begin creating test plans and bug testing to ensure no problems make it far into development.
 
 #### 2.2 Progress and Issues
 
 **What we've finished:** 
-- Worked on user display and what the game will look like to the users
-- Worked on creating a clear development plan and began planning test methods for out game.
-- Worked on allowing the program to properly track and display where a user is.
+- Created database to store player information and begin frontend connection to this database
+- Put game onto the school servers so the game will have a permanent uptime.
+- Finished and presented midterm presentation.
 
 **What we learned:**  
-- The google API has a lot of feature that will be helpful for this project.
-- The backend will need stress testing to determine how many players could use it at once.
+- The school servers provide free deticated servers which can be used to run our project.
+- The backend database software can only be edited on a stronger PC so will have to edited on a desktop.
 
 **Where we had trouble/stuck:** 
-- I had a issue with the area that I'm living out which resulted in me having to head home for the week which made me unable to work at the same level as my teammates this week.
+- Struggle to properly devide work out for each member of the group.
+_ As the project takes more shape there will be more things for each member to work on.
 
 
 #### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
-- Return to Corvallis to be abel to work with my group in-person again.
-- Work on creating a backend that will hold user profile information.
-- Begin creating test plans and bug testing to ensure no problems make it far into development.
+- Create login page for players to fill out to create a account on the database (1 week)
+- Begin working on location tracking storage and developing the visual line that the player will use to track their run completion (2 weeks) 
+- Work on scoring weights to determine how much a given area show score for the player (2 weeks)
+
 
 ### Calvin Chen
 
