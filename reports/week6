@@ -104,24 +104,12 @@ _ As the project takes more shape there will be more things for each member to w
 ### Brian Munger
 
 #### 2.1 Exact Copy of the Third Section from Last Week
-- Add marker to Google Maps (30 mins)
-- Add navigational capabilities to the application (2 hours)
-- Delegate work (begin frontend, backend, etc) (10 mins)
-- Begin individual tasks (2 hours)
-- Meet to discuss progress later in the week (30 mins)
 
 #### 2.2 Progress and Issues
 
 **What we've finished:** 
-- We have set up the basic outline for our application
-- We have successfully implemented the Google Geolocation API into our program
-- We have allowed the program to find where the user is
-- The user can now put a pin on the map
-- We structured the GitHub and Trello board to be more complete
 
 **What we learned:**
-- We learned that it is hard to delegate work in the beginning stages of a project like this
-- The Google Geolocation API has a lot of features for us to utilize and implement
 
 **Where we had trouble/stuck:**
 - At times, the Google Geolocation API is hard to understand
