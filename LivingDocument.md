@@ -282,7 +282,13 @@ Finally, for JavsScript, we will declare variables that have meaningful names th
 
 For all languages, using caution to periodically enter a new line if the current line gets too long will increase readability. Using 'camel case' for naming variables will keep the code consistent and easy to read.
 
-Software Architecture
+Software Architecture:
+Client-Server Architecture Pattern
+The two major enities for our Software Architercture would be; the players and the database server. 
+  - The player's create accounts that link to the server and as they do actions in the game those values are updated and returned to the database.
+  - The database then responses back with the results of the player's action.
+    ex: if a player completes a circuit the area that they captured would be sent to the database, then server would respond by sending other players the visual showing what areas the
+        player has captured. 
 Major Software Components and Their Functionality:
 1. Frontend
     - The front end will be developed using HTML, CSS, and JavaScript and hosted on the school's public_html directory.
