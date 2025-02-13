@@ -233,20 +233,21 @@ I would not say we are completely having trouble with anything at the moment, bu
 #### 2.2 Progress and Issues
 
 **What we've finished:** 
-I finished the buttons for navigating our webapp's frontend. I fixed version conflicts which caused features like geolocation to be erased from our codebase and added QoL changes to the infowindow from that and the test marker we have implemented.
+I've finished the prototype leaderboard and designed it such that we can simply read off player data and insert div "cards" for each leaderboard. Since we are just now interacting with our database, it is good to have a stable platform we can read it off of for display debugging.
 
 **What we learned:**  
-I learned how to use the Google markers thanks to Calvin and infowindows thanks to Brian. I also now know how to make buttons that are interactive based on their image shape as opposed to simple boxes. I learned interesting styling techniques such as adding buttons in the footer/header so they are always ready for the user and how to manage to-be-used files by webapps.
+I learned how to use JS to mass-produce a templated HTML element. In my webdev class, I had difficulty doing this because of the lack of direction and I ended up using a different method to what I have now. We also learned that OSU's public_html may be difficult to interact with, but free hosting is free hosting. 
 
 **Where we had trouble/stuck:**
-The Google AdvancedMarker library was giving me and some others a lot of trouble. I feel kind of guilty for not trying something so obvious as using the simpler Marker library. In the future I will keep my mind open and not shy away from using tools that are said to be deprecated without trying it out myself first.
+Figuring out how we can implement a backend on the OSU servers is difficult. In general, I've designed databases before but have never implemented them or worked with them. It was hard to coordinate what exactly we needed to store and how we'd retrieve that in a timely manner.
 
 #### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
 
-- Finalize the point system (2 weeks)
-- Research viability of desired monitezation systems (1-2 weeks)
-    - Privacy-compliant data selling (? weeks)
+- Finalize the point system (1 weeks)
+- Research viability of desired monitezation systems (1 weeks)
 
-- Figure out how to retain players who have lost their lives (2 weeks)
+- Figure out how to retain players who have lost their lives (1 weeks)
 
-- Decide where spawning would cause the least amount of frustration for all parties (? weeks)
+- Decide where spawning would cause the least amount of frustration for all parties (2 weeks)
+
+- Figure out if public_html is a viable way to host our website
