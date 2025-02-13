@@ -4,15 +4,22 @@
 
 ### 1.1 Exact Copy of the Third Section from Last Week
 
-- Allocate tasks and side-tasks (ongoing weekly, so 1 week every week)
-- Implement basic Google Maps navigation (1 week)
-- Solidify design of gameplay loop (2 weeks)
-- Build good organizational management techniques and learn from previous complications (1 week)
+-- Allocate tasks and side-tasks (ongoing weekly, so 1 week every week)
+- Solidify design of gameplay loop (1 weeks)
+- Build leaderboard frontend and architect it to be able to integrate a database (2 week)
+- Update living document to meet the expectations of the Project Architecture and Design specifications (<1 week)
+- Implement Run For Your Life (RFYL) on the school servers so we can test it on a non-localhost server (? weeks)
+- Ask TA if using a database is the correct way to go about implementing our leaderboard (1 week)
+    - Research alternatives to the suggested solution (1 week)
+    - Act on the information (2 weeks)
 
 ### 1.2 Progress and Issues
 
 **What we've finished:** 
-Webapp navigation between leaderboard, map, and profile has been implemented. We have successfully used Google's Geolocation API to find the position of our players and can display that and their coordinates on the map. The map stays within the a certain area of the OSU campus and prevents players from playing if they are outside of that area. The infowindow object now also closes automatically upon a user's action for QoL and the map will continue to be improved. 
+Webapp navigation between leaderboard, map, and profile has been implemented. 
+Successfully set up database to store player data and keep track of account information: score, territory and login information.
+Present our project and updated living document to meet requirements with the rubric.
+Began planning test cases and what software will be used for testing our project. 
 
 **What we learned:**  
 We learned how to manage several objects from the Google Maps API and how to combine them to create a detailed game interface. Furthermore, we now understand how to use Google's Geolocation API to find a player's position and can extend that to figure out how to implement live tracking features. 
