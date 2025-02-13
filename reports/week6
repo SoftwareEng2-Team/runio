@@ -136,26 +136,26 @@ _ As the project takes more shape there will be more things for each member to w
 
 #### 2.1 Exact Copy of the Third Section from Last Week
 - Meet Thursday after TA group meeting to dicuss for the next step (2 hr).
-- Distribute part for each member (1 hr).
+- Finished implementing one of the part of this project, which we will talk about what exactly when we meet on Thursday (12 hr).
 - Meet with our TA on Thursday (15 mins).
 
 #### 2.2 Progress and Issues
 
 **What we've finished:** 
-- Implementing the Geolocation API successfully
-- Implementing the boundaries for our map
-- We add up more details and information on the Trello board in order to keep progress going
+- Finished the slides for the presentation and update the living document
+- Further discuss into small group on what we gonna do for each of us for the following week
+- start the proccess of implementing the login authentication for each user
 
 **What we learned:** 
-- We've learned how to implemting the Geolocation API, how to pin on the ap as a user, what we gooing to user for database and server.
+- What I've learn is that in order to make the login authentication work, it must go through the database to retrieve that user's authentication and send it back to log that player in jis own aacount.
 
 **Where we had trouble/stuck:**
-- Mostly for me about where the trouble stuck is that it hard to split the jobs evenly and catch up others progress at the begining stage.
+- I got trouble to connect tight with my teammate this week due to the injury I've suffer,so it kind of hard to update and know if my current direction is going on well. 
 
 #### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
-- Meet Thursday after TA group meeting to dicuss for the next step (2 hr).
-- Finished implementing one of the part of this project, which we will talk about what exactly when we meet on Thursday (12 hr).
+- Finished implementing the login authentication (3 days).
 - Meet with our TA on Thursday (15 mins).
+- Further dicuss with team member fo the next step on Monday (2hr).
 
 ### Evan Albert
 
