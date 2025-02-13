@@ -20,23 +20,25 @@ Webapp navigation between leaderboard, map, and profile has been implemented.
 Successfully set up database to store player data and keep track of account information: score, territory and login information.
 Present our project and updated living document to meet requirements with the rubric.
 Began planning test cases and what software will be used for testing our project. 
+Successfully set up the project to run on the school servers so it can be running constantly
 
 **What we learned:**  
-We learned how to manage several objects from the Google Maps API and how to combine them to create a detailed game interface. Furthermore, we now understand how to use Google's Geolocation API to find a player's position and can extend that to figure out how to implement live tracking features. 
+We learned how the school public server works and how we can run our site on that server for players to be able to access our game at all times.
+Furthermore, we now also have developed an understanding of what is required for setting up the database to hold all the players information. 
 
 **Where we had trouble/stuck:**  
-We attempted to use the AdvancedMarker library from Google because we were informed the Marker library is deprecated. However, the AdvancedMarker would not render on our map while the Marker library would. This caused us to waste many hours of work through bug-chasing.
+We had trouble understanding requirements for the presentation and other assignments in the class since some of the instructions can be difficult to understand.
+However, through discussing as a group and asking questions in class we were able to understand what requirements were necessary for the midterm presentation.
 
 ### 1.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
 
 - Allocate tasks and side-tasks (ongoing weekly, so 1 week every week)
-- Solidify design of gameplay loop (1 weeks)
-- Build leaderboard frontend and architect it to be able to integrate a database (2 week)
-- Update living document to meet the expectations of the Project Architecture and Design specifications (<1 week)
-- Implement Run For Your Life (RFYL) on the school servers so we can test it on a non-localhost server (? weeks)
+- Finish setting up database and create connections between the backend database and frontend (1 week)
+- Create login page for players to fill out to create a account on the database (1 week)
+- Begin working on location tracking storage and developing the visual line that the player will use to track their run completion (2 weeks)
+- Build leaderboard frontend and architect it to be able to integrate a database (1 week)
 - Ask TA if using a database is the correct way to go about implementing our leaderboard (1 week)
-    - Research alternatives to the suggested solution (1 week)
-    - Act on the information (2 weeks)
+    - Act on the information (1 weeks)
 
 ## 2. Contributions of Individual Team Members
 
