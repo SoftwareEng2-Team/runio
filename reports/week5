@@ -1,0 +1,241 @@
+# Weekly Status Report -- 20250129
+
+## 1. Team Report
+
+### 1.1 Exact Copy of the Third Section from Last Week
+
+- Allocate tasks and side-tasks (ongoing weekly, so 1 week every week)
+- Implement basic Google Maps navigation (1 week)
+- Solidify design of gameplay loop (2 weeks)
+- Build good organizational management techniques and learn from previous complications (1 week)
+
+### 1.2 Progress and Issues
+
+**What we've finished:** 
+Webapp navigation between leaderboard, map, and profile has been implemented. We have successfully used Google's Geolocation API to find the position of our players and can display that and their coordinates on the map. The map stays within the a certain area of the OSU campus and prevents players from playing if they are outside of that area. The infowindow object now also closes automatically upon a user's action for QoL and the map will continue to be improved. 
+
+**What we learned:**  
+We learned how to manage several objects from the Google Maps API and how to combine them to create a detailed game interface. Furthermore, we now understand how to use Google's Geolocation API to find a player's position and can extend that to figure out how to implement live tracking features. 
+
+**Where we had trouble/stuck:**  
+We attempted to use the AdvancedMarker library from Google because we were informed the Marker library is deprecated. However, the AdvancedMarker would not render on our map while the Marker library would. This caused us to waste many hours of work through bug-chasing.
+
+### 1.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
+
+- Allocate tasks and side-tasks (ongoing weekly, so 1 week every week)
+- Solidify design of gameplay loop (1 weeks)
+- Build leaderboard frontend and architect it to be able to integrate a database (2 week)
+- Update living document to meet the expectations of the Project Architecture and Design specifications (<1 week)
+- Implement Run For Your Life (RFYL) on the school servers so we can test it on a non-localhost server (? weeks)
+- Ask TA if using a database is the correct way to go about implementing our leaderboard (1 week)
+    - Research alternatives to the suggested solution (1 week)
+    - Act on the information (2 weeks)
+
+## 2. Contributions of Individual Team Members
+
+### James Nichols
+
+#### 2.1 Exact Copy of the Third Section from Last Week
+- Improve understanding of the Google API (1 week)
+- Begin planning the development and planning out progess milestones (1 weeks)
+- Begin developing a basic location tracking software to begin optimizing and testing (2 weeks)
+
+#### 2.2 Progress and Issues
+
+**What we've finished:** 
+- Worked on user display and what the game will look like to the users
+- Worked on creating a clear development plan and began planning test methods for out game.
+- Worked on allowing the program to properly track and display where a user is.
+
+**What we learned:**  
+- The google API has a lot of feature that will be helpful for this project.
+- The backend will need stress testing to determine how many players could use it at once.
+
+**Where we had trouble/stuck:** 
+- I had a issue with the area that I'm living out which resulted in me having to head home for the week which made me unable to work at the same level as my teammates this week.
+
+
+#### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
+- Return to Corvallis to be abel to work with my group in-person again.
+- Work on creating a backend that will hold user profile information.
+- Begin creating test plans and bug testing to ensure no problems make it far into development.
+
+### Calvin Chen
+
+#### 2.1 Exact Copy of the Third Section from Last Week
+- Split up parts of code for everyone to work on and commit changes to github when done (30 min)
+- Implement a pin-point location on the map to represent where the player is (1 hr)
+- Freely control the players movement on the map (3 hrs)
+
+#### 2.2 Progress and Issues
+
+**What we've finished:**  
+- Allocated different components of the project to each individual or groups of 2-3 to implement.
+- Added map boundaries tailored to the OSU campus.
+- Added a marker onto the map to represent the player.
+- Added a button to track the location of a player.
+- Updated the living document with our software architecture, design, and coding outline.
+
+**What we learned:**  
+- We learned how to add boundaries to the map, how to add a marker, and how to use the geolocation tracking feature.
+- We learned the importance of committing and pushing updates frequently to avoid merge conflicts.
+
+**Where we had trouble/stuck:**  
+- Some of the team members' computer would be blank when the browser got refreshed.
+- Google's most advanced version of the marker would not display when we tried to implement it.
+
+#### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
+- Improve real-time player movement updates on the map (2 hrs)
+- Integrate basic leaderboard functionality (3 hrs)
+- Test and refine player movement mechanics (2 hrs)
+- Meet up with the team to create a detailed presentation (2 hrs)
+
+### Brian Munger
+
+#### 2.1 Exact Copy of the Third Section from Last Week
+- Add marker to Google Maps (30 mins)
+- Add navigational capabilities to the application (2 hours)
+- Delegate work (begin frontend, backend, etc) (10 mins)
+- Begin individual tasks (2 hours)
+- Meet to discuss progress later in the week (30 mins)
+
+#### 2.2 Progress and Issues
+
+**What we've finished:** 
+- We have set up the basic outline for our application
+- We have successfully implemented the Google Geolocation API into our program
+- We have allowed the program to find where the user is
+- The user can now put a pin on the map
+- We structured the GitHub and Trello board to be more complete
+
+**What we learned:**
+- We learned that it is hard to delegate work in the beginning stages of a project like this
+- The Google Geolocation API has a lot of features for us to utilize and implement
+
+**Where we had trouble/stuck:**
+- At times, the Google Geolocation API is hard to understand
+
+#### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
+- Implement leaderboard (~3 hours)
+- Run web application on the OSU public.html server (~1 hour)
+- Start creating the profile section (~2 hours)
+- Work on presentation (~2 hours)
+
+### Shi-Ru Huang
+
+#### 2.1 Exact Copy of the Third Section from Last Week
+- Meet Thursday after TA group meeting to dicuss for the next step (2 hr).
+- Distribute part for each member (1 hr).
+- Meet with our TA on Thursday (15 mins).
+
+#### 2.2 Progress and Issues
+
+**What we've finished:** 
+- Implementing the Geolocation API successfully
+- Implementing the boundaries for our map
+- We add up more details and information on the Trello board in order to keep progress going
+
+**What we learned:** 
+- We've learned how to implemting the Geolocation API, how to pin on the ap as a user, what we gooing to user for database and server.
+
+**Where we had trouble/stuck:**
+- Mostly for me about where the trouble stuck is that it hard to split the jobs evenly and catch up others progress at the begining stage.
+
+#### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
+- Meet Thursday after TA group meeting to dicuss for the next step (2 hr).
+- Finished implementing one of the part of this project, which we will talk about what exactly when we meet on Thursday (12 hr).
+- Meet with our TA on Thursday (15 mins).
+
+### Evan Albert
+
+#### 2.1 Exact Copy of the Third Section from Last Week
+- Add marker to Google Maps (30 mins)
+- Add navigational capabilities to the application (2 hours)
+- Delegate work (begin frontend, backend, etc) (10 mins)
+- Begin individual tasks (2 hours)
+- Meet to discuss progress later in the week (30 mins)
+
+#### 2.2 Progress and Issues
+
+**What we've finished:** 
+- Implementing a barrier around the map
+- Implementing a marker onto the map which we will use as a player
+- Most of the completion on the API implementation
+
+**What we learned:**  
+We learned about Google's API location tracking and how we can implement it into our game.
+
+**Where we had trouble/stuck:**
+We had trouble figuring out if it was possible to implement our game on the schools public_html network.
+
+#### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
+- Meet Thursday after TA group meeting to dicuss for the next step (2 hr).
+- Distribute part for each member (1 hr).
+- Meet with our TA on Thursday (15 mins).
+
+### Keona Abad
+
+#### 2.1 Exact Copy of the Third Section from Last Week
+- Finalize the point system (1-2 weeks)
+    - Decide the criteria for weighing an area more heavily for points (1 week)
+- Research viability of desired monitezation systems (1-2 weeks)
+    - Business collaboration viability (1 week)
+    - Microtransaction viability (1 week)
+    - Privacy-compliant data selling
+- Figure out how to retain players who have lost their lives (3 weeks+)
+- Decide where spawning would cause the least amount of frustration for all parties (? weeks)
+
+#### 2.2 Progress and Issues
+
+**What we've finished:** 
+- Implementing a barrier around the map
+- Implementing a marker onto the map which we will use as a player
+- Most of the completion on the API implementation
+
+**What we learned:**  
+We learned how to manage a large API system and how to gather pre-existing code from external sources that can really help us in our development stage. We also learned how to properly navigate through our local host.
+
+**Where we had trouble/stuck:**
+I would not say we are completely having trouble with anything at the moment, but right now we are trying to figure out how we are going to host this on a public server
+
+#### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
+
+- Create a UX design for the marker (player 2 hours at most)
+- Meet with the team on Wednesday and Thursday (1 hour)
+- We should get exact coordinates for the border of Oregon State University to have precise on our map (30 mins)
+- Still decide where spawning would cause the least amount of frustration for all parties (? weeks)
+
+### Connor Sun
+
+#### 2.1 Exact Copy of the Third Section from Last Week 
+
+- Finalize the point system (1-2 weeks)
+    - Decide the criteria for weighing an area more heavily for points (1 week)
+- Research viability of desired monitezation systems (1-2 weeks)
+    - Business collaboration viability (1 week)
+    - Microtransaction viability (1 week)
+    - Privacy-compliant data selling
+
+- Figure out how to retain players who have lost their lives (3 weeks+)
+- Decide where spawning would cause the least amount of frustration for all parties (? weeks)
+
+#### 2.2 Progress and Issues
+
+**What we've finished:** 
+I finished the buttons for navigating our webapp's frontend. I fixed version conflicts which caused features like geolocation to be erased from our codebase and added QoL changes to the infowindow from that and the test marker we have implemented.
+
+**What we learned:**  
+I learned how to use the Google markers thanks to Calvin and infowindows thanks to Brian. I also now know how to make buttons that are interactive based on their image shape as opposed to simple boxes. I learned interesting styling techniques such as adding buttons in the footer/header so they are always ready for the user and how to manage to-be-used files by webapps.
+
+**Where we had trouble/stuck:**
+The Google AdvancedMarker library was giving me and some others a lot of trouble. I feel kind of guilty for not trying something so obvious as using the simpler Marker library. In the future I will keep my mind open and not shy away from using tools that are said to be deprecated without trying it out myself first.
+
+#### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
+
+- Finalize the point system (2 weeks)
+- Research viability of desired monitezation systems (1-2 weeks)
+    - Privacy-compliant data selling (? weeks)
+
+- Figure out how to retain players who have lost their lives (2 weeks)
+
+- Decide where spawning would cause the least amount of frustration for all parties (? weeks)
