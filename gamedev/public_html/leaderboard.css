@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: black;
+  background-color: rgb(205, 204, 204);
   text-align: center;
   width: 100%;
   overflow-x: hidden; /* Prevent horizontal scrolling */
@@ -9,10 +9,14 @@ body {
   height: auto; /* Allow body height to grow based on content */
 }
 
+h1 {
+  color: black;
+}
+
 .leaderboard {
   width: 100%;
   padding: 1%;
-  background: black;
+  background: rgb(205, 204, 204);
   color: white;
 }
 
@@ -37,6 +41,7 @@ body {
   display: flex; /* Use flexbox to position elements horizontally */
   flex-direction: column; /* Stack items vertically */
   gap: 10px; /* Add space between name, score, and rank */
+  font-size: 20px;
 }
 
 .card .top-row {
@@ -51,6 +56,11 @@ body {
 
 .card .rank {
   margin-top: 10px; /* Add space between score and rank */
+}
+
+.rank {
+  font-style: italic;
+  font-weight: bold;
 }
 
 footer {
@@ -94,5 +104,17 @@ footer {
 /* Style for the third place */
 .third-place-div {
   background-color: #d5a16d; /* Bronze for third place */
-  color: white;
+  color: black;
+}
+
+#rank_1 {
+  color: rgb(158, 136, 11)
+}
+
+#rank_2 {
+  color: rgb(76, 76, 76);
+}
+
+#rank_3 {
+  color: #9d5d1c; 
 }
