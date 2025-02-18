@@ -168,20 +168,23 @@ _ As the project takes more shape there will be more things for each member to w
 #### 2.2 Progress and Issues
 
 **What we've finished:** 
-- Implementing a barrier around the map
-- Implementing a marker onto the map which we will use as a player
-- Most of the completion on the API implementation
+- Finished and presented our presentation
+- Implemented the website on the public.html server
+- Designed the leaderboard and profile sections
+- Got the database to work
 
 **What we learned:**  
-We learned about Google's API location tracking and how we can implement it into our game.
+- We learned how to make the login authentication work and how it must go through the database to retrieve that user's authentication and send it back to log that player in its own account.
 
 **Where we had trouble/stuck:**
-We had trouble figuring out if it was possible to implement our game on the schools public_html network.
+- Figure out how we are going to host this on a public server.
 
 #### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
-- Meet Thursday after TA group meeting to dicuss for the next step (2 hr).
-- Distribute part for each member (1 hr).
-- Meet with our TA on Thursday (15 mins).
+- Finalize the point system (1 weeks)
+- Research viability of desired monitezation systems (1 weeks)
+- Figure out how to retain players who have lost their lives (1 weeks)
+- Decide where spawning would cause the least amount of frustration for all parties (2 weeks)
+- Figure out if public_html is a viable way to host our website (1 week)
 
 ### Keona Abad
 
