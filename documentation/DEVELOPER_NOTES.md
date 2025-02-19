@@ -6,9 +6,17 @@ OBTAIN SOURCE CODE: Any developer seeking to obtain the source code for the Run 
 - Most of the frontend and backend are stored in /gamedev/public_html. Here you will find the HTML / CSS files for the front end and some of the JS files for the back end.
 
 DIRECTORIES: This repository includes several directories to better categorize and store resources associated with our game. 
-- /database includes all information about connecting to our database. The database is used for storing user credentials and location updates.
-- /documentation is the current directory this file is stored in.
-- /gamedev
-- /living-doc-versions
-- /reports
-- Other files: 
+- /database: includes all information about connecting to our database. The database is used for storing user credentials and location updates.
+- /documentation: the current directory this file is stored in. Also stores other documentation for the game.
+- /gamedev: where the source code for our game is stored. 
+- /living-doc-versions: older versions of our living document for this project are stored here. 
+- /reports: our weekly report will developing this game is stored here. 
+- Other files: other files, such as our current living document and README file, are stored in the main repository.
+
+HOW TO BUILD SOFTWARE: 
+
+HOW TO TEST THE SOFTWARE: 
+
+HOW TO ADD NEW TESTS: 
+
+HOW TO BUILD A RELEASE OF THE SOFTWARE:
