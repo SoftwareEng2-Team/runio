@@ -15,8 +15,8 @@ DIRECTORIES: This repository includes several directories to better categorize a
 Other files: other files, such as our current living document and README file, are stored in the main repository.
 HOW TO BUILD SOFTWARE:
 
-HOW TO TEST THE SOFTWARE:
+HOW TO TEST THE SOFTWARE: This application's backend is tested using Selenium and Google ChromeDriver. Install Selenium using 'npm install selenium-webdriver' and download ChromeDriver from the link 'https://developer.chrome.com/docs/chromedriver/downloads'. You can run existing test scripts files in JavaScript by invoking 'node <path to testscript>/testscript.js'. Any future tests should be kept in a testing directory. 
 
-HOW TO ADD NEW TESTS:
+HOW TO ADD NEW TESTS: New tests can be added by creating a new script or cloning an existing script and adding to that. All testing should be done in an async() function such that you can await driver to open and load the frontend. 
 
 HOW TO BUILD A RELEASE OF THE SOFTWARE:
