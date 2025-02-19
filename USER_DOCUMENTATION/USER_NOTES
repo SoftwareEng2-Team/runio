@@ -11,4 +11,23 @@ Our game requires no installation since it is a live service game hosted on a we
 To play our game a player will simply have to go to this URL: https://web.engr.oregonstate.edu/~mungerbr/RFYL/public_html/.
 Then they will have to make an account which will allow them to connect to our backend and play the game.
 
+How to Use the Software:
 
+Starting a Run
+- Authenticate by logging in or creating an account.
+- Open the Map screen.
+- Select a preset route.
+- Press "Start Run" to begin tracking your movement.
+- Run in a closed loop to form a valid claimable territory.
+- Press "Finish Run" to finalize and claim your territory.
+
+Checking Your Progress:
+- View live territory updates on the Map screen.
+- Check the Leaderboard to compare rankings.
+- Navigate to the Profile page to see total distance, land claimed, ranking, and recent activity.
+
+Competitive Features
+- User Authentication: Every player must log in before playing.
+- Territory Claiming: Any closed circuit grants all land within as your territory.
+- Cutting Off Opponents: Run through another player’s path and complete a circuit before them to remove their territory.
+- Weekly Reset: All scores reset every week; the top player earns a flair for recognition.
