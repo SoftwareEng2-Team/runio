@@ -5,3 +5,6 @@ Upon completion of said circuit, players are rewarded with all map space within 
 The map displays currently existing territories and all in-progress routes by players. A leaderboard will also display the current square miles each player has claimed for that week.
 All scores and territories are reset weekly, and the top player is given a flair for the following week.
 
+How to Install the Software: Our game requires no installation since it is a live service game hosted on a web server.
+To play our game a player will simply have to go to this URL: https://web.engr.oregonstate.edu/~mungerbr/RFYL/public_html/.
+Then they will have to make an account which will allow them to connect to our backend and play the game.
