@@ -27,3 +27,18 @@ HOW TO TEST THE SOFTWARE:
 HOW TO ADD NEW TESTS:
 
 HOW TO BUILD A RELEASE OF THE SOFTWARE:
+- After building the software the developer should have a new version with an updated ID number that correlates to that new version.
+- They must update the version numbers in the code, documentation, and configuration files.
+- They should place the new version files into a separate folder inside our versions folder to help keep track of our progress.
+- Some basic sanity checks the developer should perform are:
+  - Launch test: Ensuring the software does not crash on launch.
+  - Game playtest: Playing through key features of the game to make sure it performs basic functionality.
+  - File checking: Checking assets within files to ensure everything is included and referenced correctly.
+  - Performance test: Ensuring the game runs smoothly.
+  - Error Logging: Checking logs for unexpected errors or warnings.
+  - Cross-Platform Testing: Checking to see to make sure it can build on mobile device as well as computers.
+
+
+
+
+
