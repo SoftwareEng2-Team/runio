@@ -1,5 +1,5 @@
 High-level Description: 
--Competitive running game that simulates territory acquisition via a completed running route. 
+Competitive running game that simulates territory acquisition via a completed running route. 
 Players compete by claiming the most space on a shared real-world map each week.
 To claim space one must create and complete a running circuit of any length.
 Upon completion of said circuit, players are rewarded with all map space within that circuit being claimed as their territory regardless of whether it is already claimed. 
@@ -10,3 +10,5 @@ How to Install the Software:
 Our game requires no installation since it is a live service game hosted on a web server.
 To play our game a player will simply have to go to this URL: https://web.engr.oregonstate.edu/~mungerbr/RFYL/public_html/.
 Then they will have to make an account which will allow them to connect to our backend and play the game.
+
+
