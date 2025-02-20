@@ -232,29 +232,6 @@ I struggled with the strict type enforcement and it kept throwing errors at me b
 
 #### 2.1 Exact Copy of the Third Section from Last Week 
 
-- Finalize the point system (1-2 weeks)
-    - Decide the criteria for weighing an area more heavily for points (1 week)
-- Research viability of desired monitezation systems (1-2 weeks)
-    - Business collaboration viability (1 week)
-    - Microtransaction viability (1 week)
-    - Privacy-compliant data selling
-
-- Figure out how to retain players who have lost their lives (3 weeks+)
-- Decide where spawning would cause the least amount of frustration for all parties (? weeks)
-
-#### 2.2 Progress and Issues
-
-**What we've finished:** 
-I've finished the prototype leaderboard and designed it such that we can simply read off player data and insert div "cards" for each leaderboard. Since we are just now interacting with our database, it is good to have a stable platform we can read it off of for display debugging.
-
-**What we learned:**  
-I learned how to use JS to mass-produce a templated HTML element. In my webdev class, I had difficulty doing this because of the lack of direction and I ended up using a different method to what I have now. We also learned that OSU's public_html may be difficult to interact with, but free hosting is free hosting. 
-
-**Where we had trouble/stuck:**
-Figuring out how we can implement a backend on the OSU servers is difficult. In general, I've designed databases before but have never implemented them or worked with them. It was hard to coordinate what exactly we needed to store and how we'd retrieve that in a timely manner.
-
-#### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
-
 - Finalize the point system (1 weeks)
 - Research viability of desired monitezation systems (1 weeks)
 
@@ -263,3 +240,22 @@ Figuring out how we can implement a backend on the OSU servers is difficult. In 
 - Decide where spawning would cause the least amount of frustration for all parties (2 weeks)
 
 - Figure out if public_html is a viable way to host our website (1 week)
+
+#### 2.2 Progress and Issues
+
+**What we've finished:** 
+Finished the leaderboard basic implementation. Sorting function and proper CSS is working with more refinements on the way. Game design has been ironed out a lot but specifics are hard to talk about in a simple paragraph.
+
+**What we learned:**  
+I learned how to delegate work for my own tasks to others. I'm not proud of the fact I had to rely on my groupmates for my own work, but being able to efficiently communicate and empathize with your teammates is extremely important to cohesion. Furthermore, my understanding of CSS and template-able HTML elements improved by a lot. I learned not to underestimate game design in genres and areas I'm not particularly versed in, as well as being limited by real-world locational constraints. 
+
+**Where we had trouble/stuck:**
+A lot of the game design work has been difficult to think about without players actually being able to interact with the game. I have had  a lot on my plate preparing for my algorithm midterm so I had to make sure my responsibilities were either handled by other teammates or done in advance to clear my head for it. 
+
+#### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
+
+- Decide where spawning would cause the least amount of frustration for all parties (1 week)
+
+- Figure out if public_html is a viable way to host our website (pushed off because of midterm and other work) (1 week)
+
+- Work on designing backend API specifications given new design expectations (2 weeks)
