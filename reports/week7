@@ -66,17 +66,18 @@
 #### 2.2 Progress and Issues
 
 **What we've finished:** 
-- Created database to store player information and begin frontend connection to this database
-- Put game onto the school servers so the game will have a permanent uptime.
-- Finished and presented midterm presentation.
+- Create login page for players to fill out to create a account on the database (1 week)
+- Begin working on location tracking storage and developing the visual line that the player will use to track their run completion (2 weeks) 
+- Work on scoring weights to determine how much a given area show score for the player (2 weeks)
+
 
 **What we learned:**  
-- The school servers provide free deticated servers which can be used to run our project.
-- The backend database software can only be edited on a stronger PC so will have to edited on a desktop.
+- The backend may not be able to be accessed on the school servers which needs more testing to determine.
+- The Google API may have trouble providing managing multiple players at once.
 
 **Where we had trouble/stuck:** 
 - Struggle to properly devide work out for each member of the group.
-_ As the project takes more shape there will be more things for each member to work on.
+- Each member of our group were busy with different assignments in other classes so progress was minimal this week
 
 
 #### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
