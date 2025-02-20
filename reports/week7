@@ -4,34 +4,6 @@
 
 ### 1.1 Exact Copy of the Third Section from Last Week
 
--- Allocate tasks and side-tasks (ongoing weekly, so 1 week every week)
-- Solidify design of gameplay loop (1 weeks)
-- Build leaderboard frontend and architect it to be able to integrate a database (2 week)
-- Update living document to meet the expectations of the Project Architecture and Design specifications (<1 week)
-- Implement Run For Your Life (RFYL) on the school servers so we can test it on a non-localhost server (? weeks)
-- Ask TA if using a database is the correct way to go about implementing our leaderboard (1 week)
-    - Research alternatives to the suggested solution (1 week)
-    - Act on the information (2 weeks)
-
-### 1.2 Progress and Issues
-
-**What we've finished:** 
-Webapp navigation between leaderboard, map, and profile has been implemented. 
-Successfully set up database to store player data and keep track of account information: score, territory and login information.
-Present our project and updated living document to meet requirements with the rubric.
-Began planning test cases and what software will be used for testing our project. 
-Successfully set up the project to run on the school servers so it can be running constantly
-
-**What we learned:**  
-We learned how the school public server works and how we can run our site on that server for players to be able to access our game at all times.
-Furthermore, we now also have developed an understanding of what is required for setting up the database to hold all the players information. 
-
-**Where we had trouble/stuck:**  
-We had trouble understanding requirements for the presentation and other assignments in the class since some of the instructions can be difficult to understand.
-However, through discussing as a group and asking questions in class we were able to understand what requirements were necessary for the midterm presentation.
-
-### 1.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
-
 - Allocate tasks and side-tasks (ongoing weekly, so 1 week every week)
 - Finish setting up database and create connections between the backend database and frontend (1 week)
 - Create login page for players to fill out to create a account on the database (1 week)
@@ -39,6 +11,48 @@ However, through discussing as a group and asking questions in class we were abl
 - Build leaderboard frontend and architect it to be able to integrate a database (1 week)
 - Ask TA if using a database is the correct way to go about implementing our leaderboard (1 week)
     - Act on the information (1 weeks)
+
+### 1.2 Progress and Issues
+
+**What we've finished:** 
+- Completed leaderboard frontend, allowing users to see rankings. Top 3 players are colored accordingly (gold, silver, bronze).
+- Began researching a potential switch to AWS for security reasons instead of OSU’s public HTML server.
+- Completed User Documentation, including:
+    - High-level description of the project.
+    - Installation guide with prerequisites and setup instructions.
+    - How to run the software for both users and developers.
+    - Usage instructions for gameplay and account creation.
+    - Bug reporting guidelines with clear submission steps.
+    - Known issues and limitations documented in the bug tracker.
+- Completed Developer Documentation, including:
+    - How to obtain the source code from the repository.
+    - Directory structure layout and explanations of key files.
+    - How to build the software and resolve dependencies.
+    - How to test the software using automated and manual testing.
+    - How to add new tests to improve reliability.
+    - How to package and release the software for deployment.
+
+**What we learned:**  
+- AWS offers better security options but requires additional setup for database and hosting.
+- Writing clear user documentation helps improve team understanding and ensures usability.
+- Developer documentation needs to be structured well for easy onboarding and contributions.
+- Database setup is more complex than expected, requiring adjustments for integration.
+- Real-time location tracking needs a scalable backend to ensure smooth updates.
+- Leaderboard updates must be optimized to handle multiple simultaneous players.
+
+**Where we had trouble/stuck:**  
+- Login page has not been implemented yet, as we are still working on user authentication.
+- Backend connection between leaderboard and database is incomplete, requiring further development.
+
+### 1.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
+
+- Allocate tasks and side-tasks (ongoing weekly, so 1 week every week)
+- Complete database setup and ensure backend can communicate with the frontend (1 week)
+- Create and implement login page with user authentication (1 week)
+- Begin working on location tracking storage and developing the visual line that the player will use to track their run completion (2 weeks)
+- Fix leaderboard update inconsistencies and ensure accurate ranking system (1 week)
+- Optimize database queries for faster read/write operations and leaderboard updates (1 week)
+- Build Profile page frontend and architect it to be able to integrate a database (1 week)
 
 ## 2. Contributions of Individual Team Members
 
