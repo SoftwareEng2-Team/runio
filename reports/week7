@@ -120,32 +120,31 @@
 ### Brian Munger
 
 #### 2.1 Exact Copy of the Third Section from Last Week
-- Implement leaderboard (~3 hours)
-- Run web application on the OSU public.html server (~1 hour)
-- Start creating the profile section (~2 hours)
-- Work on presentation (~2 hours)
+- Implement database in code
+- Have the website display the leaderboard, sign-in, and profile pages correctly
+- Have the code correctly read/write from database
 
 #### 2.2 Progress and Issues
 
 **What we've finished:** 
-- Finished and presented our presentation
-- Implemented the website on the public.html server
-- Designed the leaderboard and profile sections
-- Got the database to work
+- Updated the Trello board to fit our current project tasks
+- Designed and implemented the frontend for the leaderboard page, added sorting and ranking
+- Designed the login page, will implement the frontend today
+- Further our progress on the database, will be integrated soon 
 
 **What we learned:**
-- We will need more time than needed to find out how the database works
-- Learned we don't need to use Node.JS if using public.html
+- We will need to spend a lot of time this weekend and the following week getting work done
+- Public_HTML might pose an issue with backend properties, may use AWS as a backup
 
 **Where we had trouble/stuck:**
-- Finding what database to use
-- Agreeing on the presentation/what slides to include
-- Finding how to incorporate a database in the code
+- This was a busy week for our group: multiple midterms, large projects in other classes, etc
+- Did not make a lot of progress this week
 
 #### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
-- Implement database in code
-- Have the website display the leaderboard, sign-in, and profile pages correctly
-- Have the code correctly read/write from database
+- Implement database in code (~ 5 hours)
+- Have all frontend done (~3 hours)
+- Have all backend mostly done (the week)
+- Integrate interactions with players
 
 ### Shi-Ru Huang
 
