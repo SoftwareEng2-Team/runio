@@ -205,29 +205,29 @@
 ### Keona Abad
 
 #### 2.1 Exact Copy of the Third Section from Last Week
-- Create a UX design for the marker (player 2 hours at most)
-- Meet with the team on Wednesday and Thursday (1 hour)
-- We should get exact coordinates for the border of Oregon State University to have precise on our map (30 mins)
-- Still decide where spawning would cause the least amount of frustration for all parties (? weeks)
-
-#### 2.2 Progress and Issues
-
-**What we've finished:** 
-- Connecting our postgre database
-- Implementing example data to see on our frontend
-
-**What we learned:**  
-We've learned that we are going to be able to connect our local data storage with  our school server hosted html frontend.
-
-**Where we had trouble/stuck:**
-A problem we might have is figuring out how we are going to make test cases to ensure that our database is running realtime and updating properly and accordingly.
-
-#### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
-
 - Setup up endpoints so we can connect our database to our backend (1 hour)
 - Meet with the team on Wednesday and Thursday (1 hour)
 - Start working on the backend to manipulate the data we have (2 hours)
 - We need to do research on the best and most optimal ways to make sure our data is being used correctly (1 hour)
+
+#### 2.2 Progress and Issues
+
+**What we've finished:** 
+- Completed a frontend for our program. Of course we will have to adjust small dynamic changes.
+- Fully implementing our database to be functional
+- Creating endpoints to our backend system to connect with our database
+
+**What we learned:**  
+I have learned that in postgreSQL's JSONB data type lets you store a query JSON with full indexing meaning that it's almost like a hybrid between a relational and NOSQL databases.
+
+**Where we had trouble/stuck:**
+I struggled with the strict type enforcement and it kept throwing errors at me because it wanted me to manually cast values more often than I expected.
+
+#### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
+
+- Start the manipulation of the database from the backend (4 hours)
+- Meet with the team on Wednesday and Thursday (1 hour)
+- Begin to work on the front-end in the sense it needs to make sure it is properly displaying all the data (2 hours)
 
 ### Connor Sun
 
