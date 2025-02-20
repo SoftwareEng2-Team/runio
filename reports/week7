@@ -87,33 +87,34 @@ _ As the project takes more shape there will be more things for each member to w
 ### Calvin Chen
 
 #### 2.1 Exact Copy of the Third Section from Last Week
-- Improve real-time player movement updates on the map (2 hrs)
-- Integrate basic leaderboard functionality (3 hrs)
-- Test and refine player movement mechanics (2 hrs)
-- Meet up with the team to create a detailed presentation (2 hrs)
+- Address server permission restrictions for better frontend-to-database communication (3 hrs)
+- Finalize profile page UI integration with backend data and ensure smooth stat retrieval and display (5 hrs)
+- Develop user authentication system to allow account creation and secure login (4 hrs)
 
 #### 2.2 Progress and Issues
 
 **What we've finished:**  
-- Hosted our game on Oregon State University’s public HTML server.
-- Updated and revised our living document (added workflows of software architecture and database schema and revised our test cases along with a more detailed timeline).
-- Set up the database on a PostgreSQL server.
-- Completed the profile page design outline.
-- Finished and presented the midterm presentation to the class.
+- Began researching a potential switch to AWS for security and database management.
+- Wrote user documentation, covering a high-level description of the game, installation steps and how to run the software, usage instructions for new users, and how to report bugs and known limitations.
+- Completed developer documentation, covering how to obtain the source code and directory structure, and how to build, test, and release the software.
+- Completed the leaderboard frontend, displaying player rankings.
 
 **What we learned:**  
-- PostgreSQL query optimization is critical for leaderboard and profile updates to prevent performance holdup.
-- The OSU public HTML server offers free hosting, but some access restrictions exist, requiring alternative solutions for database connections.
-- Midterm presentation feedback emphasized scalability concerns, meaning we need to refine our server architecture to handle more players.
+- Database permissions on OSU's public server are limited, making integration more challenging than expected.
+- AWS offers better security but no one in our group has experience with it and it requires a complicated setup.
+- Detailed user documentation helps improve usability and ensures easy onboarding for testers.
 
 **Where we had trouble/stuck:**  
-- Difficulty integrating the PostgreSQL database with the school-hosted frontend, as direct queries were restricted by server permissions.
-- Allocating work to members who were online.
+- Database setup remains incomplete, as we are determining whether to continue with OSU's server or migrate to AWS.
+- Login page has not been created yet, due to ongoing schedule challenges.
 
 #### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
-- Address server permission restrictions for better frontend-to-database communication (3 hrs)
-- Finalize profile page UI integration with backend data and ensure smooth stat retrieval and display (5 hrs)
-- Develop user authentication system to allow account creation and secure login (4 hrs)
+- Implement and test user authentication system to allow account creation, secure login, and session management (7 hrs)
+- Improve frontend-to-database communication by resolving server permission issues or migrating to AWS (5 hrs)
+- Complete profile page integration with user stats and display recent run history (5 hrs)
+- Continue testing and refining GPS tracking logic to improve accuracy in movement detection (4 hrs)
+- Optimize leaderboard update process to handle multiple players updating scores simultaneously (3 hrs)
+- Research and integrate anti-cheating measures such as speed thresholds and activity validation (5 hrs)
 
 ### Brian Munger
 
