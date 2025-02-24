@@ -174,32 +174,28 @@
 ### Evan Albert
 
 #### 2.1 Exact Copy of the Third Section from Last Week
-- Add marker to Google Maps (30 mins)
-- Add navigational capabilities to the application (2 hours)
-- Delegate work (begin frontend, backend, etc) (10 mins)
-- Begin individual tasks (2 hours)
-- Meet to discuss progress later in the week (30 mins)
+- Finished implementing the login authentication (3 days).
+- Meet with our TA on Thursday (15 mins).
+- Further dicuss with team member fo the next step on Monday (2hr).
 
 #### 2.2 Progress and Issues
 
 **What we've finished:** 
-- Finished and presented our presentation
-- Implemented the website on the public.html server
-- Designed the leaderboard and profile sections
-- Got the database to work
+- Finished the leaderboard basic implementation. 
+- Sorting function and proper CSS is working with more refinements on the way. 
+- Game design has been ironed out a lot but specifics are hard to talk about in a simple paragraph.
+
 
 **What we learned:**  
 - We learned how to make the login authentication work and how it must go through the database to retrieve that user's authentication and send it back to log that player in its own account.
 
 **Where we had trouble/stuck:**
-- Figure out how we are going to host this on a public server.
+- Still figuring out testing on a public server.
 
 #### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
-- Finalize the point system (1 weeks)
-- Research viability of desired monitezation systems (1 weeks)
-- Figure out how to retain players who have lost their lives (1 weeks)
-- Decide where spawning would cause the least amount of frustration for all parties (2 weeks)
-- Figure out if public_html is a viable way to host our website (1 week)
+- Start the manipulation of the database from the backend (4 hours)
+- Meet with the team on Wednesday and Thursday (1 hour)
+- Begin to work on the front-end in the sense it needs to make sure it is properly displaying all the data (2 hours)
 
 ### Keona Abad
 
