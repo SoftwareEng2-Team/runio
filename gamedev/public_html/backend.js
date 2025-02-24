@@ -1,26 +1,25 @@
-const API_URL = "https://run-for-your-life-api.onrender.com";  
+const API_URL = "https://run-for-your-life-api.onrender.com/api"; 
+
 async function fetchLeaderboard() {
     try {
         let response = await fetch(`${API_URL}/leaderboard`);
         let data = await response.json();
         console.log("Leaderboard Data:", data);
+
+        // Update leaderboard on webpage
+        const leaderboardDiv = document.getElementById("leaderboard");
+        leaderboardDiv.innerHTML = "<h2>Leaderboard</h2>";
+
+        data.forEach((player, index) => {
+            const entry = document.createElement("p");
+            entry.textContent = `${index + 1}. ${player.username} - ${player.total_distance_km} km`;
+            leaderboardDiv.appendChild(entry);
+        });
+
     } catch (error) {
         console.error("Error fetching leaderboard:", error);
     }
 }
 
-async function registerUser(username, email, password) {
-    try {
-        let response = await fetch(`${API_URL}/users/register`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ username, email, password }),
-        });
-        let data = await response.json();
-        console.log("User Registration Response:", data);
-    } catch (error) {
-        console.error("Error registering user:", error);
-    }
-}
-
-fetchLeaderboard();
+// Run function on page load
+window.onload = fetchLeaderboard;
