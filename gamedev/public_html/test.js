@@ -95,7 +95,7 @@ async function initMap() {
           if (previousPosition) {
             const latDiff = Math.abs(pos.lat - previousPosition.lat);
             const lngDiff = Math.abs(pos.lng - previousPosition.lng);
-            if (latDiff < 0.5 && lngDiff < 0.5) {
+            if (latDiff < 0.0001 && lngDiff < 0.0001) {
               console.log("Position change is too small, not updating.");
               return;
             }
