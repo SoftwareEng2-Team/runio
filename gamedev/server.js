@@ -1,5 +1,3 @@
-'use strict';
-
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
@@ -14,9 +12,9 @@ const PORT = process.env.PORT || 3000;
 
 app.use(cors({
     origin: [
-        "https://web.engr.oregonstate.edu", 
+        "https://web.engr.oregonstate.edu",
         "https://run-for-your-life-frontend.onrender.com"
-    ], 
+    ],
     methods: "GET,POST,PUT,DELETE",
     allowedHeaders: "Content-Type"
 }));
@@ -24,10 +22,12 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// API Routes
 app.use('/api/users', userRoutes);
 app.use('/api/runs', runRoutes);
 app.use('/api/leaderboard', leaderboardRoutes);
 
+// Start server
 app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}...`);
 });
