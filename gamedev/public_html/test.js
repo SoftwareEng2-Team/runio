@@ -8,6 +8,8 @@ let openlocationwindow = null;
 let userLocationMarker;
 // Array to store trail markers
 let trailMarkers = [];
+// Previous position
+let previousPosition = null;
 
 async function initMap() {
   // Bounding Box for the OSU Campus
@@ -111,71 +113,89 @@ async function initMap() {
     }
   });
 
-  // Watch the user's position and update the map
-  if (navigator.geolocation) {
-    navigator.geolocation.watchPosition(
-      (position) => {
-        const pos = {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude,
-        };
+  // Function to update the user's location
+  function updateLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          };
 
-        console.log("User position:", pos);
+          console.log("User position:", pos);
 
-        if(
-          pos.lat < osuBounds.south ||
-          pos.lat > osuBounds.north ||
-          pos.lng < osuBounds.west ||
-          pos.lng > osuBounds.east
-        ){
-          console.log("Location is outside OSU campus. Stay within the boundary.");
-          return;
-        }
-
-        // Create a new marker for the trail
-        const trailMarker = new google.maps.Marker({
-          position: pos,
-          map: map,
-          title: "Trail Marker",
-          icon: {
-            url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png"
+          if(
+            pos.lat < osuBounds.south ||
+            pos.lat > osuBounds.north ||
+            pos.lng < osuBounds.west ||
+            pos.lng > osuBounds.east
+          ){
+            console.log("Location is outside OSU campus. Stay within the boundary.");
+            return;
           }
-        });
-        trailMarkers.push(trailMarker);
 
-        if (!userLocationMarker) {
-          console.log("Creating user location marker");
-          userLocationMarker = new google.maps.Marker({
+          // Check if the position has changed significantly
+          if (previousPosition) {
+            const latDiff = Math.abs(pos.lat - previousPosition.lat);
+            const lngDiff = Math.abs(pos.lng - previousPosition.lng);
+            if (latDiff < 0.5 && lngDiff < 0.5) {
+              console.log("Position change is too small, not updating.");
+              return;
+            }
+          }
+
+          // Update the previous position
+          previousPosition = pos;
+
+          // Create a new marker for the trail
+          const trailMarker = new google.maps.Marker({
             position: pos,
             map: map,
-            title: "Your Location",
+            title: "Trail Marker",
             icon: {
-              url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+              url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png"
             }
           });
-        } else {
-          console.log("Updating user location marker position");
-          userLocationMarker.setPosition(pos);
-        }
+          trailMarkers.push(trailMarker);
 
-        current_location_window.setPosition(pos);
-        current_location_window.setContent("Current Location: " + pos.lat + ", " + pos.lng);
-        current_location_window.open(map);
-        openlocationwindow = current_location_window;
-        map.setCenter(pos);
-      },
-      (error) => {
-        console.error("Error watching position:", error);
-      },
-      {
-        enableHighAccuracy: true,
-        maximumAge: 0,
-        timeout: 500,
-      }
-    );
-  } else {
-    console.error("Browser doesn't support Geolocation");
+          if (!userLocationMarker) {
+            console.log("Creating user location marker");
+            userLocationMarker = new google.maps.Marker({
+              position: pos,
+              map: map,
+              title: "Your Location",
+              icon: {
+                url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+              }
+            });
+          } else {
+            console.log("Updating user location marker position");
+            userLocationMarker.setPosition(pos);
+          }
+
+          current_location_window.setPosition(pos);
+          current_location_window.setContent("Current Location");
+          current_location_window.open(map);
+          openlocationwindow = current_location_window;
+          map.setCenter(pos);
+        },
+        (error) => {
+          console.error("Error getting position:", error);
+        },
+        {
+          enableHighAccuracy: true,
+          maximumAge: 0,
+          timeout: 5000,
+        }
+      );
+    } else {
+      console.error("Browser doesn't support Geolocation");
+    }
   }
+
+  // Update the user's location every 5 seconds
+  setInterval(updateLocation, 5000);
 }
 
 // Error handling for geolocation
