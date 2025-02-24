@@ -22,4 +22,5 @@ async function getGeoLocation() {
     }
 }
 
-getGeoLocation();
+// Call getGeoLocation every 10 seconds
+setInterval(getGeoLocation, 10000);

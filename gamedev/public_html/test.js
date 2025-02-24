@@ -4,6 +4,10 @@ let map;
 let draggableMarker; 
 // Info window for current location
 let openlocationwindow = null; 
+// Marker for the user's current location
+let userLocationMarker;
+// Array to store trail markers
+let trailMarkers = [];
 
 async function initMap() {
   // Bounding Box for the OSU Campus
@@ -41,13 +45,13 @@ async function initMap() {
     if(openlocationwindow){
       openlocationwindow.close()
     }
-      console.log("Marker is being dragged");
+    console.log("Marker is being dragged");
   });
   
   // Event listener to log position when marker is moved
   draggableMarker.addListener("dragend", () => {
-      const newPosition = draggableMarker.getPosition();
-      console.log(`Marker moved to: ${newPosition.lat()}, ${newPosition.lng()}`);
+    const newPosition = draggableMarker.getPosition();
+    console.log(`Marker moved to: ${newPosition.lat()}, ${newPosition.lng()}`);
   });
 
   // Add an info window to display the marker's position
@@ -106,6 +110,72 @@ async function initMap() {
       handleLocationError(false, current_location_window, map.getCenter());
     }
   });
+
+  // Watch the user's position and update the map
+  if (navigator.geolocation) {
+    navigator.geolocation.watchPosition(
+      (position) => {
+        const pos = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude,
+        };
+
+        console.log("User position:", pos);
+
+        if(
+          pos.lat < osuBounds.south ||
+          pos.lat > osuBounds.north ||
+          pos.lng < osuBounds.west ||
+          pos.lng > osuBounds.east
+        ){
+          console.log("Location is outside OSU campus. Stay within the boundary.");
+          return;
+        }
+
+        // Create a new marker for the trail
+        const trailMarker = new google.maps.Marker({
+          position: pos,
+          map: map,
+          title: "Trail Marker",
+          icon: {
+            url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png"
+          }
+        });
+        trailMarkers.push(trailMarker);
+
+        if (!userLocationMarker) {
+          console.log("Creating user location marker");
+          userLocationMarker = new google.maps.Marker({
+            position: pos,
+            map: map,
+            title: "Your Location",
+            icon: {
+              url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+            }
+          });
+        } else {
+          console.log("Updating user location marker position");
+          userLocationMarker.setPosition(pos);
+        }
+
+        current_location_window.setPosition(pos);
+        current_location_window.setContent("Current Location: " + pos.lat + ", " + pos.lng);
+        current_location_window.open(map);
+        openlocationwindow = current_location_window;
+        map.setCenter(pos);
+      },
+      (error) => {
+        console.error("Error watching position:", error);
+      },
+      {
+        enableHighAccuracy: true,
+        maximumAge: 0,
+        timeout: 500,
+      }
+    );
+  } else {
+    console.error("Browser doesn't support Geolocation");
+  }
 }
 
 // Error handling for geolocation
