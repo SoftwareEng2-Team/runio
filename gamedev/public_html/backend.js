@@ -15,7 +15,7 @@ async function fetchLeaderboard() {
             entry.textContent = `${index + 1}. ${player.username} - ${player.total_distance_km} km`;
             leaderboardDiv.appendChild(entry);
         });
-
+``
     } catch (error) {
         console.error("Error fetching leaderboard:", error);
     }
