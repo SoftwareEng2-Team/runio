@@ -5,6 +5,7 @@ let draggableMarker;
 // Info window for current location
 let openlocationwindow = null; 
 
+document.addEventListener("DOMContentLoaded", () => {
 async function initMap() {
   // Bounding Box for the OSU Campus
   const osuBounds = {
@@ -118,3 +119,4 @@ function handleLocationError(browserHasGeolocation, current_location_window, pos
   );
   current_location_window.open(map);
 }
+});
