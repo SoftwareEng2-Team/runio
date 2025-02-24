@@ -6,6 +6,7 @@ Format Of The Repo:
 - /gamedev: where the source code for our game is stored.
 - /living-doc-versions: older versions of our living document for this project are stored here.
 - /reports: our weekly report will developing this game is stored here.
+- /versions: includes different release versions of our game. 
 - Other files: other files, such as our current living document and README file, are stored in the main repository.
 
 Trello Board: https://trello.com/b/OsvSTA7E/pt1-run-for-your-life
