@@ -21,7 +21,7 @@ async function initMap() {
     west: -123.28965
   };
 
-  // This will initilize with the boundary
+  // Initialize the map with the boundary
   map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 44.5646, lng: -123.2620 },
     zoom: 16,
@@ -45,7 +45,7 @@ async function initMap() {
   // Event listener for when the marker is dragged
   draggableMarker.addListener("dragstart", () => {
     if(openlocationwindow){
-      openlocationwindow.close()
+      openlocationwindow.close();
     }
     console.log("Marker is being dragged");
   });
@@ -60,7 +60,7 @@ async function initMap() {
   const marker_location_window = new google.maps.InfoWindow();
   draggableMarker.addListener("click", () => {
     if(openlocationwindow){
-      openlocationwindow.close()
+      openlocationwindow.close();
     }
     marker_location_window.setContent(`Marker at: ${draggableMarker.getPosition().lat()}, ${draggableMarker.getPosition().lng()}`);
     marker_location_window.open(map, draggableMarker);
@@ -68,50 +68,6 @@ async function initMap() {
   });
   
   const current_location_window = new google.maps.InfoWindow();
-
-  const locationButton = document.createElement("button");
-  console.log("button");
-  locationButton.textContent = "Pan to Current Location";
-  locationButton.classList.add("custom-map-control-button");
-  map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
-  locationButton.addEventListener("click", () => {
-    if(openlocationwindow){
-      openlocationwindow.close()
-    }
-    // HTML5 geolocation.
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const pos = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude,
-          };
-
-          if(
-            pos.lat < osuBounds.south ||
-            pos.lat > osuBounds.north ||
-            pos.lng < osuBounds.west ||
-            pos.lng > osuBounds.east
-          ){
-            console.log("Location is outside OSU campus. Stay within the boundary.");
-            return;
-          }
-
-          current_location_window.setPosition(pos);
-          current_location_window.setContent("Location found.");
-          current_location_window.open(map);
-          openlocationwindow = current_location_window;
-          map.setCenter(pos);
-        },
-        () => {
-          handleLocationError(true, current_location_window, map.getCenter());
-        },
-      );
-    } else {
-      // Browser doesn't support Geolocation
-      handleLocationError(false, current_location_window, map.getCenter());
-    }
-  });
 
   // Function to update the user's location
   function updateLocation() {
@@ -139,7 +95,7 @@ async function initMap() {
           if (previousPosition) {
             const latDiff = Math.abs(pos.lat - previousPosition.lat);
             const lngDiff = Math.abs(pos.lng - previousPosition.lng);
-            if (latDiff < 0.05 && lngDiff < 0.05) {
+            if (latDiff < 0.5 && lngDiff < 0.5) {
               console.log("Position change is too small, not updating.");
               return;
             }
@@ -194,7 +150,7 @@ async function initMap() {
     }
   }
 
-  // Update the user's location every 5 seconds
+  // Update the user's location every 5-10 seconds
   setInterval(updateLocation, 5000);
 }
 
