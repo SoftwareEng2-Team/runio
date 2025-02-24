@@ -106,6 +106,44 @@ async function initMap() {
       handleLocationError(false, current_location_window, map.getCenter());
     }
   });
+
+  // Watch the user's position and update the map
+  if (navigator.geolocation) {
+    navigator.geolocation.watchPosition(
+      (position) => {
+        const pos = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude,
+        };
+
+        if(
+          pos.lat < osuBounds.south ||
+          pos.lat > osuBounds.north ||
+          pos.lng < osuBounds.west ||
+          pos.lng > osuBounds.east
+        ){
+          console.log("Location is outside OSU campus. Stay within the boundary.");
+          return;
+        }
+
+        current_location_window.setPosition(pos);
+        current_location_window.setContent("Location updated.");
+        current_location_window.open(map);
+        openlocationwindow = current_location_window;
+        map.setCenter(pos);
+      },
+      (error) => {
+        console.error("Error watching position:", error);
+      },
+      {
+        enableHighAccuracy: true,
+        maximumAge: 0,
+        timeout: 5000,
+      }
+    );
+  } else {
+    console.error("Browser doesn't support Geolocation");
+  }
 }
 
 // Error handling for geolocation
