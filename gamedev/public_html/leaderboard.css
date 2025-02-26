@@ -4,9 +4,12 @@ body {
   background-color: rgb(205, 204, 204);
   text-align: center;
   width: 100%;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-  overflow-y: auto; /* Allow vertical scrolling */
-  height: auto; /* Allow body height to grow based on content */
+  overflow-x: hidden;
+  /* Prevent horizontal scrolling */
+  overflow-y: auto;
+  /* Allow vertical scrolling */
+  height: auto;
+  /* Allow body height to grow based on content */
 }
 
 h1 {
@@ -26,11 +29,13 @@ h1 {
   align-items: center;
   gap: 5px;
   margin-top: 20px;
-  padding-bottom: 50px; /* Prevent content from being hidden behind footer */
+  padding-bottom: 50px;
+  /* Prevent content from being hidden behind footer */
 }
 
 .card {
-  width: 90%; /* Adjust to fill most of the screen */
+  width: 90%;
+  /* Adjust to fill most of the screen */
   max-width: 600px;
   background: white;
   color: black;
@@ -38,24 +43,32 @@ h1 {
   border-radius: 10px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
   text-align: left;
-  display: flex; /* Use flexbox to position elements horizontally */
-  flex-direction: column; /* Stack items vertically */
-  gap: 10px; /* Add space between name, score, and rank */
+  display: flex;
+  /* Use flexbox to position elements horizontally */
+  flex-direction: column;
+  /* Stack items vertically */
+  gap: 10px;
+  /* Add space between name, score, and rank */
   font-size: 20px;
 }
 
 .card .top-row {
-  display: flex; /* Position name and score on the same row */
-  justify-content: space-between; /* Space them out */
-  align-items: center; /* Center the text vertically */
+  display: flex;
+  /* Position name and score on the same row */
+  justify-content: space-between;
+  /* Space them out */
+  align-items: center;
+  /* Center the text vertically */
 }
 
 .card .top-row p {
-  margin: 0; /* Remove margin to avoid extra spacing */
+  margin: 0;
+  /* Remove margin to avoid extra spacing */
 }
 
 .card .rank {
-  margin-top: 10px; /* Add space between score and rank */
+  margin-top: 10px;
+  /* Add space between score and rank */
 }
 
 .rank {
@@ -91,19 +104,22 @@ footer {
 
 /* Style for the first place */
 .first-place-div {
-  background-color: rgb(245, 226, 120); /* Yellow for first place */
+  background-color: rgb(245, 226, 120);
+  /* Yellow for first place */
   color: black;
 }
 
 /* Style for the second place */
 .second-place-div {
-  background-color: silver; /* Silver for second place */
+  background-color: silver;
+  /* Silver for second place */
   color: black;
 }
 
 /* Style for the third place */
 .third-place-div {
-  background-color: #d5a16d; /* Bronze for third place */
+  background-color: #d5a16d;
+  /* Bronze for third place */
   color: black;
 }
 
@@ -116,5 +132,5 @@ footer {
 }
 
 #rank_3 {
-  color: #9d5d1c; 
+  color: #9d5d1c;
 }

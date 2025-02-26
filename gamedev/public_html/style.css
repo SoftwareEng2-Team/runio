@@ -3,10 +3,12 @@
     width: 100%;
     background-color: transparent;
 }
+
 html, body {
   height: 100%;
   margin: 0;
 }
+
 footer {
   position: fixed;
   bottom: 0;
@@ -17,12 +19,14 @@ footer {
   justify-content: center;
   align-items: center;
 }
+
 .nav {
   background: none;
   border: none;
   background-size: cover;
   background-position: center;
 }
+
 #navbuttons {
   display: flex;
   justify-content: space-evenly;

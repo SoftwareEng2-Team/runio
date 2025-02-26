@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
-        const API_URL = 'https://run-for-your-life-api.onrender.com/';
+        const API_URL = 'https://run-for-your-life-api.onrender.com';
 
         try {
             const response = await fetch(`${API_URL}/api/users/login`, {
@@ -18,12 +18,12 @@ document.addEventListener("DOMContentLoaded", function () {
             const data = await response.json();
     
             if (response.ok) {
-                alert("successful!");
+                console.log("successful!");
                 localStorage.setItem('user_id', data.user_id);
                 window.location.href = "map.html";
             } else {
                 errorMessage.style.display = "block";
-                alert("failed!");
+                console.log("failed!");
             }
         } catch (error) {
             console.error("Error:", error);
