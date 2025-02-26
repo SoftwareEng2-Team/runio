@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 localStorage.setItem('user_id', data.user_id);
                 window.location.href = "https://run-for-your-life.onrender.com/map.html";
             } else {
-                errorMessage.style.display = "block";
+                errorMessage.style.visibility = "visible";
                 console.log("failed!");
             }
         } catch (error) {
