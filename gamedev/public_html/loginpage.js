@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector("form").addEventListener("submit", async function (event) {
         const errorMessage = document.getElementById('login-error-message');
         errorMessage.style.visibility = "hidden";
+        event.preventDefault();
 
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
