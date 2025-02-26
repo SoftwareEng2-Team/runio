@@ -244,7 +244,7 @@ Week 5: Start development of the app.
 Week 6: Mid-term presentation. Share what we have so far, see results, and address any concerns.
 - Continue working towards implementing the user interface. Focus on the leaderboard and profile pages (user authentication) this week.
 - Choose a database service and start integrating it into our application. It will need to store player credentials, as well as their location data to show other users. 
-- Figure out how to host our application on the Oregon State public.html server. 
+- Figure out how to host our application with both front end and back end services covered.
 
 Week 7: Full game logic and user interface navigation.
 - Work to finish implementing the core features of our game. 
@@ -291,10 +291,10 @@ The two major enities for our Software Architercture would be; the players and t
         player has captured. 
 Major Software Components and Their Functionality:
 1. Frontend
-    - The front end will be developed using HTML, CSS, and JavaScript and hosted on the school's public_html directory.
+    - The front end will be developed using HTML, CSS, and JavaScript and hosted using render.com.
     - It will be responsible for rendering the user interface, handling user interactions, and sending/receiving data from the backend.
 2. Backend
-    - The backend will be implemented using Node.js, running on the school's public server (if allowed).
+    - The backend will be implemented using render.com. This allows for easy connection to our database and is free.
     - It will handle game logic, player authentication, and interactions with the database.
     - The backend will also serve API endpoints for data retrieval and updates.
 3. Database
@@ -342,13 +342,13 @@ Main Entities:
     - week_start: Start date of leaderboard cycle
     - total_distance: Distance recorded for the leaderboard
 - Assumptions Underpinning the Architecture
-    - The school's public server allows running Node.js and MySQL.
+    - Render.com will allow us to host both our front end and back end successfully. 
     - HTTP requests will be sufficient for most operations, but WebSockets may be needed for real-time features.
     - If real-time performance is required, the system can switch to WebSockets for efficiency.
 
 Alternative Architectural Decisions:
 Frontend Hosting
-- Chosen Approach: Host the front end on the school's public_html server.
+- Chosen Approach: Host the front end using render.com.
     - Pros: Free hosting, easy access, and no extra infrastructure needed.
     - Cons: Potential restrictions on what can be deployed.
 - Alternative: Use a third-party hosting service like Render.com or AWS EC2.
