@@ -10,11 +10,14 @@
     <div class="login-container">
         <h1>Create Account</h1>
         <form action="#" method="POST">
-            <label for="username_ca">Username:</label>
-            <input type="text" id="username_ca" name="username_ca" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
             <br>
-            <label for="password_ca">Password:</label>
-            <input type="password" id="password_ca" name="password_ca" required>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
             <br>
             <label for="confirm_password">Confirm Password:</label>
             <input type="password" id="confirm_password" name="confirm_password" required>
@@ -24,8 +27,8 @@
         <p></p>
         <a href="loginpage.html">Already have an account? Login!</a>
         <div class="error-message" id="error-message">
-            <p>Passwords do not match. Please enter again. </p>
-            <p>An account with that username already exists. </p>
+            <p id="password_error">Passwords do not match. Please enter again. </p>
+            <p id="account_error">An account with that username already exists. </p>
         </div>
     </div>
 </body>
