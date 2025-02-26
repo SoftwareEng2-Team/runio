@@ -16,7 +16,7 @@ app.use(cors({
         "https://run-for-your-life-frontend.onrender.com"
     ],
     methods: "GET,POST,PUT,DELETE",
-    allowedHeaders: "Content-Type"
+    allowedHeaders: ["Content-Type", "Authorization"]
 }));
 
 app.use(express.json());
