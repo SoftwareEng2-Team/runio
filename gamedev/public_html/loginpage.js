@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (response.ok) {
                 console.log("redirecting...");
                 localStorage.setItem('user_id', data.user_id);
-                window.location.replace = "map.html";
+                window.location.href = "https://run-for-your-life.onrender.com/map.html";
             } else {
                 errorMessage.style.display = "block";
                 console.log("failed!");
