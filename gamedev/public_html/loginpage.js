@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const errorMessage = document.getElementById('login-error-message');
+    errorMessage.style.visibility = "hidden";
     document.querySelector("form").addEventListener("submit", async function (event) {
-        const errorMessage = document.getElementById('login-error-message');
-        errorMessage.style.visibility = "hidden";
         event.preventDefault();
 
         const email = document.getElementById("email").value;
