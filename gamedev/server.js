@@ -26,11 +26,11 @@ app.use(express.urlencoded({ extended: true }));
 
 // Middleware so CORS headers are sent for all requests
 app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "*");  // ✅ Allows all origins (for testing)
+    res.header("Access-Control-Allow-Origin", "*");  
     res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
     res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
     if (req.method === "OPTIONS") {
-        return res.status(200).end();  // ✅ Responds successfully to preflight requests
+        return res.status(200).end();  
     }
     next();
 });
