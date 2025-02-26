@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     document.querySelector("form").addEventListener("submit", async function (event) {
         const errorMessage = document.getElementById('login-error-message');
-        errorMessage.style.display = "none";
+        errorMessage.style.visibility = "hidden";
         event.preventDefault();
 
         const email = document.getElementById("email").value;
@@ -18,9 +18,9 @@ document.addEventListener("DOMContentLoaded", function () {
             const data = await response.json();
     
             if (response.ok) {
-                console.log("successful!");
+                console.log("redirecting...");
                 localStorage.setItem('user_id', data.user_id);
-                window.location.href = "map.html";
+                window.location.replace = "map.html";
             } else {
                 errorMessage.style.display = "block";
                 console.log("failed!");
