@@ -10,13 +10,10 @@ let userLocationMarker;
 let trailMarkers = [];
 // Previous position
 let previousPosition = null;
-<<<<<<< HEAD
 // User's current position
 let userPosition = null;
 // check claimed territory status
 let territoryClaimed = null;
-=======
->>>>>>> origin
 
 async function initMap() {
   // Bounding Box for the OSU Campus
@@ -87,11 +84,8 @@ async function initMap() {
             lng: position.coords.longitude,
           };
 
-<<<<<<< HEAD
           
 
-=======
->>>>>>> origin
           // For debugging purposes, update the console periodically with the user's position
           console.log("User position:", pos);
 
@@ -106,24 +100,13 @@ async function initMap() {
           if (previousPosition) {
             const latDiff = Math.abs(pos.lat - previousPosition.lat);
             const lngDiff = Math.abs(pos.lng - previousPosition.lng);
-<<<<<<< HEAD
             if (latDiff < 0.0001 && lngDiff < 0.0001) {
-=======
-<<<<<<<< HEAD:gamedev/public_html/test.js
-            if (latDiff < 0.05 && lngDiff < 0.05) {
-========
-            if (latDiff < 0.0001 && lngDiff < 0.0001) {
->>>>>>>> origin:gamedev/public_html/geolocation.js
->>>>>>> origin
               console.log("Position change is too small, not updating.");
               return;
             }
           }
 
-<<<<<<< HEAD
           userPosition = pos; // Store the user's position
-=======
->>>>>>> origin
           // Update the previous position
           previousPosition = pos;
 
@@ -181,7 +164,6 @@ async function initMap() {
   setInterval(updateLocation, 5000);
 }
 
-<<<<<<< HEAD
 function claimTerritory(){
   if(userPosition){
     if(territoryClaimed){
@@ -202,8 +184,6 @@ function claimTerritory(){
   }
 }
 
-=======
->>>>>>> origin
 // Error handling for geolocation
 function handleLocationError(browserHasGeolocation, current_location_window, pos) {
   current_location_window.setPosition(pos);
