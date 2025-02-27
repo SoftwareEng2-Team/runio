@@ -1,27 +1,57 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Mock user data (replace with backend fetch calls later)
-    const userData = {
-        username: "John11",
-        name: "John Doe",
-        rank: "#3",
-        distanceRan: "25 miles",
-        distanceClaimed: "696m sqft",
-        knockouts: "8",
-        achievements: [true, false, true] // True = completed, False = not completed
-    };
-
-    // Update profile info
-    document.getElementById("username").innerText = userData.username;
-    document.getElementById("name").innerText = userData.name;
-    document.getElementById("rank").innerText = userData.rank;
-    document.getElementById("distanceRan").innerText = userData.distanceRan;
-    document.getElementById("distanceClaimed").innerText = userData.distanceClaimed;
-    document.getElementById("knockouts").innerText = userData.knockouts;
-
-    // Update achievements
-    const achievementIcons = document.querySelectorAll(".status-icon");
-    userData.achievements.forEach((status, index) => {
-        achievementIcons[index].src = status ? "images/check-icon.png" : "images/x-icon.png";
-        achievementIcons[index].alt = status ? "Completed" : "Not Completed";
-    });
-});
+    // Fetch the profile data from your API endpoint.
+    fetch("/api/profile")
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok.");
+        }
+        return response.json();
+      })
+      .then(data => {
+        // If no data is returned, clear all fields.
+        if (!data || Object.keys(data).length === 0) {
+          document.getElementById("username").textContent = "";
+          document.getElementById("name").textContent = "";
+          document.getElementById("rank").textContent = "";
+          document.getElementById("totalDistance").textContent = "";
+          document.getElementById("totalClaimed").textContent = "";
+          document.getElementById("knockouts").textContent = "";
+          document.getElementById("achievements").innerHTML = "";
+          return;
+        }
+        
+        // Update the profile info section.
+        document.getElementById("username").textContent = data.username || "";
+        document.getElementById("name").textContent = data.name || "";
+        document.getElementById("rank").textContent = data.rank ? "#" + data.rank : "";
+        
+        // Update the stats section.
+        document.getElementById("totalDistance").textContent = data.totalDistance ? data.totalDistance + " miles" : "";
+        document.getElementById("totalClaimed").textContent = data.totalClaimed ? data.totalClaimed + " sqft" : "";
+        document.getElementById("knockouts").textContent = data.knockouts || "";
+        
+        // Update the achievements section.
+        const achievementsContainer = document.getElementById("achievements");
+        if (data.achievements && Array.isArray(data.achievements)) {
+          achievementsContainer.innerHTML = data.achievements.map(achievement => `
+            <div class="achievement">
+              <p>${achievement.text}</p>
+              <img src="images/${achievement.completed ? "check-icon.png" : "x-icon.png"}" class="status-icon" alt="${achievement.completed ? "Completed" : "Not Completed"}">
+            </div>
+          `).join("");
+        } else {
+          achievementsContainer.innerHTML = "";
+        }
+      })
+      .catch(error => {
+        console.error("Error fetching profile data:", error);
+        // On error, ensure all fields remain blank.
+        document.getElementById("username").textContent = "";
+        document.getElementById("name").textContent = "";
+        document.getElementById("rank").textContent = "";
+        document.getElementById("totalDistance").textContent = "";
+        document.getElementById("totalClaimed").textContent = "";
+        document.getElementById("knockouts").textContent = "";
+        document.getElementById("achievements").innerHTML = "";
+      });
+  });  
