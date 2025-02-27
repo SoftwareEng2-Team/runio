@@ -194,29 +194,28 @@
 ### Keona Abad
 
 #### 2.1 Exact Copy of the Third Section from Last Week
-- Setup up endpoints so we can connect our database to our backend (1 hour)
+- Start the manipulation of the database from the backend (4 hours)
 - Meet with the team on Wednesday and Thursday (1 hour)
-- Start working on the backend to manipulate the data we have (2 hours)
-- We need to do research on the best and most optimal ways to make sure our data is being used correctly (1 hour)
+- Begin to work on the front-end in the sense it needs to make sure it is properly displaying all the data (2 hours)
 
 #### 2.2 Progress and Issues
 
 **What we've finished:** 
-- Completed a frontend for our program. Of course we will have to adjust small dynamic changes.
-- Fully implementing our database to be functional
-- Creating endpoints to our backend system to connect with our database
+- Successfully have the frontend, backend, and database hosted through Render.com.
+- Routing through each end is hooked up
+- Now able to register as a user and log in as a user as a frontend and the data gets stored properly
 
 **What we learned:**  
-I have learned that in postgreSQL's JSONB data type lets you store a query JSON with full indexing meaning that it's almost like a hybrid between a relational and NOSQL databases.
+We have learned that because we are hosting through render, our code requires a lot of bypass strings. We've also learned how to use bcrypt to hash passwords and unhash them when looking at equality.
 
 **Where we had trouble/stuck:**
-I struggled with the strict type enforcement and it kept throwing errors at me because it wanted me to manually cast values more often than I expected.
+There was some confusion on why, when a user successfully logs in, it kept on routing us to an incorrect window even though our href was setup properly. It wasn't the fact that href wasn't working properly but it was the fact that async defer was not properly loading the scrip,t which was also the reason our map wasn't getting updated at one point. 
 
 #### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
 
-- Start the manipulation of the database from the backend (4 hours)
+- Hopefully finish our polygon for tracking our users route (1-5 hours)
 - Meet with the team on Wednesday and Thursday (1 hour)
-- Begin to work on the front-end in the sense it needs to make sure it is properly displaying all the data (2 hours)
+- I need to be helping on the backend side to be able to have data append properly to the leaderboard the way we need it to. Right now it displays all information if I call the leaderboard and we don't want that.(2 hours)
 
 ### Connor Sun
 
