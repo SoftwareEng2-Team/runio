@@ -2,9 +2,9 @@
 document.addEventListener("DOMContentLoaded", function () {
     // When page loads, hide all errors
     const passwordError = document.getElementById('password-error');
-    passwordError.style.visible = "hidden";
+    passwordError.style.visibility = "hidden";
     const accountError = document.getElementById('account-error');
-    accountError.style.visible = "hidden";
+    accountError.style.visibility = "hidden";
     // Wait until the user submits the form
     document.querySelector("form").addEventListener("submit", async function (event) {
         event.preventDefault();
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     window.location.href = "https://run-for-your-life.onrender.com/";
                 // If the register account did not work, display error message to the user
                 } else {
-                    accountError.style.display = "visible";
+                    accountError.style.visibility = "visible";
                     console.log("Error creating user");
                 }
             // Display any other errors to the console
