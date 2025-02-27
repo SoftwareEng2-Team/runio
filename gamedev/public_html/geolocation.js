@@ -164,7 +164,7 @@ async function initMap() {
 
 function claimTerritory() {
   if (userPosition) {
-    const squareSize = 0.0005; // Size of the square in degrees (approx. 50 meters)
+    const squareSize = 0.0002; // Size of the square in degrees (approx. 50 meters)
     const squareCoords = [
       { lat: userPosition.lat + squareSize, lng: userPosition.lng - squareSize },
       { lat: userPosition.lat + squareSize, lng: userPosition.lng + squareSize },
