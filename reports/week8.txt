@@ -15,13 +15,26 @@
 ### 1.2 Progress and Issues
 
 **What we've finished:** 
+- Front end and back end hosting now complete with database set update
+- All pages completed, a lot of backend Setup
+- User can now login or create an account
+- The geolocation API is set up to now track the users position, and if it changes enough, log the changes
+    - This will be important to draw polygons
 
 **What we learned:**  
+- How front end and back end hosting works
+- How to set up the database to read and write to
+- How to track and store the users location, which will be used to draw ploygons 
 
 **Where we had trouble/stuck:**  
+- Scheduling difficulties 
+- Tasks taking longer than anticipated 
 
 ### 1.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
-
+- Allocate tasks and side-tasks (ongoing weekly, so 1 week every week)
+- Draw polygon with the users location (.5 weeks)
+- Have the project fully hooked up to the database (.5 weeks)
+- Implement basic multiplayer (1.5 weeks)
 
 ## 2. Contributions of Individual Team Members
 
@@ -97,12 +110,28 @@
 #### 2.2 Progress and Issues
 
 **What we've finished:** 
+- Geolocation API now leaves pins every so often of the user's path, will use to draw polygon
+- User can now sign in with their credientals via the login page
+- User can now create an account via the create account page
+- Rearranged GitHub repo to be better organized, completed documentation
+- Created a testing suite for our testing software
+- Prepared for launch, set goals, and scheduled working time
+- Found render.com to be a good server for hosting frontend/backend
 
 **What we learned:**
+- How backend and frontend hosting works 
+- How to connect our database to our backend
+- How to call the database in the frontend code
+- How to track the user's location and create markesr where they go
 
 **Where we had trouble/stuck:**
+- Lack of availability from teammates
+- Learning curve setting up and understanding back end database code 
 
 #### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
+- Have the profile section all completed with user information
+- Have a polygon drawn marking the users captured area
+- Implement basic multiplayer, will work more on after inital launch 
 
 ### Shi-Ru Huang
 
