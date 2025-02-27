@@ -70,34 +70,41 @@
 ### Calvin Chen
 
 #### 2.1 Exact Copy of the Third Section from Last Week
-- Address server permission restrictions for better frontend-to-database communication (3 hrs)
-- Finalize profile page UI integration with backend data and ensure smooth stat retrieval and display (5 hrs)
-- Develop user authentication system to allow account creation and secure login (4 hrs)
-
-#### 2.2 Progress and Issues
-
-**What we've finished:**  
-- Began researching a potential switch to AWS for security and database management.
-- Wrote user documentation, covering a high-level description of the game, installation steps and how to run the software, usage instructions for new users, and how to report bugs and known limitations.
-- Completed developer documentation, covering how to obtain the source code and directory structure, and how to build, test, and release the software.
-- Completed the leaderboard frontend, displaying player rankings.
-
-**What we learned:**  
-- Database permissions on OSU's public server are limited, making integration more challenging than expected.
-- AWS offers better security but no one in our group has experience with it and it requires a complicated setup.
-- Detailed user documentation helps improve usability and ensures easy onboarding for testers.
-
-**Where we had trouble/stuck:**  
-- Database setup remains incomplete, as we are determining whether to continue with OSU's server or migrate to AWS.
-- Login page has not been created yet, due to ongoing schedule challenges.
-
-#### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
 - Implement and test user authentication system to allow account creation, secure login, and session management (7 hrs)
 - Improve frontend-to-database communication by resolving server permission issues or migrating to AWS (5 hrs)
 - Complete profile page integration with user stats and display recent run history (5 hrs)
 - Continue testing and refining GPS tracking logic to improve accuracy in movement detection (4 hrs)
 - Optimize leaderboard update process to handle multiple players updating scores simultaneously (3 hrs)
 - Research and integrate anti-cheating measures such as speed thresholds and activity validation (5 hrs)
+
+#### 2.2 Progress and Issues
+
+**What we've finished:**  
+- Successfully hosted both the frontend and backend on Render.com.
+- Fully set up and connected the database with the backend.
+- User authentication system is complete—users can now log in and create accounts.
+- The leaderboard is now fully functional, dynamically updating rankings.
+- The profile page is complete, ready to display user information, ranking, and achievements.
+- The geolocation API tracks movement and logs the player's path at specific intervals.
+- Resolved previous database permission issues encountered on OSU’s server.
+
+**What we learned:**  
+- Hosting the game on Render.com is a more viable option than AWS, as it is easier to manage
+- User experience is significantly improved by refining the profile and leaderboard page layout 
+- Debugging geolocation tracking requires frequent real-world testing to validate accuracy and consistency
+- How to host our frontend and backend along with connecting to our database on Render.com
+
+**Where we had trouble/stuck:**  
+- Google Maps API issues caused intermittent failures when navigating to the map page.
+- Some UI inconsistencies needed fixes across different devices.
+- Scheduling conflicts led to slower progress in some areas.
+
+#### 2.3 Plans and Goals for the Following Week (list as bullet points along with estimated time to accomplish)
+- Allocate tasks and side-tasks (ongoing weekly, so 1 week every week)
+- Finalize profile page database integration and test dynamic user stats (2 days)
+- Implement polygon drawing to visualize captured areas using GPS coordinates (1 week)
+- Improve map page stability and fix any remaining Google Maps API issues (1 week)
+- Implement basic multiplayer interactions such as tracking nearby users (1 week)
 
 ### Brian Munger
 
