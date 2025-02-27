@@ -1,4 +1,3 @@
-// Map variable
 let map;
 // The player's draggable marker
 let draggableMarker;
@@ -7,13 +6,17 @@ let openlocationwindow = null;
 // Marker for the user's current location
 let userLocationMarker;
 // Array to store trail markers
-// let trailMarkers = [];
+let trailMarkers = [];
 // Previous position
 let previousPosition = null;
 // User's current position
 let userPosition = null;
 // Variable to store the claimed territory
 let claimedTerritory = null;
+// Variable to keep track of the score (expansion width)
+let score = 0;
+// Variable to track the user's path outside the territory
+let outsidePath = [];
 
 async function initMap() {
   // Bounding Box for the OSU Campus
@@ -132,6 +135,22 @@ async function initMap() {
           // Claim territory if not already claimed
           if (!claimedTerritory) {
             claimTerritory();
+          } else {
+            // Check if the user is outside the territory
+            if (!google.maps.geometry.poly.containsLocation(new google.maps.LatLng(pos), claimedTerritory)) {
+              console.log("User is outside the territory.");
+              // Track the user's path outside the territory
+              outsidePath.push(pos);
+            } else {
+              // User re-enters the territory
+              if (outsidePath.length > 0) {
+                console.log("User re-entered the territory.");
+                // Expand the territory to include the path
+                expandTerritory();
+                // Clear the outside path
+                outsidePath = [];
+              }
+            }
           }
         },
         (error) => {
@@ -175,6 +194,35 @@ function claimTerritory() {
     console.log("Territory claimed around:", userPosition);
   } else {
     console.error("User position is not available.");
+  }
+}
+
+function expandTerritory() {
+  if (userPosition && outsidePath.length > 0) {
+    // Get the current territory coordinates
+    const currentCoords = claimedTerritory.getPath().getArray();
+    // Add the outside path to the current territory
+    const newCoords = currentCoords.concat(outsidePath);
+
+    // Create a new polygon with the expanded territory
+    claimedTerritory = new google.maps.Polygon({
+      paths: newCoords,
+      strokeColor: "#FF0000",
+      strokeOpacity: 0.8,
+      strokeWeight: 2,
+      fillColor: "#FF0000",
+      fillOpacity: 0.35,
+    });
+
+    claimedTerritory.setMap(map);
+
+    // Calculate the expansion width and update the score
+    const expansionWidth = google.maps.geometry.spherical.computeLength(outsidePath);
+    score += expansionWidth;
+    console.log("Territory expanded around:", userPosition);
+    console.log("Current score:", score);
+  } else {
+    console.error("User position or outside path is not available.");
   }
 }
 
