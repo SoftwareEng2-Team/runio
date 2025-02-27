@@ -10,6 +10,10 @@ let userLocationMarker;
 let trailMarkers = [];
 // Previous position
 let previousPosition = null;
+// User's current position
+let userPosition = null;
+// Variable to store the claimed territory
+let claimedTerritory = null;
 
 async function initMap() {
   // Bounding Box for the OSU Campus
@@ -80,6 +84,8 @@ async function initMap() {
             lng: position.coords.longitude,
           };
 
+          userPosition = pos; // Store the user's current position
+
           // For debugging purposes, update the console periodically with the user's position
           console.log("User position:", pos);
 
@@ -100,29 +106,24 @@ async function initMap() {
             }
           }
 
-          // Update the previous position
           previousPosition = pos;
 
-          // Create a new marker for the trail
           const trailMarker = new google.maps.Marker({
             position: pos,
             map: map,
             title: "Trail Marker",
-            // Set the icon to the green dot icon provided by Google
             icon: {
               url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png"
             }
           });
           trailMarkers.push(trailMarker);
 
-          // If a location marker does not exist, create one
           if (!userLocationMarker) {
             console.log("Creating user location marker");
             userLocationMarker = new google.maps.Marker({
               position: pos,
               map: map,
               title: "Your Location",
-              // Set the icon to the blue dot icon provided by Google
               icon: {
                 url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
               }
@@ -137,6 +138,11 @@ async function initMap() {
           current_location_window.open(map);
           openlocationwindow = current_location_window;
           map.setCenter(pos);
+
+          // Claim territory if not already claimed
+          if (!claimedTerritory) {
+            claimTerritory();
+          }
         },
         (error) => {
           console.error("Error getting position:", error);
@@ -147,7 +153,6 @@ async function initMap() {
           timeout: 5000,
         }
       );
-      // An error with the browser occured - it does not support geolocation
     } else {
       console.error("Browser doesn't support Geolocation");
     }
@@ -155,6 +160,32 @@ async function initMap() {
 
   // Update the user's location every 5-10 seconds
   setInterval(updateLocation, 5000);
+}
+
+function claimTerritory() {
+  if (userPosition) {
+    const squareSize = 0.0005; // Size of the square in degrees (approx. 50 meters)
+    const squareCoords = [
+      { lat: userPosition.lat + squareSize, lng: userPosition.lng - squareSize },
+      { lat: userPosition.lat + squareSize, lng: userPosition.lng + squareSize },
+      { lat: userPosition.lat - squareSize, lng: userPosition.lng + squareSize },
+      { lat: userPosition.lat - squareSize, lng: userPosition.lng - squareSize },
+    ];
+
+    claimedTerritory = new google.maps.Polygon({
+      paths: squareCoords,
+      strokeColor: "#FF0000",
+      strokeOpacity: 0.8,
+      strokeWeight: 2,
+      fillColor: "#FF0000",
+      fillOpacity: 0.35,
+    });
+
+    claimedTerritory.setMap(map);
+    console.log("Territory claimed around:", userPosition);
+  } else {
+    console.error("User position is not available.");
+  }
 }
 
 // Error handling for geolocation
