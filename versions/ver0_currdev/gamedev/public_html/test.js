@@ -4,12 +4,6 @@ let map;
 let draggableMarker; 
 // Info window for current location
 let openlocationwindow = null; 
-// Marker for the user's current location
-let userLocationMarker;
-// Array to store trail markers
-let trailMarkers = [];
-// Previous position
-let previousPosition = null;
 
 async function initMap() {
   // Bounding Box for the OSU Campus
@@ -21,7 +15,7 @@ async function initMap() {
     west: -123.28965
   };
 
-  // Initialize the map with the boundary
+  // This will initilize with the boundary
   map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 44.5646, lng: -123.2620 },
     zoom: 16,
@@ -45,22 +39,22 @@ async function initMap() {
   // Event listener for when the marker is dragged
   draggableMarker.addListener("dragstart", () => {
     if(openlocationwindow){
-      openlocationwindow.close();
+      openlocationwindow.close()
     }
-    console.log("Marker is being dragged");
+      console.log("Marker is being dragged");
   });
   
   // Event listener to log position when marker is moved
   draggableMarker.addListener("dragend", () => {
-    const newPosition = draggableMarker.getPosition();
-    console.log(`Marker moved to: ${newPosition.lat()}, ${newPosition.lng()}`);
+      const newPosition = draggableMarker.getPosition();
+      console.log(`Marker moved to: ${newPosition.lat()}, ${newPosition.lng()}`);
   });
 
   // Add an info window to display the marker's position
   const marker_location_window = new google.maps.InfoWindow();
   draggableMarker.addListener("click", () => {
     if(openlocationwindow){
-      openlocationwindow.close();
+      openlocationwindow.close()
     }
     marker_location_window.setContent(`Marker at: ${draggableMarker.getPosition().lat()}, ${draggableMarker.getPosition().lng()}`);
     marker_location_window.open(map, draggableMarker);
@@ -69,8 +63,16 @@ async function initMap() {
   
   const current_location_window = new google.maps.InfoWindow();
 
-  // Function to update the user's location
-  function updateLocation() {
+  const locationButton = document.createElement("button");
+  console.log("button");
+  locationButton.textContent = "Pan to Current Location";
+  locationButton.classList.add("custom-map-control-button");
+  map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
+  locationButton.addEventListener("click", () => {
+    if(openlocationwindow){
+      openlocationwindow.close()
+    }
+    // HTML5 geolocation.
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
@@ -78,8 +80,6 @@ async function initMap() {
             lat: position.coords.latitude,
             lng: position.coords.longitude,
           };
-
-          console.log("User position:", pos);
 
           if(
             pos.lat < osuBounds.south ||
@@ -91,67 +91,21 @@ async function initMap() {
             return;
           }
 
-          // Check if the position has changed significantly
-          if (previousPosition) {
-            const latDiff = Math.abs(pos.lat - previousPosition.lat);
-            const lngDiff = Math.abs(pos.lng - previousPosition.lng);
-            if (latDiff < 0.05 && lngDiff < 0.05) {
-              console.log("Position change is too small, not updating.");
-              return;
-            }
-          }
-
-          // Update the previous position
-          previousPosition = pos;
-
-          // Create a new marker for the trail
-          const trailMarker = new google.maps.Marker({
-            position: pos,
-            map: map,
-            title: "Trail Marker",
-            icon: {
-              url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png"
-            }
-          });
-          trailMarkers.push(trailMarker);
-
-          if (!userLocationMarker) {
-            console.log("Creating user location marker");
-            userLocationMarker = new google.maps.Marker({
-              position: pos,
-              map: map,
-              title: "Your Location",
-              icon: {
-                url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
-              }
-            });
-          } else {
-            console.log("Updating user location marker position");
-            userLocationMarker.setPosition(pos);
-          }
-
           current_location_window.setPosition(pos);
-          current_location_window.setContent("Current Location");
+          current_location_window.setContent("Location found.");
           current_location_window.open(map);
           openlocationwindow = current_location_window;
           map.setCenter(pos);
         },
-        (error) => {
-          console.error("Error getting position:", error);
+        () => {
+          handleLocationError(true, current_location_window, map.getCenter());
         },
-        {
-          enableHighAccuracy: true,
-          maximumAge: 0,
-          timeout: 5000,
-        }
       );
     } else {
-      console.error("Browser doesn't support Geolocation");
+      // Browser doesn't support Geolocation
+      handleLocationError(false, current_location_window, map.getCenter());
     }
-  }
-
-  // Update the user's location every 5-10 seconds
-  setInterval(updateLocation, 5000);
+  });
 }
 
 // Error handling for geolocation

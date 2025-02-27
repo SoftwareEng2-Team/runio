@@ -244,7 +244,7 @@ Week 5: Start development of the app.
 Week 6: Mid-term presentation. Share what we have so far, see results, and address any concerns.
 - Continue working towards implementing the user interface. Focus on the leaderboard and profile pages (user authentication) this week.
 - Choose a database service and start integrating it into our application. It will need to store player credentials, as well as their location data to show other users. 
-- Figure out how to host our application on the Oregon State public.html server. 
+- Figure out how to host our application with both front end and back end services covered.
 
 Week 7: Full game logic and user interface navigation.
 - Work to finish implementing the core features of our game. 
@@ -282,13 +282,19 @@ Finally, for JavsScript, we will declare variables that have meaningful names th
 
 For all languages, using caution to periodically enter a new line if the current line gets too long will increase readability. Using 'camel case' for naming variables will keep the code consistent and easy to read.
 
-Software Architecture
+Software Architecture:
+Client-Server Architecture Pattern
+The two major enities for our Software Architercture would be; the players and the database server. 
+  - The player's create accounts that link to the server and as they do actions in the game those values are updated and returned to the database.
+  - The database then responses back with the results of the player's action.
+    ex: if a player completes a circuit the area that they captured would be sent to the database, then server would respond by sending other players the visual showing what areas the
+        player has captured. 
 Major Software Components and Their Functionality:
 1. Frontend
-    - The front end will be developed using HTML, CSS, and JavaScript and hosted on the school's public_html directory.
+    - The front end will be developed using HTML, CSS, and JavaScript and hosted using render.com.
     - It will be responsible for rendering the user interface, handling user interactions, and sending/receiving data from the backend.
 2. Backend
-    - The backend will be implemented using Node.js, running on the school's public server (if allowed).
+    - The backend will be implemented using render.com. This allows for easy connection to our database and is free.
     - It will handle game logic, player authentication, and interactions with the database.
     - The backend will also serve API endpoints for data retrieval and updates.
 3. Database
@@ -336,13 +342,13 @@ Main Entities:
     - week_start: Start date of leaderboard cycle
     - total_distance: Distance recorded for the leaderboard
 - Assumptions Underpinning the Architecture
-    - The school's public server allows running Node.js and MySQL.
+    - Render.com will allow us to host both our front end and back end successfully. 
     - HTTP requests will be sufficient for most operations, but WebSockets may be needed for real-time features.
     - If real-time performance is required, the system can switch to WebSockets for efficiency.
 
 Alternative Architectural Decisions:
 Frontend Hosting
-- Chosen Approach: Host the front end on the school's public_html server.
+- Chosen Approach: Host the front end using render.com.
     - Pros: Free hosting, easy access, and no extra infrastructure needed.
     - Cons: Potential restrictions on what can be deployed.
 - Alternative: Use a third-party hosting service like Render.com or AWS EC2.
@@ -384,6 +390,16 @@ Location Tracking API
 - Uses Google Maps API to fetch and process real-time location data.
 - Ensures routes are valid before allowing a claim.
 
+
+Coding guideline
+With our project, we are implementing our design to be accessible through a webpage. This way, it can be utilized on any device without installation. Additionally, all of the group members have experience with website development, making it a smart choice. We are using HTML to structure our web pages, CSS to style them, and JavaScript to handle the functionality of our project. 
+
+- For HTML, we will always declare the document type at the beginning (for example, <!DOCTYPE html>). We will use lowercase element names, as this is the industry standard, and we will open and close all elements on different lines.
+- For CSS, we will find a style for the webpage that we all agree upon. If someone disagrees with a stylistic choice, we will find an alternative that we can agree on. Comments should be used in CSS documents to show what different style blocks affect.
+- Finally, for JavsScript, we will declare variables that have meaningful names that give us insight into what they store. Comments will be used to explain what different code blocks do, making it easy for other group members to understand. Spacing around operators and general indentation of code will be implemented to increase readability.
+
+For all languages, using caution to periodically enter a new line if the current line gets too long will increase readability. Using underscores for naming variables will keep the code consistent and easy to read. 
+
 Git Repo Link: 
 Organization: https://github.com/SoftwareEng2-Team 
 Repository: https://github.com/SoftwareEng2-Team/runio 
@@ -402,3 +418,5 @@ GitHub: Sync as often as possible to keep work up to date; contribute to weekly 
 API key: AIzaSyBYPZyFFX2wm_TAr1haKfFJGMlDbHkF8TQ
 
 Figma link: https://www.figma.com/design/SG1ROIIvWYSpmKm1g8WVZm/Untitled?node-id=0-1&t=ExN0nOSrw4YITC6Y-1
+
+Project link: https://run-for-your-life.onrender.com/
