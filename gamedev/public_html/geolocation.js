@@ -7,7 +7,7 @@ let openlocationwindow = null;
 // Marker for the user's current location
 let userLocationMarker;
 // Array to store trail markers
-let trailMarkers = [];
+// let trailMarkers = [];
 // Previous position
 let previousPosition = null;
 // User's current position
@@ -107,16 +107,6 @@ async function initMap() {
           }
 
           previousPosition = pos;
-
-          const trailMarker = new google.maps.Marker({
-            position: pos,
-            map: map,
-            title: "Trail Marker",
-            icon: {
-              url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png"
-            }
-          });
-          trailMarkers.push(trailMarker);
 
           if (!userLocationMarker) {
             console.log("Creating user location marker");
