@@ -17,6 +17,8 @@ let claimedTerritory = null;
 let score = 0;
 // Variable to track the user's path outside the territory
 let outsidePath = [];
+// Array to store the user's location every second
+let locationHistory = [];
 
 async function initMap() {
   // Bounding Box for the OSU Campus
@@ -99,9 +101,17 @@ async function initMap() {
             return;
           }
 
-          // Check if the position has changed significantly
-
           previousPosition = pos;
+
+          // Store the user's location in the array
+          locationHistory.push(pos);
+
+          // If the array length is 5 (5 seconds), calculate the average location and place a marker
+          if (locationHistory.length === 5) {
+            const avgLocation = calculateAverageLocation(locationHistory);
+            placeAverageLocationMarker(avgLocation);
+            locationHistory = []; // Clear the array
+          }
 
           if (!userLocationMarker) {
             console.log("Creating user location marker");
@@ -147,7 +157,7 @@ async function initMap() {
         {
           enableHighAccuracy: true,
           maximumAge: 0,
-          timeout: 500,
+          timeout: 1000,
         }
       );
     } else {
@@ -155,8 +165,35 @@ async function initMap() {
     }
   }
 
-  // Update the user's location every 5-10 seconds
-  setInterval(updateLocation, 5000);
+  // Update the user's location every second
+  setInterval(updateLocation, 1000);
+}
+
+// Function to calculate the average location
+function calculateAverageLocation(locations) {
+  const sum = locations.reduce((acc, loc) => {
+    acc.lat += loc.lat;
+    acc.lng += loc.lng;
+    return acc;
+  }, { lat: 0, lng: 0 });
+
+  return {
+    lat: sum.lat / locations.length,
+    lng: sum.lng / locations.length,
+  };
+}
+
+// Function to place a marker at the average location
+function placeAverageLocationMarker(location) {
+  const avgLocationMarker = new google.maps.Marker({
+    position: location,
+    map: map,
+    title: "Average Location",
+    icon: {
+      url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+    }
+  });
+  trailMarkers.push(avgLocationMarker);
 }
 
 function claimTerritory() {
@@ -165,8 +202,8 @@ function claimTerritory() {
     const squareCoords = [
       { lat: userPosition.lat + squareSize, lng: userPosition.lng - squareSize },
       { lat: userPosition.lat + squareSize, lng: userPosition.lng + squareSize },
-      { lat: userPosition.lat - squareSize, lng: userPosition.lng + squareSize },
       { lat: userPosition.lat - squareSize, lng: userPosition.lng - squareSize },
+      { lat: userPosition.lat - squareSize, lng: userPosition.lng + squareSize } // Closing the square
     ];
 
     claimedTerritory = new google.maps.Polygon({
