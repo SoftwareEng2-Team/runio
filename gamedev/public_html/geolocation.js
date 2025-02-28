@@ -203,8 +203,7 @@ function claimTerritory() {
       { lat: userPosition.lat + squareSize, lng: userPosition.lng - squareSize },
       { lat: userPosition.lat + squareSize, lng: userPosition.lng + squareSize },
       { lat: userPosition.lat - squareSize, lng: userPosition.lng + squareSize },
-      { lat: userPosition.lat - squareSize, lng: userPosition.lng - squareSize },
-      { lat: userPosition.lat - .01 + squareSize, lng: userPosition.lng - squareSize }// Closing the square
+      { lat: userPosition.lat - squareSize, lng: userPosition.lng - squareSize }// Closing the square
     ];
 
     claimedTerritory = new google.maps.Polygon({
