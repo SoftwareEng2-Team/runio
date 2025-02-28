@@ -14,6 +14,12 @@ document.addEventListener("DOMContentLoaded", async () => {
   const API_URL = 'https://run-for-your-life-api.onrender.com';
   // Retrieve the user_id from local storage
   const user_id = localStorage.getItem('user_id');
+  if (!user_id) {
+    console.error("No user_id found in local storage!");
+    return; // Stop execution if user_id is missing
+  }
+
+
   console.log("user_id: ", user_id);
   try {
     // Send the above entered data to the database function to create a new user
@@ -26,19 +32,20 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const data = await response.json();
     console.log(data);
+
+    // Update the profile info section.
+    document.getElementById("username").textContent = data.username || "";
+    document.getElementById("name").textContent = data.name || "";
+    document.getElementById("rank").textContent = data.rank ? "#" + data.rank : "";
+
+    // Update the stats section.
+    document.getElementById("totalDistance").textContent = data.totalDistance ? data.totalDistance + " miles" : "";
+    document.getElementById("totalClaimed").textContent = data.totalClaimed ? data.totalClaimed + " sqft" : "";
+    //document.getElementById("knockouts").textContent = data.knockouts || "";
+
   } catch (error) {
     console.error("Error:", error);
   }
-
-  // Update the profile info section.
-  document.getElementById("username").textContent = data.username || "";
-  document.getElementById("name").textContent = data.name || "";
-  document.getElementById("rank").textContent = data.rank ? "#" + data.rank : "";
-
-  // Update the stats section.
-  document.getElementById("totalDistance").textContent = data.totalDistance ? data.totalDistance + " miles" : "";
-  document.getElementById("totalClaimed").textContent = data.totalClaimed ? data.totalClaimed + " sqft" : "";
-  //document.getElementById("knockouts").textContent = data.knockouts || "";
 
   // Update the achievements section.
   /*const achievementsContainer = document.getElementById("achievements");
