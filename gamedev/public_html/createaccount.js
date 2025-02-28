@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // If the passwords match, send a POST request to the API
         if (password === confirm_password) {
+            passwordError.style.visibility = "hidden";
             try {
                 // Send the above entered data to the database function to create a new user
                 const response = await fetch(`${API_URL}/api/users/register`, {
@@ -32,7 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 const data = await response.json();
                 if (response.ok) {
                     console.log("User created!");
-                    localStorage.setItem('user_id', data.user_id);
                     window.location.href = "https://run-for-your-life.onrender.com/";
                 // If the register account did not work, display error message to the user
                 } else {
