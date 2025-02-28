@@ -3,7 +3,7 @@ import pool from '../../database/connection_pool.mjs';
 // Fetch User Profile Information
 export const getProfile = async (req, res) => {
     // Get the user_id from the request body
-    const { user_id } = req.query;
+    const { user_id } = req.body;
 
     try {
         // Create the query
