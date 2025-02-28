@@ -39,6 +39,7 @@ app.use((req, res, next) => {
 app.use('/api/users', userRoutes);
 app.use('/api/runs', runRoutes);
 app.use('/api/leaderboard', leaderboardRoutes);
+app.use('/api/profile', profileRoutes);
 
 // Start server
 app.listen(PORT, () => {
