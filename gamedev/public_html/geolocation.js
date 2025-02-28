@@ -201,9 +201,10 @@ function claimTerritory() {
     const squareSize = 0.0002; // Size of the square in degrees (approx. 50 meters)
     const squareCoords = [
       { lat: userPosition.lat + squareSize, lng: userPosition.lng - squareSize },
+      { lat: userPosition.lat + squareSize, lng: userPosition.lng + squareSize },
       { lat: userPosition.lat - squareSize, lng: userPosition.lng + squareSize },
       { lat: userPosition.lat - squareSize, lng: userPosition.lng - squareSize },
-      { lat: userPosition.lat + squareSize, lng: userPosition.lng + squareSize } // Closing the square
+      { lat: userPosition.lat - .01 + squareSize, lng: userPosition.lng - squareSize }// Closing the square
     ];
 
     claimedTerritory = new google.maps.Polygon({
