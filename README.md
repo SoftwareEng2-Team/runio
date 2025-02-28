@@ -4,6 +4,7 @@ Game link: https://run-for-your-life.onrender.com/
 
 Format Of The Repo:
 - /database: includes all information about connecting to our database. The database is used for storing user credentials and location updates.
+- /defunctfiles: files no longer used but kept for reference
 - /documentation: the current directory this file is stored in. Also stores other documentation for the game.
 - /gamedev: where the source code for our game is stored.
 - /living-doc-versions: older versions of our living document for this project are stored here.

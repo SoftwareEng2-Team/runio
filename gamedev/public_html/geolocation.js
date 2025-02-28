@@ -1,4 +1,3 @@
-// Map variable
 let map;
 // The player's draggable marker
 let draggableMarker;
@@ -10,6 +9,14 @@ let userLocationMarker;
 let trailMarkers = [];
 // Previous position
 let previousPosition = null;
+// User's current position
+let userPosition = null;
+// Variable to store the claimed territory
+let claimedTerritory = null;
+// Variable to keep track of the score (expansion width)
+let score = 0;
+// Variable to track the user's path outside the territory
+let outsidePath = [];
 
 async function initMap() {
   // Bounding Box for the OSU Campus
@@ -80,6 +87,8 @@ async function initMap() {
             lng: position.coords.longitude,
           };
 
+          userPosition = pos; // Store the user's current position
+
           // For debugging purposes, update the console periodically with the user's position
           console.log("User position:", pos);
 
@@ -91,38 +100,15 @@ async function initMap() {
           }
 
           // Check if the position has changed significantly
-          if (previousPosition) {
-            const latDiff = Math.abs(pos.lat - previousPosition.lat);
-            const lngDiff = Math.abs(pos.lng - previousPosition.lng);
-            if (latDiff < 0.0001 && lngDiff < 0.0001) {
-              console.log("Position change is too small, not updating.");
-              return;
-            }
-          }
 
-          // Update the previous position
           previousPosition = pos;
 
-          // Create a new marker for the trail
-          const trailMarker = new google.maps.Marker({
-            position: pos,
-            map: map,
-            title: "Trail Marker",
-            // Set the icon to the green dot icon provided by Google
-            icon: {
-              url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png"
-            }
-          });
-          trailMarkers.push(trailMarker);
-
-          // If a location marker does not exist, create one
           if (!userLocationMarker) {
             console.log("Creating user location marker");
             userLocationMarker = new google.maps.Marker({
               position: pos,
               map: map,
               title: "Your Location",
-              // Set the icon to the blue dot icon provided by Google
               icon: {
                 url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
               }
@@ -132,11 +118,28 @@ async function initMap() {
             userLocationMarker.setPosition(pos);
           }
 
-          current_location_window.setPosition(pos);
-          current_location_window.setContent("Current Location");
-          current_location_window.open(map);
-          openlocationwindow = current_location_window;
           map.setCenter(pos);
+
+          // Claim territory if not already claimed
+          if (!claimedTerritory) {
+            claimTerritory();
+          } else {
+            // Check if the user is outside the territory
+            if (!google.maps.geometry.poly.containsLocation(new google.maps.LatLng(pos), claimedTerritory)) {
+              console.log("User is outside the territory.");
+              // Track the user's path outside the territory
+              outsidePath.push(pos);
+            } else {
+              // User re-enters the territory
+              if (outsidePath.length > 0) {
+                console.log("User re-entered the territory.");
+                // Expand the territory to include the path
+                expandTerritory();
+                // Clear the outside path
+                outsidePath = [];
+              }
+            }
+          }
         },
         (error) => {
           console.error("Error getting position:", error);
@@ -144,10 +147,9 @@ async function initMap() {
         {
           enableHighAccuracy: true,
           maximumAge: 0,
-          timeout: 5000,
+          timeout: 500,
         }
       );
-      // An error with the browser occured - it does not support geolocation
     } else {
       console.error("Browser doesn't support Geolocation");
     }
@@ -155,6 +157,61 @@ async function initMap() {
 
   // Update the user's location every 5-10 seconds
   setInterval(updateLocation, 5000);
+}
+
+function claimTerritory() {
+  if (userPosition) {
+    const squareSize = 0.0002; // Size of the square in degrees (approx. 50 meters)
+    const squareCoords = [
+      { lat: userPosition.lat + squareSize, lng: userPosition.lng - squareSize },
+      { lat: userPosition.lat + squareSize, lng: userPosition.lng + squareSize },
+      { lat: userPosition.lat - squareSize, lng: userPosition.lng + squareSize },
+      { lat: userPosition.lat - squareSize, lng: userPosition.lng - squareSize },
+    ];
+
+    claimedTerritory = new google.maps.Polygon({
+      paths: squareCoords,
+      strokeColor: "#FF0000",
+      strokeOpacity: 0.8,
+      strokeWeight: 2,
+      fillColor: "#FF0000",
+      fillOpacity: 0.35,
+    });
+
+    claimedTerritory.setMap(map);
+    console.log("Territory claimed around:", userPosition);
+  } else {
+    console.error("User position is not available.");
+  }
+}
+
+function expandTerritory() {
+  if (userPosition && outsidePath.length > 0) {
+    // Get the current territory coordinates
+    const currentCoords = claimedTerritory.getPath().getArray();
+    // Add the outside path to the current territory
+    const newCoords = currentCoords.concat(outsidePath);
+
+    // Create a new polygon with the expanded territory
+    claimedTerritory = new google.maps.Polygon({
+      paths: newCoords,
+      strokeColor: "#FF0000",
+      strokeOpacity: 0.8,
+      strokeWeight: 2,
+      fillColor: "#FF0000",
+      fillOpacity: 0.35,
+    });
+
+    claimedTerritory.setMap(map);
+
+    // Calculate the expansion width and update the score
+    const expansionWidth = google.maps.geometry.spherical.computeLength(outsidePath);
+    score += expansionWidth;
+    console.log("Territory expanded around:", userPosition);
+    console.log("Current score:", score);
+  } else {
+    console.error("User position or outside path is not available.");
+  }
 }
 
 // Error handling for geolocation
