@@ -113,20 +113,20 @@ async function initMap() {
             locationHistory = []; // Clear the array
           }
 
-          if (!userLocationMarker) {
-            console.log("Creating user location marker");
-            userLocationMarker = new google.maps.Marker({
-              position: pos,
-              map: map,
-              title: "Your Location",
-              icon: {
-                url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
-              }
-            });
-          } else {
-            console.log("Updating user location marker position");
-            userLocationMarker.setPosition(pos);
-          }
+          // if (!userLocationMarker) {
+          //   console.log("Creating user location marker");
+          //   userLocationMarker = new google.maps.Marker({
+          //     position: pos,
+          //     map: map,
+          //     title: "Your Location",
+          //     icon: {
+          //       url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+          //     }
+          //   });
+          // } else {
+          //   console.log("Updating user location marker position");
+          //   userLocationMarker.setPosition(pos);
+          // }
 
           map.setCenter(pos);
 
