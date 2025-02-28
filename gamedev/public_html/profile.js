@@ -1,6 +1,15 @@
 document.addEventListener("DOMContentLoaded", async () => {
   // Fetch the profile data from your API endpoint.
 
+  // Clear all text fields 
+  document.getElementById("username").textContent = "";
+  document.getElementById("name").textContent = "";
+  document.getElementById("rank").textContent = "";
+  document.getElementById("totalDistance").textContent = "";
+  document.getElementById("totalClaimed").textContent = "";
+  document.getElementById("knockouts").textContent = "";
+  document.getElementById("achievements").innerHTML = "";
+
   // API URL for the backend
   const API_URL = 'https://run-for-your-life-api.onrender.com';
   // Retrieve the user_id from local storage
@@ -8,28 +17,17 @@ document.addEventListener("DOMContentLoaded", async () => {
   console.log("user_id: ", user_id);
   try {
     // Send the above entered data to the database function to create a new user
-    const response = await fetch(`${API_URL}/api/user/profile`, {
+    const response = await fetch(`${API_URL}/api/profile`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       // Send the username, email, passowr
       body: JSON.stringify({ user_id })
     });
+
+    const data = await response.json();
     console.log(data);
   } catch (error) {
     console.error("Error:", error);
-  }
-
-
-  // If no data is returned, clear all fields.
-  if (!data || Object.keys(data).length === 0) {
-    document.getElementById("username").textContent = "";
-    document.getElementById("name").textContent = "";
-    document.getElementById("rank").textContent = "";
-    document.getElementById("totalDistance").textContent = "";
-    document.getElementById("totalClaimed").textContent = "";
-    document.getElementById("knockouts").textContent = "";
-    document.getElementById("achievements").innerHTML = "";
-    return;
   }
 
   // Update the profile info section.
@@ -40,10 +38,10 @@ document.addEventListener("DOMContentLoaded", async () => {
   // Update the stats section.
   document.getElementById("totalDistance").textContent = data.totalDistance ? data.totalDistance + " miles" : "";
   document.getElementById("totalClaimed").textContent = data.totalClaimed ? data.totalClaimed + " sqft" : "";
-  document.getElementById("knockouts").textContent = data.knockouts || "";
+  //document.getElementById("knockouts").textContent = data.knockouts || "";
 
   // Update the achievements section.
-  const achievementsContainer = document.getElementById("achievements");
+  /*const achievementsContainer = document.getElementById("achievements");
   if (data.achievements && Array.isArray(data.achievements)) {
     achievementsContainer.innerHTML = data.achievements.map(achievement => `
             <div class="achievement">
@@ -52,17 +50,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             </div>
           `).join("");
   } else {
-    achievementsContainer.innerHTML = "";
-  }
+    achievementsContainer.innerHTML = ""; 
+  } */
 })
-  .catch(error => {
-    console.error("Error fetching profile data:", error);
-    // On error, ensure all fields remain blank.
-    document.getElementById("username").textContent = "";
-    document.getElementById("name").textContent = "";
-    document.getElementById("rank").textContent = "";
-    document.getElementById("totalDistance").textContent = "";
-    document.getElementById("totalClaimed").textContent = "";
-    document.getElementById("knockouts").textContent = "";
-    document.getElementById("achievements").innerHTML = "";
-  });
