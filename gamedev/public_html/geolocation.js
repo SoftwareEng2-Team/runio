@@ -209,15 +209,13 @@ function claimTerritory() {
 
 function expandTerritory() {
   if (userPosition && outsidePath.length > 0) {
-    // Remove the previous territory
-    claimedTerritory.setMap(null);
-
     // Get the current territory coordinates
     const currentCoords = claimedTerritory.getPath().getArray();
     // Add the outside path to the current territory
     const newCoords = currentCoords.concat(outsidePath);
 
     // Create a new polygon with the expanded territory
+    claimedTerritory.setMap(null); // Remove the previous territory
     claimedTerritory = new google.maps.Polygon({
       paths: newCoords,
       strokeColor: "#FF0000",
