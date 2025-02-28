@@ -113,21 +113,6 @@ async function initMap() {
             locationHistory = []; // Clear the array
           }
 
-          // if (!userLocationMarker) {
-          //   console.log("Creating user location marker");
-          //   userLocationMarker = new google.maps.Marker({
-          //     position: pos,
-          //     map: map,
-          //     title: "Your Location",
-          //     icon: {
-          //       url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
-          //     }
-          //   });
-          // } else {
-          //   console.log("Updating user location marker position");
-          //   userLocationMarker.setPosition(pos);
-          // }
-
           map.setCenter(pos);
 
           // Claim territory if not already claimed
@@ -157,7 +142,7 @@ async function initMap() {
         {
           enableHighAccuracy: true,
           maximumAge: 0,
-          timeout: 1000,
+          timeout: 500,
         }
       );
     } else {
@@ -166,7 +151,7 @@ async function initMap() {
   }
 
   // Update the user's location every second
-  setInterval(updateLocation, 1000);
+  setInterval(updateLocation, 500);
 }
 
 // Function to calculate the average location
@@ -202,8 +187,8 @@ function claimTerritory() {
     const squareCoords = [
       { lat: userPosition.lat + squareSize, lng: userPosition.lng - squareSize },
       { lat: userPosition.lat + squareSize, lng: userPosition.lng + squareSize },
-      { lat: userPosition.lat - squareSize, lng: userPosition.lng + squareSize },
-      { lat: userPosition.lat - squareSize, lng: userPosition.lng - squareSize }// Closing the square
+      { lat: userPosition.lat - squareSize, lng: userPosition.lng - squareSize },
+      { lat: userPosition.lat - squareSize, lng: userPosition.lng + squareSize } // Closing the square
     ];
 
     claimedTerritory = new google.maps.Polygon({
@@ -224,6 +209,9 @@ function claimTerritory() {
 
 function expandTerritory() {
   if (userPosition && outsidePath.length > 0) {
+    // Remove the previous territory
+    claimedTerritory.setMap(null);
+
     // Get the current territory coordinates
     const currentCoords = claimedTerritory.getPath().getArray();
     // Add the outside path to the current territory
