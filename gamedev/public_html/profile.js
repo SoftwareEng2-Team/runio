@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
   // Fetch the profile data from your API endpoint.
 
   // API URL for the backend
