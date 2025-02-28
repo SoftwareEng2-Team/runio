@@ -5,10 +5,10 @@ document.addEventListener("DOMContentLoaded", async () => {
   const API_URL = 'https://run-for-your-life-api.onrender.com';
   // Retrieve the user_id from local storage
   const user_id = localStorage.getItem('user_id');
-
+  console.log("user_id: ", user_id);
   try {
     // Send the above entered data to the database function to create a new user
-    const response = await fetch(`${API_URL}/api/profile`, {
+    const response = await fetch(`${API_URL}/api/user/profile`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       // Send the username, email, passowr
