@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   console.log("user_id: ", user_id);
   try {
     // Send the above entered data to the database function to create a new user
-    const response = await fetch(`${API_URL}/api/user/profile`, {
+    const response = await fetch(`${API_URL}/api/profile`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       // Send the username, email, passowr
