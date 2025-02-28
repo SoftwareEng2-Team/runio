@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   // Fetch the profile data from your API endpoint.
 
   // API URL for the backend
-  const API_URL = 'https://run-for-your-life-api.onrender.com/';
+  const API_URL = 'https://run-for-your-life-api.onrender.com';
   // Retrieve the user_id from local storage
   const user_id = localStorage.getItem('user_id');
 
