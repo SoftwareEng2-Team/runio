@@ -4,10 +4,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   // Clear all text fields 
   document.getElementById("username").textContent = "";
   document.getElementById("name").textContent = "";
-  document.getElementById("rank").textContent = "";
   document.getElementById("totalDistance").textContent = "";
   document.getElementById("totalClaimed").textContent = "";
-  document.getElementById("knockouts").textContent = "";
+  //document.getElementById("knockouts").textContent = "";
   document.getElementById("achievements").innerHTML = "";
 
   // API URL for the backend
@@ -35,7 +34,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // Update the profile info section.
     document.getElementById("username").textContent = data.username || "";
-    document.getElementById("name").textContent = data.name || "";
     document.getElementById("rank").textContent = data.rank ? "#" + data.rank : "";
 
     // Update the stats section.
