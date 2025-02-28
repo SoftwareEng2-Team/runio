@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // Clear all text fields 
   document.getElementById("username").textContent = "";
-  document.getElementById("name").textContent = "";
+  document.getElementById("rank").textContent = "";
   document.getElementById("totalDistance").textContent = "";
   document.getElementById("totalClaimed").textContent = "";
   //document.getElementById("knockouts").textContent = "";
@@ -45,6 +45,27 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.error("Error:", error);
   }
 
+  // Modal (User Guide) Logic
+  const guideButton = document.getElementById("guideButton");
+  const guideModal = document.getElementById("guideModal");
+  const closeButton = document.querySelector(".modal .close");
+
+  // Open modal when button is clicked
+  guideButton.addEventListener("click", () => {
+    guideModal.style.display = "block";
+  });
+
+  // Close modal when the close button (×) is clicked
+  closeButton.addEventListener("click", () => {
+    guideModal.style.display = "none";
+  });
+
+  // Close modal if user clicks outside the modal content
+  window.addEventListener("click", (event) => {
+    if (event.target === guideModal) {
+      guideModal.style.display = "none";
+    }
+  });
   // Update the achievements section.
   /*const achievementsContainer = document.getElementById("achievements");
   if (data.achievements && Array.isArray(data.achievements)) {
@@ -57,4 +78,4 @@ document.addEventListener("DOMContentLoaded", async () => {
   } else {
     achievementsContainer.innerHTML = ""; 
   } */
-})
+});
