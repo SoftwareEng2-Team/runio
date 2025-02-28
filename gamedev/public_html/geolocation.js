@@ -100,14 +100,6 @@ async function initMap() {
           }
 
           // Check if the position has changed significantly
-          if (previousPosition) {
-            const latDiff = Math.abs(pos.lat - previousPosition.lat);
-            const lngDiff = Math.abs(pos.lng - previousPosition.lng);
-            if (latDiff < 0.0001 && lngDiff < 0.0001) {
-              console.log("Position change is too small, not updating.");
-              return;
-            }
-          }
 
           previousPosition = pos;
 
@@ -126,10 +118,6 @@ async function initMap() {
             userLocationMarker.setPosition(pos);
           }
 
-          current_location_window.setPosition(pos);
-          current_location_window.setContent("Current Location");
-          current_location_window.open(map);
-          openlocationwindow = current_location_window;
           map.setCenter(pos);
 
           // Claim territory if not already claimed
@@ -159,7 +147,7 @@ async function initMap() {
         {
           enableHighAccuracy: true,
           maximumAge: 0,
-          timeout: 5000,
+          timeout: 500,
         }
       );
     } else {
