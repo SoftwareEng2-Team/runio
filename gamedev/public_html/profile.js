@@ -66,4 +66,3 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("knockouts").textContent = "";
     document.getElementById("achievements").innerHTML = "";
   });
-  });  
